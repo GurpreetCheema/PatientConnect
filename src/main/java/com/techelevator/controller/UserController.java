@@ -24,7 +24,7 @@ public class UserController {
 		this.userDAO = userDAO;
 	}
 
-	@RequestMapping(path="/", method=RequestMethod.GET)
+	@RequestMapping(path="/users/new", method=RequestMethod.GET)
 	public String displayNewUserForm(ModelMap modelHolder) {
 		if( ! modelHolder.containsAttribute("user")) {
 			modelHolder.addAttribute("user", new User());
