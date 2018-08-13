@@ -3,16 +3,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Critter</title>
+		<title>Patient Connect</title>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.js "></script>
 	    <script src="https://cdn.jsdelivr.net/jquery.timeago/1.4.1/jquery.timeago.min.js"></script>
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	    <c:url var="cssHref" value="/site.css" />
+	    <c:url var="cssHref" value="./css/style.css" />
 		<link rel="stylesheet" type="text/css" href="${cssHref}">
-		
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$("time.timeago").timeago();
@@ -26,15 +25,18 @@
 				
 			});
 			
-			
 		</script>
 		
 	</head>
 	<body>
 		<header>
 			<c:url var="homePageHref" value="/" />
-			<c:url var="imgSrc" value="/img/logo.png" />
-			<a href="${homePageHref}"><img src="${imgSrc}" class="img-responsive" /></a>
+			<div class="headerIMG">
+			<c:url var="imgSrc1" value="/img/logo2.png" />
+			<a href="${homePageHref}"><img src="${imgSrc1}" class="img-responsive" /></a>
+			<c:url var="imgSrc" value="/img/patcon1.jpg" />
+			<a href="${homePageHref}"><img src="${imgSrc}"  class="img-responsive" /></a>
+			</div>
 		</header>
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
