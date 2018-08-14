@@ -1,7 +1,7 @@
 		</div>
 		
 		<footer>
-			Copyright 2018 ZANG Inc. AKA CoolGuyHunk69
+			Copyright 2018 ZANG LLC. 
 		</footer>
 	</body>
 </html>

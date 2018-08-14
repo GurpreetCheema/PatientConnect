@@ -34,6 +34,8 @@
 			<div class="headerIMG">
 			<c:url var="imgSrc1" value="/img/logo2.png" />
 			<a href="${homePageHref}"><img src="${imgSrc1}" class="img-responsive" /></a>
+			</div>
+			<div class="HeaderTextIMG">
 			<c:url var="imgSrc" value="/img/patcon1.jpg" />
 			<a href="${homePageHref}"><img src="${imgSrc}"  class="img-responsive" /></a>
 			</div>

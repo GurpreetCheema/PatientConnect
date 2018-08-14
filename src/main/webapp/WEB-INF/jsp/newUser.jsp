@@ -2,6 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
+
 <script type="text/javascript">
 	$(document).ready(function () {
 		$.validator.addMethod('capitals', function(thing){
@@ -55,7 +56,14 @@
 				<label for="confirmPassword">Confirm Password: </label>
 				<input type="password" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" />	
 			</div>
-			<button type="submit" class="btn btn-default">Create Patient</button>
+			<!-- <form name="form1"> -->
+				Select A Profile Type: <select name="profileType">
+					<option value="Null"></option>
+					<option value="Doctor">Doctor</option>
+					<option value="Patient">Patient</option>
+				</select>
+			<!-- </form> -->
+			<button type="submit" class="btn btn-default">Create Profile</button>
 		</div>
 		<div class="col-sm-4"></div>
 	</div>

@@ -47,15 +47,24 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/users", method=RequestMethod.POST)
-	public String createUser(@Valid @ModelAttribute User user, BindingResult result, RedirectAttributes flash) {
+	public String createUser(@Valid @ModelAttribute User user, @RequestParam String profileType, BindingResult result, RedirectAttributes flash) {
 		if(result.hasErrors()) {
 			flash.addFlashAttribute("user", user);
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "user", result);
 			return "redirect:/users/new";
 		}
 		
+		
 		userDAO.saveUser(user.getUserName(), user.getPassword());
-		return "redirect:/login";
+		if(profileType.equals("Doctor"))
+		{
+			return "redirect:/doctorRegistration";
+		}
+		else if(profileType.equals("Patient"))
+		{
+			return "redirect:/patientRegistration";
+		}
+		else return "redirect:/users/new";
 	}
 	
 	@RequestMapping(path="/doctorRegistration", method=RequestMethod.GET)
