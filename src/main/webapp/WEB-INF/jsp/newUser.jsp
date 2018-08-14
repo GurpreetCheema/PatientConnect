@@ -15,7 +15,7 @@
 				},
 				password : {
 					required : true,
-					minlength: 15,
+					minlength: 10,
 					capitals: true,
 				},
 				confirmPassword : {
@@ -25,7 +25,7 @@
 			},
 			messages : {			
 				password: {
-					minlength: "Password too short, make it at least 15 characters",
+					minlength: "Password too short, make it at least 10 characters",
 					capitals: "Field must contain a capital letter",
 				},
 				confirmPassword : {
@@ -55,7 +55,7 @@
 				<label for="confirmPassword">Confirm Password: </label>
 				<input type="password" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" />	
 			</div>
-			<button type="submit" class="btn btn-default">Create User</button>
+			<button type="submit" class="btn btn-default">Create Patient</button>
 		</div>
 		<div class="col-sm-4"></div>
 	</div>
