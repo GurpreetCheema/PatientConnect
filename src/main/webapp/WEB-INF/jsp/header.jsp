@@ -32,11 +32,17 @@
 		<header>
 			<c:url var="homePageHref" value="/" />
 			<div class="headerIMG">
-			<c:url var="imgSrc1" value="/img/logo2.png" />
-			<a href="${homePageHref}"><img src="${imgSrc1}" class="img-responsive" /></a>
-			<c:url var="imgSrc" value="/img/patcon1.jpg" />
-			<a href="${homePageHref}"><img src="${imgSrc}"  class="img-responsive" /></a>
+			<div>
+				<c:url var="imgSrc1" value="/img/logo2.png" />
+				<a href="${homePageHref}"><img src="${imgSrc1}"
+					class="img-responsive" /></a>
 			</div>
+			<div>
+				<c:url var="imgSrc" value="/img/patcon1.jpg" />
+				<a href="${homePageHref}"><img src="${imgSrc}"
+					class="img-responsive" /></a>
+			</div>
+		</div>
 		</header>
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -59,7 +65,7 @@
 						<c:when test="${empty currentUser}">
 							<c:url var="newUserHref" value="/users/new" />
 							<li><a href="${newUserHref}">Sign Up</a></li>
-							<c:url var="loginHref" value="/login" />
+							<c:url var="loginHref" value="/" />
 							<li><a href="${loginHref}">Log In</a></li>
 						</c:when>
 						<c:otherwise>
