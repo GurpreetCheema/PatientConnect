@@ -112,4 +112,10 @@ public class UserController {
 			
 			return "redirect:/patient";
 	}
+	@RequestMapping(path="/appointment", method=RequestMethod.GET)
+	public String viewCalendars() {
+		return "/appointment";
+	}
+	
+			
 }
