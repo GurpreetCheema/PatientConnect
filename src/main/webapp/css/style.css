@@ -1,38 +1,16 @@
-.headerIMG img {
-	display: flex;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-	padding-top: 10px;
-	background-color: white;
-}
-
-<<<<<<< HEAD
-=======
 input{
 width: 200px;
 	}
-/* .formSubmitButton{
-width: 150px;
-border-radius: 12px;	
-background-color: #4CAF50;
-text:Bold;
-margin-top:0px;
-} */
+
 .formSubmitButton {
     bottom: 90%;
     border-radius: 12px;	
      
 }
-/* footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: #44ad30;
-   color: white;
-   text-align: center;
-   height:20px;
-} */
->>>>>>> 0779aa067667d014ad96778c62990525baf14241
 
+.headerIMG {
+	display: grid | inline-grid;
+	width: 50%;
+	padding-top: 10px;
+	background-color: white;
+}

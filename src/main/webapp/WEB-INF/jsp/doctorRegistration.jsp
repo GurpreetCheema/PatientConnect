@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 0779aa067667d014ad96778c62990525baf14241
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<<<<<<< HEAD
 <c:url var="docRegistrationHomePageUrl" value="/"/>
 
 <script type="text/javascript">
@@ -35,20 +30,6 @@
 	});
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-<c:import url="/WEB-INF/jsp/footer.jsp" />
-=======
 <div>
 <h3 class=â€doctorRegistrationâ€>Hello Doctor!</h3>
 <h1>Please Fill out the Information below:</h1>
@@ -159,8 +140,4 @@ name="doctorInsurance" id="doctorInsurance" />
 
 </div>
 
-
-
 <c:import url="/WEB-INF/jsp/footer.jsp" />
-	
->>>>>>> 0779aa067667d014ad96778c62990525baf14241
