@@ -112,10 +112,6 @@ ALTER TABLE user_role
 ADD FOREIGN KEY (role_id)
 REFERENCES role(role_id);
 
-ALTER TABLE user_role
-ADD FOREIGN KEY (role_id)
-REFERENCES role(role_id);
-
 ALTER TABLE user_doctor
 ADD FOREIGN KEY (doctor_id)
 REFERENCES doctor(doctor_id);
