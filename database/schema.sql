@@ -22,7 +22,6 @@ CREATE TABLE app_user (
   user_id SERIAL PRIMARY KEY,
   user_name varchar(32) NOT NULL UNIQUE,
   password varchar(32) NOT NULL,
-  role varchar(32),
   salt varchar(255) NOT NULL
 );
 
@@ -62,7 +61,7 @@ CREATE TABLE office (
   address varchar (100),
   city varchar (32),
   state varchar (2),
-  zip int,
+  zip varchar(10),
   phone varchar(15)
   );
   
@@ -78,9 +77,10 @@ CREATE TABLE patient (
   address varchar(100),
   city varchar(32),
   state varchar(2),
-  zip int,
+  zip varchar(10),
   email varchar(50),
-  phone varchar(15)
+  phone varchar(15),
+  insurance varchar(100)
   );
   
 CREATE TABLE patient_prescriptions (

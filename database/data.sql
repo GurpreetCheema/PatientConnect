@@ -32,14 +32,14 @@ INSERT INTO prescriptions ( name   )
         
         --      TEST USER ACCOUNTS                      --
 
-INSERT INTO app_user(user_name,    password,      role, salt)
-        VALUES      ('test_admin', 'PartyParrot123!@#', 3, 'salt');
+INSERT INTO app_user(user_name,    password,       salt)
+        VALUES      ('test_admin', 'PartyParrot123!@#', 'salt');
         
 INSERT INTO app_user(user_name,    password,        role, salt)
-        VALUES      ('test_patient', 'PartyParrot123!@#', 1, 'salt');
+        VALUES      ('test_patient', 'PartyParrot123!@#', 'salt');
         
 INSERT INTO app_user(user_name,      password,     role, salt)
-        VALUES      ('test_doctor', 'PartyParrot123!@#', 2, 'salt');
+        VALUES      ('test_doctor', 'PartyParrot123!@#', 'salt');
         
         --              TEST USERS TO ROLES             --
         
@@ -52,4 +52,14 @@ INSERT INTO user_role ( user_id, role_id)
 INSERT INTO user_role ( user_id, role_id)
         VALUES        (  3    ,   2     );
 
+        --          LINK USERS TO ACCOUNT INFO			--
+INSERT INTO user_doctor (user_id, doctor_id)
+		VALUES			(   3,       1     );
+		
+INSERT INTO user_patient (user_id, patient_id)
+		VALUES			(   2,         1);
+		
+		--			LINK PATIENT WITH PRESCRIPTION		--
+INSERT INTO patient_prescriptions ( prescription_id, patient_id)
+		VALUES						( 1,                 1)
 COMMIT;
