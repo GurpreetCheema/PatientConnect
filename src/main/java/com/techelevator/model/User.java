@@ -13,7 +13,6 @@ public class User {
 		@Pattern(regexp=".*[A-Z].*", message="Must have a capital")
 	})
 	private String password;
-	private String role;
 	
 	private String confirmPassword;
 	public String getUserName() {
@@ -26,19 +25,6 @@ public class User {
 
 	public void setUserId(Long userId) {
 		this.userId = userId;
-	}
-
-	/**
-	 * @return the role
-	 */
-	public String getRole() {
-		return role;
-	}
-	/**
-	 * @param role the role to set
-	 */
-	public void setRole(String role) {
-		this.role = role;
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;

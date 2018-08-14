@@ -1,62 +1,57 @@
 package com.techelevator.model;
 
 public class Doctor {
-	public String docFirstName;
-	public String docLastName;
-	public String speciality;
-	public String location;
-	public Boolean availability;
-	public String phoneNumber;
-	public String prescription;
-	public String docEmail;
+	private Long doctorId;
+	private String firstName;
+	private String lastName;
+	private String practice;
 	
-	public String getDocFirstName() {
-		return docFirstName;
+	/**
+	 * @return the doctorId
+	 */
+	public Long getDoctorId() {
+		return doctorId;
 	}
-	public void setDocFirstName(String docFirstName) {
-		this.docFirstName = docFirstName;
+	/**
+	 * @param doctorId the doctorId to set
+	 */
+	public void setDoctorId(Long doctorId) {
+		this.doctorId = doctorId;
 	}
-	public String getDocLastName() {
-		return docLastName;
+	/**
+	 * @return the firstName
+	 */
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setDocLastName(String docLastName) {
-		this.docLastName = docLastName;
+	/**
+	 * @param firstName the firstName to set
+	 */
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public String getSpeciality() {
-		return speciality;
+	/**
+	 * @return the lastName
+	 */
+	public String getLastName() {
+		return lastName;
 	}
-	public void setSpeciality(String speciality) {
-		this.speciality = speciality;
+	/**
+	 * @param lastName the lastName to set
+	 */
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
-	public String getLocation() {
-		return location;
+	/**
+	 * @return the practice
+	 */
+	public String getPractice() {
+		return practice;
 	}
-	public void setLocation(String location) {
-		this.location = location;
+	/**
+	 * @param practice the practice to set
+	 */
+	public void setPractice(String practice) {
+		this.practice = practice;
 	}
-	public Boolean getAvailability() {
-		return availability;
-	}
-	public void setAvailability(Boolean availability) {
-		this.availability = availability;
-	}
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-	public String getPrescription() {
-		return prescription;
-	}
-	public void setPrescription(String prescription) {
-		this.prescription = prescription;
-	}
-	public String getDocEmail() {
-		return docEmail;
-	}
-	public void setDocEmail(String docEmail) {
-		this.docEmail = docEmail;
-	}
-
 }

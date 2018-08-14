@@ -1,76 +1,135 @@
 package com.techelevator.model;
 
 public class Patient {
-	public int patient_id;
-	public String patientLastName;
-	public String patientFirstName;
-	public String patient_prescriptions;
-	public String patientAddress;
-	public String patientCity;
-	public String patientState;
-	public String patientPhone;
-	public String patientEmail;
-	public String patientReview;
-	public int getPatient_id() {
-		return patient_id;
-	}
-	public void setPatient_id(int patient_id) {
-		this.patient_id = patient_id;
-	}
-	public String getPatientLastName() {
-		return patientLastName;
-	}
-	public void setPatientLastName(String patientLastName) {
-		this.patientLastName = patientLastName;
-	}
-	public String getPatientFirstName() {
-		return patientFirstName;
-	}
-	public void setPatientFirstName(String patientFirstName) {
-		this.patientFirstName = patientFirstName;
-	}
+	private long patientId;
+	private String lastName;
+	private String firstName;
+	private String address;
+	private String city;
+	private String state;
+	private String zip;
+	private String email;
+	private String phone;
+	private String insurance;
 	
-	public String getPatient_prescriptions() {
-		return patient_prescriptions;
+	/**
+	 * @return the insurance
+	 */
+	public String getInsurance() {
+		return insurance;
 	}
-	public void setPatient_prescriptions(String patient_prescriptions) {
-		this.patient_prescriptions = patient_prescriptions;
+	/**
+	 * @param insurance the insurance to set
+	 */
+	public void setInsurance(String insurance) {
+		this.insurance = insurance;
 	}
-	public String getPatientAddress() {
-		return patientAddress;
+	/**
+	 * @return the patientId
+	 */
+	public long getPatientId() {
+		return patientId;
 	}
-	public void setPatientAddress(String patientAddress) {
-		this.patientAddress = patientAddress;
+	/**
+	 * @param patientId the patientId to set
+	 */
+	public void setPatientId(long patientId) {
+		this.patientId = patientId;
 	}
-	public String getPatientCity() {
-		return patientCity;
+	/**
+	 * @return the lastName
+	 */
+	public String getLastName() {
+		return lastName;
 	}
-	public void setPatientCity(String patientCity) {
-		this.patientCity = patientCity;
+	/**
+	 * @param lastName the lastName to set
+	 */
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
-	public String getPatientState() {
-		return patientState;
+	/**
+	 * @return the firstName
+	 */
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setPatientState(String patientState) {
-		this.patientState = patientState;
+	/**
+	 * @param firstName the firstName to set
+	 */
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public String getPatientPhone() {
-		return patientPhone;
+	/**
+	 * @return the address
+	 */
+	public String getAddress() {
+		return address;
 	}
-	public void setPatientPhone(String patientPhone) {
-		this.patientPhone = patientPhone;
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public String getPatientEmail() {
-		return patientEmail;
+	/**
+	 * @return the city
+	 */
+	public String getCity() {
+		return city;
 	}
-	public void setPatientEmail(String patientEmail) {
-		this.patientEmail = patientEmail;
+	/**
+	 * @param city the city to set
+	 */
+	public void setCity(String city) {
+		this.city = city;
 	}
-	public String getPatientReview() {
-		return patientReview;
+	/**
+	 * @return the state
+	 */
+	public String getState() {
+		return state;
 	}
-	public void setPatientReview(String patientReview) {
-		this.patientReview = patientReview;
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(String state) {
+		this.state = state;
 	}
-	
+	/**
+	 * @return the zip
+	 */
+	public String getZip() {
+		return zip;
+	}
+	/**
+	 * @param zip the zip to set
+	 */
+	public void setZip(String zip) {
+		this.zip = zip;
+	}
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	/**
+	 * @return the phone
+	 */
+	public String getPhone() {
+		return phone;
+	}
+	/**
+	 * @param phone the phone to set
+	 */
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}	
 }
