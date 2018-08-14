@@ -14,20 +14,23 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.model.Doctor;
 import com.techelevator.model.DoctorDAO;
+import com.techelevator.model.Patient;
+import com.techelevator.model.PatientDAO;
 import com.techelevator.model.User;
 import com.techelevator.model.UserDAO;
-import com.techelevator.npgeek.model.Survey;
 
 @Controller
 public class UserController {
 
 	private UserDAO userDAO;
 	private DoctorDAO doctorDAO;
+	private PatientDAO patientDAO;
 
 	@Autowired
-	public UserController(UserDAO userDAO, DoctorDAO doctorDAO) {
+	public UserController(UserDAO userDAO, DoctorDAO doctorDAO, PatientDAO patientDAO) {
 		this.userDAO = userDAO;
 		this.doctorDAO = doctorDAO;
+		this.patientDAO = patientDAO;
 	}
 
 	@RequestMapping(path="/users/new", method=RequestMethod.GET)
@@ -60,9 +63,9 @@ public class UserController {
 				@RequestParam String firstName,				
 				@RequestParam String lastName,
 				@RequestParam String practice,
-				RedirectAttributes flashScope  //pass a flash scope variable into saveNewProject method
+				RedirectAttributes flashScope  //pass a flash scope variable into save method
 			) {
-			Doctor newDoctor= new Doctor();
+			Doctor newDoctor = new Doctor();
 			newDoctor.setFirstName(firstName);
 			newDoctor.setLastName(lastName);
 			newDoctor.setPractice(practice);
@@ -72,5 +75,41 @@ public class UserController {
 			flashScope.addFlashAttribute("message", "New doctor profile created!");
 			
 			return "redirect:/doctor";
+	}
+	
+	@RequestMapping(path="/patientRegistration", method=RequestMethod.GET)
+	public String registerPatient() {
+		return "/patientRegistration";
+	}
+	
+	@RequestMapping(path="/patientRegistration", method=RequestMethod.POST)
+	public String patientDoctor(
+				@RequestParam String firstName,				
+				@RequestParam String lastName,
+				@RequestParam String address,
+				@RequestParam String city,				
+				@RequestParam String state,
+				@RequestParam String zip,
+				@RequestParam String email,				
+				@RequestParam String phone,
+				@RequestParam String insurance,
+				RedirectAttributes flashScope  //pass a flash scope variable into save method
+			) {
+			Patient newPatient = new Patient();
+			newPatient.setFirstName(firstName);
+			newPatient.setLastName(lastName);
+			newPatient.setAddress(address);
+			newPatient.setCity(city);
+			newPatient.setState(state);
+			newPatient.setZip(zip);
+			newPatient.setEmail(email);
+			newPatient.setPhone(phone);
+			newPatient.setInsurance(insurance);
+			
+			patientDAO.save(newPatient);
+			
+			flashScope.addFlashAttribute("message", "New patient profile created!");
+			
+			return "redirect:/patient";
 	}
 }
