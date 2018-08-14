@@ -1,35 +1,42 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
+<c:url var="formAction" value="/Patient" />
+<form method="POST" action="${formAction}">
 
-<div>
+<%-- 
 
-<!-- This will show info about Patient, So we have patient info show info name, address, phone, insurance
- -->
- <h3 class=“patient”>Patient Information</h3>
- <c:url var="Patient" value="/Patient"/>
-<%--  <jsp:include page="/path/to/servlet" />
- --%> 
- <table class ="PatientInfo">
- 
-<tr>
-	<td class="patInfo"> 
-	<div id="patient-info">
-	<c:url var="patientDetailPageUrl" value="/patientDetail/${patient.patient_id}"/>
-	</td>
-	
+<c:set var="pageTitle" value="patient Results"></c:set>
 
-	<td class ="patientDesc">	<c:out value="${patient.patientDe}" /> <br></td>
+<c:url var="patient" value="/Patient"/> --%>
 
-	</tr>
-	
+
+
+
+<h1> Patient Information </h1>
+<c:forEach var="patients" items="${patient_id}">
+<div class=clearfix>
+<c:url var="patientDetailPageUrl" value="/patientRegistration/${patients.patient_id}"/>
+
+	<div>
+<h2>${patientRegistration.firstName}</h2>
+<h2>${patientRegistration.lastName}</h2>
+<h2>${patientRegistration.address}</h2>
+<h2>${patientRegistration.city}</h2>
+<h2>${patientRegistration.state}</h2>
+<h2>${patientRegistration.zip}</h2>
+<h2>${patientRegistration.email}</h2>
+<h2>${patientRegistration.phone}</h2>
+<h2>${patientRegistration.insurance}</h2>
+
+
 </c:forEach>
-	</table>
-
 
 </div>
+	
 
 
+<c:import url="/WEB-INF/jsp/footer.jsp" />
 
 
 

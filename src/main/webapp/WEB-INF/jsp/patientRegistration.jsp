@@ -4,34 +4,34 @@
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
 <div>
-<h3 class=â€œpatientRegistrationâ€>Hello Patient!</h3>
+<h3 class=€œpatientRegistrationâ€>Hello Patient!</h3>
 <h1>Please Fill out the Information below:</h1>
 <br/>
 <c:url var="formAction" value="/patientRegistration" />
 <form method="POST" action="${formAction}">
 
-<%-- <form action="${submitPatientRegistration}" method="POST" >
- --%>	
+
  <div class="formGroup">
 	
+	
 <!-- First Name -->
-	<label for="email"> Enter your first name:</label> <input type="text"
+	<label for="email"> First Name:</label> <input type="text"
 	name="patientFirstName" id="patientFirstName" />
-	
+</br>	
 <!-- Last Name -->
-	<label for="patientLastName"> Enter your last name:</label> <input type="text"
+	<label for="patientLastName"> Last Name:</label> <input type="text"
 	name="patientLastName" id="patientLastName" />
-	
+</br>
 <!--  Address -->
-	<label for="patientAddress"> Enter your Street Address:</label> <input type="text"
+	<label for="patientAddress"> Street Address:</label> <input type="text"
 	name="patientAddress" id="patientAddress" />	
-		
+	</br>	
 <!--  City -->
-<label for="patientCity"> Enter your City:</label> <input type="text"
+<label for="patientCity"> City:</label> <input type="text"
 	name="patientCity" id="patientCity" />	
-		
+</br>		
 <!--  State -->	
-	<p> <label for="state">Enter your State: </label> 	
+	<p> <label for="state">State: </label> 	
 <select name="state" id="state">
 	<option value="AL">Alabama</option>
 	<option value="AK">Alaska</option>
@@ -88,22 +88,22 @@
 </p>		
 <!--  Zip Code -->
 		
-<label for="patientZip"> Enter your Zip Code:</label> <input type="text"
+<label for="patientZip"> Zip Code:</label> <input type="text"
 name="patientZip" id="patientZip" />	
 <!--  Email -->
-						
-<label for="patientEmail"> Enter your Email:</label> <input type="text"
+	</br>					
+<label for="patientEmail">Email:</label> <input type="text"
 name="patientEmail" id="patientEmail" />	
-	
+</br>	
 <!--  Phone Number -->	
-<label for="patientPhone"> Enter your Phone number:</label> <input type="text"
+<label for="patientPhone"> Phone number:</label> <input type="text"
 name="patientPhone" id="patientPhone" />	
-
+</br>
 <!--  Insurance, Do we add few type of Insurances or getting them from somewhere, lets just put trumpCare -->
 
-<label for="patientInsurance"> Enter your Phone number:</label> <input type="text"
+<label for="patientInsurance"> Name of Your Insurance Company:</label> <input type="text"
 name="patientInsurance" id="patientInsurance" />				
-	
+</br>	
 <!--  Submit button -->
 
 <input class="formSubmitButton" type="submit" value="Submit" />
@@ -113,4 +113,7 @@ name="patientInsurance" id="patientInsurance" />
 
 </div>
 
+
+
+<c:import url="/WEB-INF/jsp/footer.jsp" />
 	
