@@ -14,6 +14,7 @@ import com.techelevator.model.UserDAO;
 @Controller
 public class AuthenticationController {
 
+	@Autowired
 	private UserDAO userDAO;
 
 	@Autowired

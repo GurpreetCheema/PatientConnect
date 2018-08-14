@@ -22,8 +22,13 @@ import com.techelevator.model.UserDAO;
 @Controller
 public class UserController {
 
+	@Autowired
 	private UserDAO userDAO;
+	
+	@Autowired
 	private DoctorDAO doctorDAO;
+	
+	@Autowired
 	private PatientDAO patientDAO;
 
 	@Autowired
