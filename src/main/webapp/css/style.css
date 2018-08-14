@@ -1,7 +1,9 @@
 .headerIMG {
 	display: flex;
-	margin-left: 21%;
+	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
 	padding-top: 10px;
+	background-color: white;
 }
+
