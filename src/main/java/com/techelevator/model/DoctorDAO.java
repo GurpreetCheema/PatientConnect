@@ -1,5 +1,8 @@
 package com.techelevator.model;
 
-public class DoctorDAO {
+
+public interface DoctorDAO {
+
+	public void save(Doctor newDoctor);
 
 }

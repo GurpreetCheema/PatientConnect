@@ -9,19 +9,25 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.techelevator.model.Doctor;
+import com.techelevator.model.DoctorDAO;
 import com.techelevator.model.User;
 import com.techelevator.model.UserDAO;
+import com.techelevator.npgeek.model.Survey;
 
 @Controller
 public class UserController {
 
 	private UserDAO userDAO;
+	private DoctorDAO doctorDAO;
 
 	@Autowired
-	public UserController(UserDAO userDAO) {
+	public UserController(UserDAO userDAO, DoctorDAO doctorDAO) {
 		this.userDAO = userDAO;
+		this.doctorDAO = doctorDAO;
 	}
 
 	@RequestMapping(path="/users/new", method=RequestMethod.GET)
@@ -44,5 +50,27 @@ public class UserController {
 		return "redirect:/login";
 	}
 	
+	@RequestMapping(path="/doctorRegistration", method=RequestMethod.GET)
+	public String registerDoctor() {
+		return "/doctorRegistration";
+	}
 	
+	@RequestMapping(path="/doctorRegistration", method=RequestMethod.POST)
+	public String registerDoctor(
+				@RequestParam String firstName,				
+				@RequestParam String lastName,
+				@RequestParam String practice,
+				RedirectAttributes flashScope  //pass a flash scope variable into saveNewProject method
+			) {
+			Doctor newDoctor= new Doctor();
+			newDoctor.setFirstName(firstName);
+			newDoctor.setLastName(lastName);
+			newDoctor.setPractice(practice);
+			
+			doctorDAO.save(newDoctor);
+			
+			flashScope.addFlashAttribute("message", "New doctor profile created!");
+			
+			return "redirect:/doctor";
+	}
 }
