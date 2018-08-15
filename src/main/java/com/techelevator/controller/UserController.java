@@ -1,5 +1,6 @@
 package com.techelevator.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,7 +87,6 @@ public class UserController {
 			newDoctor.setPractice(practice);
 			
 			doctorDAO.save(newDoctor);
-			modelHolder.put("doctor", newDoctor);
 			
 			flashScope.addFlashAttribute("message", "New doctor profile created!");
 			
@@ -124,7 +124,6 @@ public class UserController {
 			newPatient.setInsurance(insurance);
 			
 			patientDAO.save(newPatient);
-			modelHolder.put("patient", newPatient);
 			
 			flashScope.addFlashAttribute("message", "New patient profile created!");
 			
@@ -132,12 +131,14 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/patient", method=RequestMethod.GET)
-	public String patientProfile() {
+	public String patientProfile(ModelMap modelHolder, HttpSession session) {
+		modelHolder.put("patient", patientDAO.getPatientInfoByUserName(((User)session.getAttribute("currentUser")).getUserName()));
 		return "patient";
 	}
 	
 	@RequestMapping(path="/doctor", method=RequestMethod.GET)
-	public String doctorProfile() {
+	public String doctorProfile(ModelMap modelHolder, HttpSession session) {
+		modelHolder.put("doctor", session.getAttribute("currentUser"));
 		return "doctor";
 	}
 	

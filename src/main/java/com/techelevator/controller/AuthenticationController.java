@@ -41,7 +41,7 @@ public class AuthenticationController {
 				return "redirect:/users/"+userName;
 			}
 		} else {
-			return "redirect:/login";
+			return "redirect:/";
 		}
 	}
 

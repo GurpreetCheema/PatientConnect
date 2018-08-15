@@ -4,7 +4,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -24,4 +24,37 @@ public class JDBCPatientDAO implements PatientDAO{
 							, newPatient.getState(), newPatient.getZip(), newPatient.getEmail(), newPatient.getPhone(), newPatient.getInsurance());
 	}
 
+	@Override
+	public Object getPatientInfoByUserName(String userName) {
+		String sqlSearchForUsername ="SELECT * "+
+				"FROM patient "+
+				"JOIN user_patient ON patient.patient_id = user_patient.patient_id "+
+				"JOIN app_user ON patient.patient_id = app_user.user_id "+
+				"WHERE UPPER(user_name) = ? ";
+
+				SqlRowSet user = jdbcTemplate.queryForRowSet(sqlSearchForUsername, userName.toUpperCase()); 
+				Patient thisPatient = null;
+				if(user.next()) {
+					thisPatient = new Patient();
+					thisPatient = mapRowToPatient(user);
+				}
+
+				return thisPatient;
+	}
+	
+	public Patient mapRowToPatient(SqlRowSet user) {
+		Patient thisPatient = new Patient();
+		
+		thisPatient.setPatientId(user.getLong("patient_id"));
+		thisPatient.setFirstName(user.getString("first_name"));
+		thisPatient.setLastName(user.getString("last_name"));
+		thisPatient.setLastName(user.getString("address"));
+		thisPatient.setLastName(user.getString("city"));
+		thisPatient.setLastName(user.getString("state"));		
+		thisPatient.setLastName(user.getString("zip"));
+		thisPatient.setLastName(user.getString("email"));
+		thisPatient.setLastName(user.getString("phone"));
+		
+		return thisPatient;
+	}
 }
