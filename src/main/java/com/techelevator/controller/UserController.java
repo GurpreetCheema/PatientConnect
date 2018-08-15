@@ -69,7 +69,7 @@ public class UserController {
 	
 	@RequestMapping(path="/doctorRegistration", method=RequestMethod.GET)
 	public String registerDoctor() {
-		return "/doctorRegistration";
+		return "doctorRegistration";
 	}
 	
 	@RequestMapping(path="/doctorRegistration", method=RequestMethod.POST)
@@ -77,6 +77,7 @@ public class UserController {
 				@RequestParam String firstName,				
 				@RequestParam String lastName,
 				@RequestParam String practice,
+				ModelMap modelHolder,
 				RedirectAttributes flashScope  //pass a flash scope variable into save method
 			) {
 			Doctor newDoctor = new Doctor();
@@ -85,6 +86,7 @@ public class UserController {
 			newDoctor.setPractice(practice);
 			
 			doctorDAO.save(newDoctor);
+			modelHolder.put("doctor", newDoctor);
 			
 			flashScope.addFlashAttribute("message", "New doctor profile created!");
 			
@@ -93,7 +95,7 @@ public class UserController {
 	
 	@RequestMapping(path="/patientRegistration", method=RequestMethod.GET)
 	public String registerPatient() {
-		return "/patientRegistration";
+		return "patientRegistration";
 	}
 	
 	@RequestMapping(path="/patientRegistration", method=RequestMethod.POST)
@@ -107,6 +109,7 @@ public class UserController {
 				@RequestParam String email,				
 				@RequestParam String phone,
 				@RequestParam String insurance,
+				ModelMap modelHolder,
 				RedirectAttributes flashScope  //pass a flash scope variable into save method
 			) {
 			Patient newPatient = new Patient();
@@ -121,15 +124,27 @@ public class UserController {
 			newPatient.setInsurance(insurance);
 			
 			patientDAO.save(newPatient);
+			modelHolder.put("patient", newPatient);
 			
 			flashScope.addFlashAttribute("message", "New patient profile created!");
 			
 			return "redirect:/patient";
 	}
+	
+	@RequestMapping(path="/patient", method=RequestMethod.GET)
+	public String patientProfile() {
+		return "patient";
+	}
+	
+	@RequestMapping(path="/doctor", method=RequestMethod.GET)
+	public String doctorProfile() {
+		return "doctor";
+	}
+	
 	@RequestMapping(path="/appointment", method=RequestMethod.GET)
 	public String viewCalendars() {
 		return "appointment";
 	}
 	
-			
+	
 }
