@@ -56,12 +56,18 @@ public class JDBCUserDAO implements UserDAO {
 	}
 	
 //	SETS USER ID IN RELATOR DB
-	
-public void insertUserIdInRelator(long userId) {
+	@Override
+public void insertUserIdInPatientRelator(long userId) {
 String sqlUserIdInRelator = "INSERT INTO user_patient(user_id) " + 
 		"        VALUES (?);";
 jdbcTemplate.update(sqlUserIdInRelator, userId);
 }
+	@Override
+	public void insertUserIdInDoctorRelator(long userId) {
+		String sqlUserIdInRelator = "INSERT INTO user_doctor(user_id) " + 
+				"        VALUES (?);";
+		jdbcTemplate.update(sqlUserIdInRelator, userId);
+		}
 
 
 	@Override

@@ -44,10 +44,10 @@ public class JDBCPatientDAO implements PatientDAO{
 	}
 	
 //								SETS PATIENT ID TO RELATE TO USER ID IN DB
-	
-	public void updatePatientRelatorUpdate(long patientId, long userId) {
+	@Override
+	public void updatePatientRelatorId(long patientId, long userId) {
 		String sqlUpdatePatientRelatorId = "UPDATE user_patient SET patient_id = ? "
-										+ "	WHERE user_patienr.user_id = ?";
+										+ "	WHERE user_patient.user_id = ?";
 		jdbcTemplate.update(sqlUpdatePatientRelatorId, patientId);
 	}
 	

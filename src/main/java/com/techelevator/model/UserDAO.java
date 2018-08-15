@@ -10,4 +10,8 @@ package com.techelevator.model;
 
 	public Object getUserByUserName(String userName);
 
+	void insertUserIdInPatientRelator(long userId);
+
+	void insertUserIdInDoctorRelator(long userId);
+
 }

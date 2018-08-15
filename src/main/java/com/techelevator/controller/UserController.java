@@ -58,11 +58,13 @@ public class UserController {
 		if(profileType.equals("Doctor"))
 		{
 			userDAO.saveUser(user.getUserName(), user.getPassword());
+			userDAO.insertUserIdInDoctorRelator(user.getUserId());
 			return "redirect:/doctorRegistration";
 		}
 		else if(profileType.equals("Patient"))
 		{
 			userDAO.saveUser(user.getUserName(), user.getPassword());
+			userDAO.insertUserIdInPatientRelator(user.getUserId());
 			return "redirect:/patientRegistration";
 		}
 		else return "redirect:/newUser";
@@ -79,6 +81,7 @@ public class UserController {
 				@RequestParam String lastName,
 				@RequestParam String practice,
 				ModelMap modelHolder,
+				HttpSession session,
 				RedirectAttributes flashScope  //pass a flash scope variable into save method
 			) {
 			Doctor newDoctor = new Doctor();
@@ -87,6 +90,7 @@ public class UserController {
 			newDoctor.setPractice(practice);
 			
 			doctorDAO.save(newDoctor);
+			doctorDAO.updateDoctorRelatorId(newDoctor.getDoctorId(), ((User)session.getAttribute("currentUser")).getUserId());
 			
 			flashScope.addFlashAttribute("message", "New doctor profile created!");
 			
@@ -110,6 +114,7 @@ public class UserController {
 				@RequestParam String phone,
 				@RequestParam String insurance,
 				ModelMap modelHolder,
+				HttpSession session,
 				RedirectAttributes flashScope  //pass a flash scope variable into save method
 			) {
 			Patient newPatient = new Patient();
@@ -124,6 +129,8 @@ public class UserController {
 			newPatient.setInsurance(insurance);
 			
 			patientDAO.save(newPatient);
+			
+			patientDAO.updatePatientRelatorId(newPatient.getPatientId(), ((User)session.getAttribute("currentUser")).getUserId());
 			
 			flashScope.addFlashAttribute("message", "New patient profile created!");
 			
