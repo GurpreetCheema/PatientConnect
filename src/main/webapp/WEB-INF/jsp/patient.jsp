@@ -1,16 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
-<c:url var="formAction" value="/Patient" />
+<c:url var="formAction" value="/patient" />
 <form method="POST" action="${formAction}">
-
-<%-- 
-
-<c:set var="pageTitle" value="patient Results"></c:set>
-
-<c:url var="patient" value="/Patient"/> --%>
-
-
 
 
 <h1> Patient Information </h1>

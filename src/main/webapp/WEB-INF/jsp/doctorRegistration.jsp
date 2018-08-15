@@ -3,8 +3,7 @@
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
 <c:url var="docRegistrationHomePageUrl" value="/"/>
-
-<script type="text/javascript">
+<!------------------- AZ-------------><script type="text/javascript">
 	$(document).ready(function () {
 		$.validator.addMethod('capitals', function(thing){
 			return thing.match(/[A-Z]/);
@@ -29,7 +28,7 @@
 		});
 	});
 </script>
-
+<!-------------------------- GC---------------->
 <div>
 <h3 class=â€doctorRegistrationâ€>Hello Doctor!</h3>
 <h1>Please Fill out the Information below:</h1>
@@ -42,95 +41,55 @@
 	
 	
 <!-- First Name -->
-	<label for="email"> First Name:</label> <input type="text"
+	<label for="email"> First Name:</label> </br><input type="text"
 	name="doctorFirstName" id="doctorFirstName" />
 </br>	
 <!-- Last Name -->
-	<label for="doctorLastName"> Last Name:</label> <input type="text"
+	<label for="doctorLastName"> Last Name:</label> </br><input type="text"
 	name="dcotorLastName" id="doctorLastName" />
 </br>
-<!--  Address -->
-	<label for="doctorAddress"> Street Address:</label> <input type="text"
-	name="doctorAddress" id="doctorAddress" />	
-	</br>	
-<!--  City -->
-<label for="doctorCity"> City:</label> <input type="text"
-	name="doctorCity" id="doctorCity" />	
-</br>		
-<!--  State -->	
-	<p> <label for="state">State: </label> 	
-<select name="state" id="state">
-	<option value="AL">Alabama</option>
-	<option value="AK">Alaska</option>
-	<option value="AZ">Arizona</option>
-	<option value="AR">Arkansas</option>
-	<option value="CA">California</option>
-	<option value="CO">Colorado</option>
-	<option value="CT">Connecticut</option>
-	<option value="DE">Delaware</option>
-	<option value="DC">District Of Columbia</option>
-	<option value="FL">Florida</option>
-	<option value="GA">Georgia</option>
-	<option value="HI">Hawaii</option>
-	<option value="ID">Idaho</option>
-	<option value="IL">Illinois</option>
-	<option value="IN">Indiana</option>
-	<option value="IA">Iowa</option>
-	<option value="KS">Kansas</option>
-	<option value="KY">Kentucky</option>
-	<option value="LA">Louisiana</option>
-	<option value="ME">Maine</option>
-	<option value="MD">Maryland</option>
-	<option value="MA">Massachusetts</option>
-	<option value="MI">Michigan</option>
-	<option value="MN">Minnesota</option>
-	<option value="MS">Mississippi</option>
-	<option value="MO">Missouri</option>
-	<option value="MT">Montana</option>
-	<option value="NE">Nebraska</option>
-	<option value="NV">Nevada</option>
-	<option value="NH">New Hampshire</option>
-	<option value="NJ">New Jersey</option>
-	<option value="NM">New Mexico</option>
-	<option value="NY">New York</option>
-	<option value="NC">North Carolina</option>
-	<option value="ND">North Dakota</option>
-	<option value="OH">Ohio</option>
-	<option value="OK">Oklahoma</option>
-	<option value="OR">Oregon</option>
-	<option value="PA">Pennsylvania</option>
-	<option value="RI">Rhode Island</option>
-	<option value="SC">South Carolina</option>
-	<option value="SD">South Dakota</option>
-	<option value="TN">Tennessee</option>
-	<option value="TX">Texas</option>
-	<option value="UT">Utah</option>
-	<option value="VT">Vermont</option>
-	<option value="VA">Virginia</option>
-	<option value="WA">Washington</option>
-	<option value="WV">West Virginia</option>
-	<option value="WI">Wisconsin</option>
-	<option value="WY">Wyoming</option>
+
+<p> <label for="Practice">Practice: </label></br> 	
+<select name="practice" id="practice">
+	<option value="AI"> Allergists/Immunologists </option>
+	<option value="AS"> Anesthesiologists </option>
+	<option value="CD"> Cardiologists </option>
+	<option value="CR"> Colon and Rectal Surgeons </option>
+	<option value="CM">Critical Care Medicine Specialists</option>
+	<option value="DT"> Dermatologists </option>
+	<option value="EN">Endocrinologists </option>
+	<option value="EM"> Emergency Medicine Specialists </option>
+	<option value="FD"> Family Physicians </option>
+	<option value="GL"> Gastroenterologists </option>
+	<option value="GM"> Geriatric Medicine Specialists </option>
+	<option value="HM">Hematologists </option>
+	<option value="HP"> Hospice and Palliative Medicine Specialists </option>
+	<option value="ID"> Infectious Disease Specialists </option>
+	<option value="IN"> Internists </option>
+	<option value="MG"> Medical Geneticists </option>
+	<option value="NP"> Nephrologists </option>
+	<option value="NL"> Neurologists </option>
+	<option value="OG"> Obstetricians and Gynecologists </option>
+	<option value="ON"> Oncologists </option>
+	<option value="OP"> Ophthalmologists </option>
+	<option value="OS">Osteopaths </option>
+	<option value="OT">Otolaryngologists </option>
+	<option value="PT"> Pathologists </option>
+	<option value="PD"> Pediatricians </option>
+	<option value="PH"> Physiatrists </option>
+	<option value="PS"> Plastic Surgeons </option>
+	<option value="PD"> Podiatrists </option>
+	<option value="PM"> Preventive Medicine Specialists </option>
+	<option value="PS"> Psychiatrists </option>
+	<option value="PN">Pulmonologists </option>
+	<option value="RD"> Radiologists </option>
+	<option value="RH"> Rheumatologists </option>
+	<option value="SN">Sleep Medicine Specialists</option>
+	<option value="SN"> Sports Medicine Specialists </option>
+	<option value="GS"> General Surgeons </option>
+	<option value="UR"> Urologists </option>
 </select>				
 </p>		
-<!--  Zip Code -->
-		
-<label for="doctorZip"> Zip Code:</label> <input type="text"
-name="doctorZip" id="doctorZip" />	
-<!--  Email -->
-	</br>					
-<label for="doctorEmail">Email:</label> <input type="text"
-name="doctorEmail" id="doctorEmail" />	
-</br>	
-<!--  Phone Number -->	
-<label for="doctorPhone"> Phone number:</label> <input type="text"
-name="doctorPhone" id="doctorPhone" />	
-</br>
-<!--  Insurance, Do we add few type of Insurances or getting them from somewhere, lets just put trumpCare -->
-
-<label for="dcotorInsurance"> Name of Your Insurance Company:</label> <input type="text"
-name="doctorInsurance" id="doctorInsurance" />				
-</br>	
 <!--  Submit button -->
 
 <input class="formSubmitButton" type="submit" value="Submit" />
