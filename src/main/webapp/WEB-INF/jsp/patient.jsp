@@ -1,44 +1,25 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
-<c:url var="formAction" value="/patient" />
-<form method="POST" action="${formAction}">
 
 
 <h1> Patient Information </h1>
-<c:forEach var="patients" items="${patient_id}">
 <div class=clearfix>
-<c:url var="patientDetailPageUrl" value="/patientRegistration/${patients.patient_id}"/>
 
-	<div>
-<h2>${patientRegistration.firstName}</h2>
-<h2>${patientRegistration.lastName}</h2>
-<h2>${patientRegistration.address}</h2>
-<h2>${patientRegistration.city}</h2>
-<h2>${patientRegistration.state}</h2>
-<h2>${patientRegistration.zip}</h2>
-<h2>${patientRegistration.email}</h2>
-<h2>${patientRegistration.phone}</h2>
-<h2>${patientRegistration.insurance}</h2>
+<h2>${patient.firstName}</h2>
+<h2>${patient.lastName}</h2>
+<h2>${patient.address}</h2>
+<h2>${patient.city}</h2>
+<h2>${patient.state}</h2>
+<h2>${patient.zip}</h2>
+<h2>${patient.email}</h2>
+<h2>${patient.phone}</h2>
+<h2>${patient.insurance}</h2>
 
 
-</c:forEach>
 
 </div>
 	
-
-
-<c:import url="/WEB-INF/jsp/footer.jsp" />
-
-
-
-
-
-
-
-
-
-
 
 
 
