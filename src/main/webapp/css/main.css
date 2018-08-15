@@ -64,6 +64,31 @@ formSubmitButton {
 .formGroup {
 	border: 3px solid #f1f1f1;
 	text-align: left;
+	text-align: center;
+	}
+input{
+   width: 50%;
+    padding: 10px 16px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #59595a;
+    box-sizing: border-box;
+    align:center;
+}
+#dropDown{
+ width: 50%;
+    padding: 10px 16px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #59595a;
+    box-sizing: border-box;
+}
+img.responsiveDoctor{
+  width: 20%;
+  border-radius: 40%;
+}	
+.patientRegistration{
+	    text-align: center;
 }
 
 input {
