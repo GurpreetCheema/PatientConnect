@@ -3,10 +3,18 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<div>
-<h3 class=€œpatientRegistrationâ€>Hello Patient!</h3>
-<h1>Please Fill out the Information below:</h1>
+<h1 class=patientRegistration>Hello Patient!</h1>
+<h3>Please Fill out the Information below:</h3>
 <br/>
+<div class = "imgcontainer">
+	<c:url var="imgSrcDoc" value="/img/patient.jpg" />
+	<a href="${homePageHref}"><img src="${imgSrcDoc}"
+	class="responsiveDoctor" /></a>
+</div>
+</div>
+
+  <div class="container">
+<div>
 <c:url var="formAction" value="/patientRegistration" />
 <form method="POST" action="${formAction}">
 
@@ -31,7 +39,7 @@
 </br>		
 <!--  State -->	
 	<p> <label for="state">State: </label></br> 	
-<select name="state" id="state">
+<select name="state" id="dropDown">
 	<option value="AL">Alabama</option>
 	<option value="AK">Alaska</option>
 	<option value="AZ">Arizona</option>

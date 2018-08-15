@@ -3,7 +3,7 @@
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
 <c:url var="docRegistrationHomePageUrl" value="/"/>
-<!------------------- AZ-------------><script type="text/javascript">
+<script type="text/javascript">
 	$(document).ready(function () {
 		$.validator.addMethod('capitals', function(thing){
 			return thing.match(/[A-Z]/);
@@ -28,11 +28,21 @@
 		});
 	});
 </script>
-<!-------------------------- GC---------------->
-<div>
-<h3 class=â€doctorRegistrationâ€>Hello Doctor!</h3>
-<h1>Please Fill out the Information below:</h1>
+<h1 class=doctorRegistration>Hello Doctor!</h1>
+<h3>Please Fill out the Information below:</h3>
 <br/>
+<div class = "imgcontainer">
+	<c:url var="imgSrcDoc" value="/img/doctor.jpg" />
+	<a href="${homePageHref}"><img src="${imgSrcDoc}"
+	class="responsiveDoctor" /></a>
+</div>
+</div>
+
+  <div class="container">
+<div>
+
+<!-- <form action="/action_page.php">
+ -->
 <c:url var="formAction" value="/doctorRegistration" />
 <form method="POST" action="${formAction}">
 
@@ -50,7 +60,7 @@
 </br>
 
 <p> <label for="Practice">Practice: </label></br> 	
-<select name="practice" id="practice">
+<select name="practice" id="dropDown">
 	<option value="AI"> Allergists/Immunologists </option>
 	<option value="AS"> Anesthesiologists </option>
 	<option value="CD"> Cardiologists </option>
@@ -98,5 +108,5 @@
 </form>
 
 </div>
-
+</form>
 <c:import url="/WEB-INF/jsp/footer.jsp" />
