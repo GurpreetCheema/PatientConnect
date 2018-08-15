@@ -10,7 +10,7 @@
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.js "></script>
 	    <script src="https://cdn.jsdelivr.net/jquery.timeago/1.4.1/jquery.timeago.min.js"></script>
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	    <c:url var="cssHref" value="./css/style.css" />
+	    <c:url var="cssHref" value="./css/main.css" />
 		<link rel="stylesheet" type="text/css" href="${cssHref}">
 		<script type="text/javascript">
 			$(document).ready(function() {
@@ -33,15 +33,15 @@
 			<c:url var="homePageHref" value="/" />
 			<div class="headerIMG">
 			<div>
-				<c:url var="imgSrc1" value="/img/logo2.png" />
+				<c:url var="imgSrc1" value="/img/logo5.jpg" />
 				<a href="${homePageHref}"><img src="${imgSrc1}"
 					class="img-responsive" /></a>
 			</div>
-			<div>
+			<%-- <div>
 				<c:url var="imgSrc" value="/img/patcon1.jpg" />
 				<a href="${homePageHref}"><img src="${imgSrc}"
 					class="img-responsive" /></a>
-			</div>
+			</div> --%>
 		</div>
 		</header>
 		<nav class="navbar navbar-default">
@@ -63,7 +63,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<c:choose>
 						<c:when test="${empty currentUser}">
-							<c:url var="newUserHref" value="/users/new" />
+							<c:url var="newUserHref" value="/newUser" />
 							<li><a href="${newUserHref}">Sign Up</a></li>
 							<c:url var="loginHref" value="/" />
 							<li><a href="${loginHref}">Log In</a></li>
