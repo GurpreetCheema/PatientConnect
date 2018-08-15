@@ -17,26 +17,27 @@
   <div class="container">
 <div>
 <c:url var="formAction" value="/patientRegistration" />
-<form method="POST" action="${formAction}">
+<form class="newUserForm" method="POST" action="${formAction}">
+<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 
  <div class="formGroup">
 	
 	
 <!-- First Name -->
-	<label for="email"> First Name:</label> <br><input type="text"
-	name="firstName" id="patientFirstName" />
+	<label> First Name:</label> <br><input type="text"
+	name="firstName" id="firstName" />
 <br>	
 <!-- Last Name -->
 	<label for="patientLastName"> Last Name:</label> <br> <input type="text"
-	name="lastName" id="patientLastName" />
+	name="lastName" id="lastName" />
 <br>
 <!--  Address -->
 	<label for="patientAddress"> Street Address:</label> <br> <input type="text"
-	name="address" id="patientAddress" />	
+	name="address" id="address" />	
 	<br>	
 <!--  City -->
 <label for="patientCity"> City:</label> <br> <input type="text"
-	name="city" id="patientCity" />	
+	name="city" id="city" />	
 <br>		
 <!--  State -->	
 	<p> <label for="state">State: </label><br> 	
@@ -97,20 +98,20 @@
 <!--  Zip Code -->
 		
 <label for="patientZip"> Zip Code:</label><br> <input type="text"
-name="zip" id="patientZip" />	
+name="zip" id="zip" />	
 <!--  Email -->
 	</br>					
 <label for="patientEmail">Email:</label><br> <input type="text"
-name="email" id="patientEmail" />	
+name="email" id="email" />	
 </br>	
 <!--  Phone Number -->	
 <label for="patientPhone"> Phone number:</label><br> <input type="text"
-name="phone" id="patientPhone" />	
+name="phone" id="phone" />	
 </br>
 <!--  Insurance, Do we add few type of Insurances or getting them from somewhere, lets just put trumpCare -->
 
 <label for="patientInsurance"> Name of Your Insurance Company:</label><br> <input type="text"
-name="insurance" id="patientInsurance" />				
+name="insurance" id="insurance" />				
 <br>	
 <!--  Submit button -->
 

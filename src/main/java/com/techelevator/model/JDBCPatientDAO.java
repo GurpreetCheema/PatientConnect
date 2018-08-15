@@ -19,7 +19,7 @@ public class JDBCPatientDAO implements PatientDAO{
 
 	@Override
 	public void save(Patient newPatient) {
-		String sqlInsertPatient = "INSERT INTO patient(firstName, lastName, address, city, state, zip, email, phone, insurance) VALUES (?,?,?,?,?,?,?,?,?);";
+		String sqlInsertPatient = "INSERT INTO patient(first_name, last_name, address, city, state, zip, email, phone, insurance) VALUES (?,?,?,?,?,?,?,?,?);";
 		jdbcTemplate.update(sqlInsertPatient, newPatient.getFirstName(), newPatient.getLastName(), newPatient.getAddress(), newPatient.getCity()
 							, newPatient.getState(), newPatient.getZip(), newPatient.getEmail(), newPatient.getPhone(), newPatient.getInsurance());
 	}
@@ -37,6 +37,7 @@ public class JDBCPatientDAO implements PatientDAO{
 				if(user.next()) {
 					thisPatient = new Patient();
 					thisPatient = mapRowToPatient(user);
+					return thisPatient;
 				}
 
 				return thisPatient;
