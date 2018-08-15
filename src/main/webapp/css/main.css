@@ -1,84 +1,73 @@
-
 .headerIMG {
 	display: flex;
-	margin-left: 28%;
+	margin-left: 26.5%;
 	margin-right: auto;
 	width: 50%;
 	padding-top: 10px;
 	background-color: white;
 	max-width: 960px;
 }
-.newUserForm{
+
+.newUserForm {
 	padding-bottom: 30px;
-}
-.headerIMG {
-	display: flex;
-	margin-left: 25%;
-	margin-right: auto;
-	width: 50%;
-	padding-top: 10px;
-	background-color: white;
 }
 
 input {
-	
-width: 50px;
-
+	width: 50px;
 }
-input{
-width: 50px;
-	}
-/* Button for Doctor and Patient Registration */.
+
+input {
+	width: 50px;
+}
+/* Button for Doctor and Patient Registration */
+.
 formSubmitButton {
-	background-color:#77d42a;
-	border-radius:6px;
-	border:1px solid #268a16;
-	display:inline-block;
-	cursor:pointer;
-	color:#306108;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #aade7c;
+	background-color: #77d42a;
+	border-radius: 6px;
+	border: 1px solid #268a16;
+	display: inline-block;
+	cursor: pointer;
+	color: #306108;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #aade7c;
 }
+
 .formSubmitButton:hover {
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811', endColorstr='#77d42a',GradientType=0);
-	background-color:#5cb811;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811',
+		endColorstr='#77d42a', GradientType=0);
+	background-color: #5cb811;
 }
+
 .formSubmitButton:active {
-	position:relative;
-	top:1px;
+	position: relative;
+	top: 1px;
 }
 
-.headerIMG {
-	display: grid | inline-grid;
-	width: 50%;
-	padding-top: 10px;
-	background-color: white;
+.doctorImg {
+	width: 40%;
+	border-radius: 50%;
 }
 
-.doctorImg{
-   width: 40%;
-    border-radius: 50%;
-    
-}
-.doctorRegistration{
-	    text-align: center;
+.doctorRegistration {
+	text-align: center;
 }
 
 .imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
+	text-align: center;
+	margin: 24px 0 12px 0;
 }
+
 .formGroup {
 	border: 3px solid #f1f1f1;
+	text-align: left;
 	text-align: center;
-	
 	}
 input{
-   width: 70%;
+   width: 50%;
     padding: 10px 16px;
     margin: 4px 0;
     display: inline-block;
@@ -87,7 +76,7 @@ input{
     align:center;
 }
 #dropDown{
- width: 70%;
+ width: 50%;
     padding: 10px 16px;
     margin: 4px 0;
     display: inline-block;
@@ -101,19 +90,37 @@ img.responsiveDoctor{
 .patientRegistration{
 	    text-align: center;
 }
-.footer{
- padding: 44px;
- background-color:#f8f8f8;
- text-align:center;
+
+input {
+	width: 30%;
+	padding: 10px 16px;
+	margin: 4px 0;
+	display: inline-block;
+	border: 1px solid #59595a;
+	box-sizing: border-box;
+	align: left;
 }
 
+#dropDown {
+	width: 20%;
+	padding: 10px 16px;
+	margin: 4px 0;
+	display: inline-block;
+	border: 1px solid #59595a;
+	box-sizing: border-box;
+}
 
+img.responsiveDoctor {
+	width: 20%;
+	border-radius: 40%;
+}
 
+.patientRegistration {
+	text-align: center;
+}
 
-
-
-
-
-
-
+.footer {
+	padding: 44px;
+	background-color: #f8f8f8;
+	text-align: center;
 }

@@ -4,15 +4,15 @@
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
 <h1 class=patientRegistration>Hello Patient!</h1>
-<h3>Please Fill out the Information below:</h3>
-<br/>
+
 <div class = "imgcontainer">
 	<c:url var="imgSrcDoc" value="/img/patient.jpg" />
 	<a href="${homePageHref}"><img src="${imgSrcDoc}"
 	class="responsiveDoctor" /></a>
 </div>
 </div>
-
+<h3>Please Fill out the Information below:</h3>
+<br/>
   <div class="container">
 <div>
 <c:url var="formAction" value="/patientRegistration" />
