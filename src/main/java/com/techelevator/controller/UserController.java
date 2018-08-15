@@ -38,7 +38,7 @@ public class UserController {
 		this.patientDAO = patientDAO;
 	}
 
-	@RequestMapping(path="/users/new", method=RequestMethod.GET)
+	@RequestMapping(path="/newUser", method=RequestMethod.GET)
 	public String displayNewUserForm(ModelMap modelHolder) {
 		if( ! modelHolder.containsAttribute("user")) {
 			modelHolder.addAttribute("user", new User());
@@ -46,25 +46,25 @@ public class UserController {
 		return "newUser";
 	}
 	
-	@RequestMapping(path="/users", method=RequestMethod.POST)
+	@RequestMapping(path="/newUser", method=RequestMethod.POST)
 	public String createUser(@Valid @ModelAttribute User user, @RequestParam String profileType, BindingResult result, RedirectAttributes flash) {
 		if(result.hasErrors()) {
 			flash.addFlashAttribute("user", user);
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "user", result);
-			return "redirect:/users/new";
+			return "redirect:/newUser";
 		}
 		
-		
-		userDAO.saveUser(user.getUserName(), user.getPassword());
 		if(profileType.equals("Doctor"))
 		{
+			userDAO.saveUser(user.getUserName(), user.getPassword());
 			return "redirect:/doctorRegistration";
 		}
 		else if(profileType.equals("Patient"))
 		{
+			userDAO.saveUser(user.getUserName(), user.getPassword());
 			return "redirect:/patientRegistration";
 		}
-		else return "redirect:/users/new";
+		else return "redirect:/newUser";
 	}
 	
 	@RequestMapping(path="/doctorRegistration", method=RequestMethod.GET)

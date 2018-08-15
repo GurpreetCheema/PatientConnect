@@ -2,7 +2,6 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-
 <script type="text/javascript">
 	$(document).ready(function () {
 		$.validator.addMethod('capitals', function(thing){
@@ -39,7 +38,7 @@
 </script>
 
 <c:url var="formAction" value="/users" />
-<form method="POST" action="${formAction}">
+<form class="newUserForm" method="POST" action="${formAction}">
 <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 	<div class="row">
 		<div class="col-sm-4"></div>
