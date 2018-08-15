@@ -43,6 +43,14 @@ public class JDBCPatientDAO implements PatientDAO{
 				return thisPatient;
 	}
 	
+//								SETS PATIENT ID TO RELATE TO USER ID IN DB
+	
+	public void updatePatientRelatorUpdate(long patientId, long userId) {
+		String sqlUpdatePatientRelatorId = "UPDATE user_patient SET patient_id = ? "
+										+ "	WHERE user_patienr.user_id = ?";
+		jdbcTemplate.update(sqlUpdatePatientRelatorId, patientId);
+	}
+	
 	public Patient mapRowToPatient(SqlRowSet user) {
 		Patient thisPatient = new Patient();
 		
@@ -58,4 +66,5 @@ public class JDBCPatientDAO implements PatientDAO{
 		
 		return thisPatient;
 	}
+	
 }

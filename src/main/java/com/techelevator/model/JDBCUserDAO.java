@@ -54,6 +54,15 @@ public class JDBCUserDAO implements UserDAO {
 	public void updatePassword(String userName, String password) {
 		jdbcTemplate.update("UPDATE app_user SET password = ? WHERE user_name = ?", password, userName);
 	}
+	
+//	SETS USER ID IN RELATOR DB
+	
+public void insertUserIdInRelator(long userId) {
+String sqlUserIdInRelator = "INSERT INTO user_patient(user_id) " + 
+		"        VALUES (?);";
+jdbcTemplate.update(sqlUserIdInRelator, userId);
+}
+
 
 	@Override
 	public Object getUserByUserName(String userName) {
