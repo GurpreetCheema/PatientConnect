@@ -36,9 +36,9 @@ public class AuthenticationController {
 			session.setAttribute("currentUser", userDAO.getUserByUserName(userName));
 			
 			if(destination != null && ! destination.isEmpty()) {
-				return "redirect:" + destination;
+				return "redirect:/";
 			} else {
-				return "redirect:/users/"+userName;
+				return "redirect:/";
 			}
 		} else {
 			return "redirect:/";

@@ -24,19 +24,19 @@
 	
 <!-- First Name -->
 	<label for="email"> First Name:</label> <br><input type="text"
-	name="patientFirstName" id="patientFirstName" />
+	name="firstName" id="patientFirstName" />
 <br>	
 <!-- Last Name -->
 	<label for="patientLastName"> Last Name:</label> <br> <input type="text"
-	name="patientLastName" id="patientLastName" />
+	name="lastName" id="patientLastName" />
 <br>
 <!--  Address -->
 	<label for="patientAddress"> Street Address:</label> <br> <input type="text"
-	name="patientAddress" id="patientAddress" />	
+	name="address" id="patientAddress" />	
 	<br>	
 <!--  City -->
 <label for="patientCity"> City:</label> <br> <input type="text"
-	name="patientCity" id="patientCity" />	
+	name="city" id="patientCity" />	
 <br>		
 <!--  State -->	
 	<p> <label for="state">State: </label><br> 	
@@ -97,20 +97,20 @@
 <!--  Zip Code -->
 		
 <label for="patientZip"> Zip Code:</label><br> <input type="text"
-name="patientZip" id="patientZip" />	
+name="zip" id="patientZip" />	
 <!--  Email -->
 	</br>					
 <label for="patientEmail">Email:</label><br> <input type="text"
-name="patientEmail" id="patientEmail" />	
+name="email" id="patientEmail" />	
 </br>	
 <!--  Phone Number -->	
 <label for="patientPhone"> Phone number:</label><br> <input type="text"
-name="patientPhone" id="patientPhone" />	
+name="phone" id="patientPhone" />	
 </br>
 <!--  Insurance, Do we add few type of Insurances or getting them from somewhere, lets just put trumpCare -->
 
 <label for="patientInsurance"> Name of Your Insurance Company:</label><br> <input type="text"
-name="patientInsurance" id="patientInsurance" />				
+name="insurance" id="patientInsurance" />				
 <br>	
 <!--  Submit button -->
 
