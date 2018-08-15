@@ -23,23 +23,23 @@
 	
 	
 <!-- First Name -->
-	<label for="email"> First Name:</label> </br><input type="text"
+	<label for="email"> First Name:</label> <br><input type="text"
 	name="patientFirstName" id="patientFirstName" />
-</br>	
+<br>	
 <!-- Last Name -->
-	<label for="patientLastName"> Last Name:</label> </br> <input type="text"
+	<label for="patientLastName"> Last Name:</label> <br> <input type="text"
 	name="patientLastName" id="patientLastName" />
-</br>
+<br>
 <!--  Address -->
-	<label for="patientAddress"> Street Address:</label> </br> <input type="text"
+	<label for="patientAddress"> Street Address:</label> <br> <input type="text"
 	name="patientAddress" id="patientAddress" />	
-	</br>	
+	<br>	
 <!--  City -->
-<label for="patientCity"> City:</label> </br> <input type="text"
+<label for="patientCity"> City:</label> <br> <input type="text"
 	name="patientCity" id="patientCity" />	
-</br>		
+<br>		
 <!--  State -->	
-	<p> <label for="state">State: </label></br> 	
+	<p> <label for="state">State: </label><br> 	
 <select name="state" id="dropDown">
 	<option value="AL">Alabama</option>
 	<option value="AK">Alaska</option>
@@ -96,22 +96,22 @@
 </p>		
 <!--  Zip Code -->
 		
-<label for="patientZip"> Zip Code:</label></br> <input type="text"
+<label for="patientZip"> Zip Code:</label><br> <input type="text"
 name="patientZip" id="patientZip" />	
 <!--  Email -->
 	</br>					
-<label for="patientEmail">Email:</label></br> <input type="text"
+<label for="patientEmail">Email:</label><br> <input type="text"
 name="patientEmail" id="patientEmail" />	
 </br>	
 <!--  Phone Number -->	
-<label for="patientPhone"> Phone number:</label></br> <input type="text"
+<label for="patientPhone"> Phone number:</label><br> <input type="text"
 name="patientPhone" id="patientPhone" />	
 </br>
 <!--  Insurance, Do we add few type of Insurances or getting them from somewhere, lets just put trumpCare -->
 
-<label for="patientInsurance"> Name of Your Insurance Company:</label></br> <input type="text"
+<label for="patientInsurance"> Name of Your Insurance Company:</label><br> <input type="text"
 name="patientInsurance" id="patientInsurance" />				
-</br>	
+<br>	
 <!--  Submit button -->
 
 <input class="formSubmitButton" type="submit" value="Submit" />
