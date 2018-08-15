@@ -29,7 +29,7 @@
 	});
 </script>
 <h1 class=doctorRegistration>Hello Doctor!</h1>
-<h3>Please Fill out the Information below:</h3>
+<h3 class="heading" >Please Fill out the Information below:</h3>
 <br/>
 <div class = "imgcontainer">
 	<c:url var="imgSrcDoc" value="/img/doctor.jpg" />
@@ -38,11 +38,10 @@
 </div>
 </div>
 
-  <div class="container">
+  <div class="containerForm">
 <div>
 
-<!-- <form action="/action_page.php">
- -->
+
 <c:url var="formAction" value="/doctorRegistration" />
 <form method="POST" action="${formAction}">
 

@@ -13,7 +13,7 @@ width: 200px;
 
 }
 input{
-width: 200px;
+width: 100px;
 	}
 /* Button for Doctor and Patient Registration */.
 formSubmitButton {
@@ -84,6 +84,6 @@ img.responsiveDoctor{
   border-radius: 40%;
 }	
 .patientRegistration{
-	    text-align: center;
+text-align: center;
 }
 }

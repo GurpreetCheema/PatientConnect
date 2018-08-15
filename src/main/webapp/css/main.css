@@ -22,11 +22,11 @@
 
 input {
 	
-width: 200px;
+width: 50px;
 
 }
 input{
-width: 200px;
+width: 50px;
 	}
 /* Button for Doctor and Patient Registration */.
 formSubmitButton {
@@ -52,7 +52,6 @@ formSubmitButton {
 	top:1px;
 }
 
-  
 .headerIMG {
 	display: grid | inline-grid;
 	width: 50%;
@@ -75,17 +74,20 @@ formSubmitButton {
 }
 .formGroup {
 	border: 3px solid #f1f1f1;
+	text-align: center;
+	
 	}
 input{
-   width: 100%;
+   width: 70%;
     padding: 10px 16px;
     margin: 4px 0;
     display: inline-block;
     border: 1px solid #59595a;
     box-sizing: border-box;
+    align:center;
 }
 #dropDown{
- width: 100%;
+ width: 70%;
     padding: 10px 16px;
     margin: 4px 0;
     display: inline-block;
@@ -93,10 +95,25 @@ input{
     box-sizing: border-box;
 }
 img.responsiveDoctor{
-  width: 30%;
+  width: 20%;
   border-radius: 40%;
 }	
 .patientRegistration{
 	    text-align: center;
 }
+.footer{
+ padding: 44px;
+ background-color:#f8f8f8;
+ text-align:center;
+}
+
+
+
+
+
+
+
+
+
+
 }
