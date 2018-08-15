@@ -2,16 +2,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
+<h3><em>Hello Patient:</em></h3>
 
-<h1 class=patientRegistration>Hello Patient!</h1>
-
+<div class= "patLayout">
+<h1 class=patientRegistration><br>Please Fill Out The Information Below</h1>
 <div class = "imgcontainer">
-	<c:url var="imgSrcDoc" value="/img/patient.jpg" />
+	<c:url var="imgSrcDoc" value="/img/patientSideBar.jpg" />
 	<a href="${homePageHref}"><img src="${imgSrcDoc}"
 	class="responsiveDoctor" /></a>
 </div>
 </div>
-<h3>Please Fill out the Information below:</h3>
+<!-- <h3>Please Fill out the Information below:</h3> -->
 <br/>
   <div class="container">
 <div>
@@ -117,7 +118,7 @@ name="patientInsurance" id="patientInsurance" />
 </div>
 
 </form>
-
+</div>
 </div>
 
 

@@ -28,15 +28,18 @@
 		});
 	});
 </script>
-<h1 class=doctorRegistration>Hello Doctor!</h1>
+<h3><em>Hello Doctor:</em></h3>
+<div class="docLayout">
+
+<h1 class=doctorRegistration>Please Fill Out The Information Below</h1>
 
 <div class = "imgcontainer">
-	<c:url var="imgSrcDoc" value="/img/doctor.jpg" />
+	<c:url var="imgSrcDoc" value="/img/docSideBar.jpg" />
 	<a href="${homePageHref}"><img src="${imgSrcDoc}"
 	class="responsiveDoctor" /></a>
 </div>
 </div>
-<h3 class="heading" >Please Fill out the Information below:</h3>
+<!-- <h3 class="heading" style="padding-left: 30px">  Please Fill out the Information below:</h3> -->
 <br/>
   <div class="containerForm">
 
@@ -51,15 +54,15 @@
 	
 	
 <!-- First Name -->
-	<label for="email"> First Name:</label> </br><input type="text"
+	<label for="email"> First Name:</label> <br><input type="text"
 	name="doctorFirstName" id="doctorFirstName" />
-</br>	
+<br>	
 <!-- Last Name -->
-	<label for="doctorLastName"> Last Name:</label> </br><input type="text"
+	<label for="doctorLastName"> Last Name:</label> <br><input type="text"
 	name="dcotorLastName" id="doctorLastName" />
-</br>
+<br>
 
-<p> <label for="Practice">Practice: </label></br> 	
+<p> <label for="Practice">Practice: </label><br> 	
 <select name="practice" id="dropDown">
 	<option value="AI"> Allergists/Immunologists </option>
 	<option value="AS"> Anesthesiologists </option>
@@ -106,7 +109,7 @@
 </div>
 
 </form>
-
+</div>
 </div>
 </form>
 <c:import url="/WEB-INF/jsp/footer.jsp" />
