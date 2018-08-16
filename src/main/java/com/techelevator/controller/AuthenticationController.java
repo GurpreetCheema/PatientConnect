@@ -41,7 +41,7 @@ public class AuthenticationController {
 				return "redirect:/";
 			}
 		} else {
-			return "redirect:/";
+			return "redirect:/patient";
 		}
 	}
 
