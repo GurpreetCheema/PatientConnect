@@ -77,6 +77,13 @@ formSubmitButton {
 .patientRegistration{
     text-align: center;
 }
+fun{
+	width: 500%;
+}
+
+hide{
+	width: 100%;
+}
 
 input {
 	width: 30%;

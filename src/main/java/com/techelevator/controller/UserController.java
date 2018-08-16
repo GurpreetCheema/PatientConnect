@@ -47,6 +47,11 @@ public class UserController {
 		return "newUser";
 	}
 	
+	@RequestMapping(path="/fun", method=RequestMethod.GET)
+	public String showFun() {
+		return "fun";
+	}
+	
 	@RequestMapping(path="/newUser", method=RequestMethod.POST)
 	public String createUser(@Valid @ModelAttribute User user, @RequestParam String profileType, BindingResult result, RedirectAttributes flash) {
 		if(result.hasErrors()) {
