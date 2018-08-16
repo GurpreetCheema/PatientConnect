@@ -30,7 +30,7 @@ public class JDBCPatientDAO implements PatientDAO{
 		String sqlSearchForUsername ="SELECT * "+
 				"FROM patient "+
 				"JOIN user_patient ON patient.patient_id = user_patient.patient_id "+
-				"JOIN app_user ON patient.patient_id = app_user.user_id "+
+				"JOIN app_user ON user_patient.user_id = app_user.user_id "+
 				"WHERE UPPER(user_name) = ? ";
 
 				SqlRowSet user = jdbcTemplate.queryForRowSet(sqlSearchForUsername, userName.toUpperCase()); 
@@ -49,12 +49,12 @@ public class JDBCPatientDAO implements PatientDAO{
 		thisPatient.setPatientId(user.getLong("patient_id"));
 		thisPatient.setFirstName(user.getString("first_name"));
 		thisPatient.setLastName(user.getString("last_name"));
-		thisPatient.setLastName(user.getString("address"));
-		thisPatient.setLastName(user.getString("city"));
-		thisPatient.setLastName(user.getString("state"));		
-		thisPatient.setLastName(user.getString("zip"));
-		thisPatient.setLastName(user.getString("email"));
-		thisPatient.setLastName(user.getString("phone"));
+		thisPatient.setAddress(user.getString("address"));
+		thisPatient.setCity(user.getString("city"));
+		thisPatient.setState(user.getString("state"));		
+		thisPatient.setZip(user.getString("zip"));
+		thisPatient.setEmail(user.getString("email"));
+		thisPatient.setPhone(user.getString("phone"));
 		thisPatient.setInsurance(user.getString("insurance"));
 		
 		return thisPatient;

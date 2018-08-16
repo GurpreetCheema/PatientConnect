@@ -162,6 +162,7 @@ public class UserController {
 	@RequestMapping(path="/patient", method=RequestMethod.GET)
 	public String patientProfile(ModelMap modelHolder, HttpSession session) {
 		User sessionUser = (User)session.getAttribute("currentUser");
+		
 		modelHolder.put("patient", patientDAO.getPatientInfoByUserName(sessionUser.getUserName()));
 		return "patient";
 	}
