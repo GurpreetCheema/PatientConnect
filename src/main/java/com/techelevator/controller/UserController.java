@@ -145,9 +145,14 @@ public class UserController {
 			newPatient.setPhone(phone);
 			newPatient.setInsurance(insurance);
 			
-			patientDAO.save(newPatient);
+			long patientId = patientDAO.save(newPatient);
 			
-			patientDAO.updatePatientRelatorId(newPatient.getPatientId(), ((User)session.getAttribute("currentUser")).getUserId());
+			User sessionUser = (User)session.getAttribute("currentUser");
+			
+			System.out.println(patientDAO);
+			System.out.println(sessionUser);
+			
+			patientDAO.updatePatientRelatorId(patientId, sessionUser.getUserId());
 			
 			flashScope.addFlashAttribute("message", "New patient profile created!");
 			
@@ -156,7 +161,8 @@ public class UserController {
 	
 	@RequestMapping(path="/patient", method=RequestMethod.GET)
 	public String patientProfile(ModelMap modelHolder, HttpSession session) {
-		modelHolder.put("patient", patientDAO.getPatientInfoByUserName(((User)session.getAttribute("currentUser")).getUserName()));
+		User sessionUser = (User)session.getAttribute("currentUser");
+		modelHolder.put("patient", patientDAO.getPatientInfoByUserName(sessionUser.getUserName()));
 		return "patient";
 	}
 	

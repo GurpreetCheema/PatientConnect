@@ -18,14 +18,15 @@ public class JDBCPatientDAO implements PatientDAO{
 	}
 
 	@Override
-	public void save(Patient newPatient) {
-		String sqlInsertPatient = "INSERT INTO patient(first_name, last_name, address, city, state, zip, email, phone, insurance) VALUES (?,?,?,?,?,?,?,?,?);";
-		jdbcTemplate.update(sqlInsertPatient, newPatient.getFirstName(), newPatient.getLastName(), newPatient.getAddress(), newPatient.getCity()
+	public long save(Patient newPatient) {
+		String sqlInsertPatient = "INSERT INTO patient(first_name, last_name, address, city, state, zip, email, phone, insurance) VALUES (?,?,?,?,?,?,?,?,?) "+
+								  "returning patient_id;";
+		return jdbcTemplate.queryForObject(sqlInsertPatient, Long.class, newPatient.getFirstName(), newPatient.getLastName(), newPatient.getAddress(), newPatient.getCity()
 							, newPatient.getState(), newPatient.getZip(), newPatient.getEmail(), newPatient.getPhone(), newPatient.getInsurance());
 	}
 
 	@Override
-	public Object getPatientInfoByUserName(String userName) {
+	public Patient getPatientInfoByUserName(String userName) {
 		String sqlSearchForUsername ="SELECT * "+
 				"FROM patient "+
 				"JOIN user_patient ON patient.patient_id = user_patient.patient_id "+
@@ -54,6 +55,7 @@ public class JDBCPatientDAO implements PatientDAO{
 		thisPatient.setLastName(user.getString("zip"));
 		thisPatient.setLastName(user.getString("email"));
 		thisPatient.setLastName(user.getString("phone"));
+		thisPatient.setInsurance(user.getString("insurance"));
 		
 		return thisPatient;
 	}
