@@ -178,5 +178,10 @@ public class UserController {
 		return "appointment";
 	}
 	
+	@RequestMapping(path="/administrator", method=RequestMethod.GET)
+	public String viewAdministratorPage() {
+		return "administrator";
+	}
+	
 	
 }
