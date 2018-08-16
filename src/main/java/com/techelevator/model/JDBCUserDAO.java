@@ -57,17 +57,16 @@ public class JDBCUserDAO implements UserDAO {
 	
 //	SETS USER ID IN RELATOR DB
 	@Override
-public void insertUserIdInPatientRelator(long userId) {
-String sqlUserIdInRelator = "INSERT INTO user_patient(user_id) " + 
-		"        VALUES (?);";
-jdbcTemplate.update(sqlUserIdInRelator, userId);
-}
+	public void insertUserIdInPatientRelator(long userId) {
+		String sqlUserIdInRelator = "INSERT INTO user_patient(user_id) " + "        VALUES (?);";
+		jdbcTemplate.update(sqlUserIdInRelator, userId);
+	}
+
 	@Override
 	public void insertUserIdInDoctorRelator(long userId) {
-		String sqlUserIdInRelator = "INSERT INTO user_doctor(user_id) " + 
-				"        VALUES (?);";
+		String sqlUserIdInRelator = "INSERT INTO user_doctor(user_id) " + "        VALUES (?);";
 		jdbcTemplate.update(sqlUserIdInRelator, userId);
-		}
+	}
 
 
 	@Override
@@ -86,5 +85,42 @@ jdbcTemplate.update(sqlUserIdInRelator, userId);
 
 		return thisUser;
 	}
+	
+	@Override
+	public long getUserIdByUsername(User newUser) {
+		String sqlSearchForUserId ="SELECT user_id "+
+				"FROM app_user "+
+				"WHERE UPPER(user_name) = ? ";
 
+				SqlRowSet user = jdbcTemplate.queryForRowSet(sqlSearchForUserId, newUser.getUserName().toUpperCase()); 
+				long userId = 0;
+				if(user.next()) {
+					userId = user.getLong("user_id");
+				}
+				
+		return userId;
+	}
+	
+	@Override
+	public void insertUserIdInUserRole(long userId, int role) {
+		String sqlUserIdInRelator = "INSERT INTO user_role(user_id, role_id) VALUES (?, ?);";
+		jdbcTemplate.update(sqlUserIdInRelator, userId, role);
+	}
+	
+	@Override
+	public long getUserRoleByUsername(String userName) {
+		String sqlSearchForUserId ="SELECT role_id "+
+				"FROM app_user "+
+				"JOIN user_role"+
+				"ON user_role.user_id = app_user.user_id"+
+				"WHERE UPPER(user_name) = ? ";
+
+				SqlRowSet user = jdbcTemplate.queryForRowSet(sqlSearchForUserId, userName.toUpperCase()); 
+				long roleId = 0;
+				if(user.next()) {
+					roleId = user.getLong("role_id");
+				}
+				
+		return roleId;
+	}
 }

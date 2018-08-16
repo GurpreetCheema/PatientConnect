@@ -14,4 +14,10 @@ package com.techelevator.model;
 
 	void insertUserIdInDoctorRelator(long userId);
 
+	long getUserIdByUsername(User newUser);
+
+	void insertUserIdInUserRole(long userId, int role);
+
+	long getUserRoleByUsername(String userName);
+
 }
