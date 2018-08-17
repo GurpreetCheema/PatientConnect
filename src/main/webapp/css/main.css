@@ -1,3 +1,7 @@
+body { 
+    background: url("../img/background8.jpg") repeat 0 0;
+}
+
 .headerIMG {
 	display: flex;
 	margin-left: 26.5%;
@@ -10,6 +14,15 @@
 
 .newUserForm {
 	padding-bottom: 30px;
+}
+.patientInfo {
+	background-color: white;
+	border-radius: 20px;
+	border-color: #515151;
+	border-size: 3px;
+	padding-left: 10px;
+	border-style: solid;
+	opacity: .9;
 }
 
 input {
@@ -148,7 +161,21 @@ img.responsiveDoctor {
 	border-radius: 20;
 }
 
+.buttons *{
+	width: 15%;
+	background-color: #95abfe;
+	border-radius: 10%;
+	border-style: solid;
+	border-width: 3px;
+}
+.buttons {
+	margin-left: 10%;
+}
 
+
+footer{
+	text-align: bottom;
+}
 
 
 
