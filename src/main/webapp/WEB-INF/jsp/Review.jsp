@@ -42,21 +42,40 @@
 		<div>
 			<h3 class="docReview">Please submit your Review</h3>
 		</div>
-		<div class="col-sm-4"></div>
-		<div>
-			<fieldset class="docRating">
-				<form:radiobutton path="rating" id="star5" value="5" />
+		
+		
+<%-- 		<div class="starRating">
+ <c:url var ="starRatingUrl" value ="/img/star.png"/>
+  <img src="${starRatingUrl}"/>
+</div>
+<div class="starRating">
+ <c:url var ="starRatingUrl" value ="/img/${Math.round(Review.rating)}-star.png"/>
+    <img src="${starRatingUrl}"/>
+</div> --%>
+<div class="col-md-12 starImage">
+		<img class="center-star" src="<c:out value=‘${Review.imgUrl}'/>" />
+</div> 
+
+<%-- <div class="starRating">
+ 	<c:url var ="starRatingUrl" value ="/img/1-star.png"/>
+  	<img src="${starRatingUrl}"/>
+</div> --%>
+	
+<div class="col-sm-4"></div>
+	<div>
+	<fieldset class="docRating">
+				<form:radiobutton path="review" id="star5" value="5" />
 				<label class="full" for="star5" title="Amazing - 5 stars"></label>
-				<form:radiobutton path="rating" id="star4" value="4" />
+				<form:radiobutton path="review" id="star4" value="4" />
 				<label class="full" for="star4" title="Good - 4 stars"></label>
-				<form:radiobutton path="rating" id="star3" value="3" />
+				<form:radiobutton path="review" id="star3" value="3" />
 				<label class="full" for="star3" title="Alright - 3 stars"></label>
-				<form:radiobutton path="rating" id="star2" value="2" />
+				<form:radiobutton path="review" id="star2" value="2" />
 				<label class="full" for="star2" title="Nope - 2 stars"></label>
-				<form:radiobutton path="rating" id="star1" value="1" />
+				<form:radiobutton path="review" id="star1" value="1" />
 				<label class="full" for="star1" title="Never Again - 1 star"></label>
-			</fieldset>
-			<br>
+	</fieldset>
+	<br>
 
 		</div>
 		<br>
