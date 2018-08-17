@@ -14,20 +14,42 @@
 <div class="reviewPost" style="display: none;">
 <a href="/review" target="_blank" class="review-button">Review</a>
 </div>
-<h1>Patient Information</h1>
+<h1 style= "text-align: center; background-color: grey; padding: 10px; color: white; border-radius: 10px;
+border-color: black; border-width: 3px; border-style: solid;">Patient Information</h1>
+<div class="buttons">
+<button>Edit Info</button>
+<button>Write A Review</button>
+<button>Delete A Review</button>
+<button>Message Doctor</button>
+<button>Listen to Scott Stapp</button>
+</div>
 <div class=clearfix>
-<table>
-	<h2>${patient.firstName}</h2>
-	<h2>${patient.lastName}</h2>
-	<h2>${patient.address}</h2>
-	<h2>${patient.city}</h2>
-	<h2>${patient.state}</h2>
-	<h2>${patient.zip}</h2>
-	<h2>${patient.email}</h2>
-	<h2>${patient.phone}</h2>
-	<h2>${patient.insurance}</h2>
-	<br />
-</table>
+ <div class="container"> 
+   </div>
+<div class="patientInfo">
+<br>
+	<h3>First Name: ${patient.firstName} </h3>
+	<hr>
+	<h3>Last Name: ${patient.lastName} </h3>
+	<hr>
+	<h3>Address: ${patient.address}</h3> 
+	<hr>
+	<h3>City: ${patient.city}</h3>
+	<hr>
+	<h3>State: ${patient.state}</h3>
+	<hr>
+	<h3>Zip: ${patient.zip}</h3>
+	<hr>
+	<h3>Email: ${patient.email}</h3>
+	<hr>
+	<h3>Phone Number: ${patient.phone}</h3>
+	<hr>
+	<h3>Insurance: ${patient.insurance}</h3>
+	<hr>
+	</div>
+	<br>
+	<br>
+
 	<!-- 						SCHEDULING BUTTON								 -->
 	<a href="https://app.acuityscheduling.com/schedule.php?owner=16497853"
 		target="_blank" class="acuity-embed-button"

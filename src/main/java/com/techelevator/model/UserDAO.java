@@ -20,4 +20,6 @@ package com.techelevator.model;
 
 	long getRoleIdFromUserId(User user);
 
+	Long getRoleFromUserLogin(String userName);
+
 }
