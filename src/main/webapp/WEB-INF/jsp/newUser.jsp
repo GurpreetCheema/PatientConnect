@@ -65,6 +65,7 @@
 </c:when>
 <c:otherwise>
 <form class="newUserForm" method="POST" action="${formAction}">
+	<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 	<div class="row">
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
@@ -88,5 +89,4 @@
 </form>
 </c:otherwise>
 </c:choose>
-
 <c:import url="/WEB-INF/jsp/footer.jsp" />

@@ -3,7 +3,7 @@ package com.techelevator.model;
 
 public interface DoctorDAO {
 
-	public void save(Doctor newDoctor);
+	public long save(Doctor newDoctor);
 
 	void updateDoctorRelatorId(long doctorId, long userId);
 
