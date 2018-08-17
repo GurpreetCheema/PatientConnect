@@ -11,10 +11,12 @@
 </div>
 <script src="https://embed.acuityscheduling.com/embed/bar/16497853.js"
 	async></script>
-
+<div class="reviewPost" style="display: none;">
+<a href="/review" target="_blank" class="review-button">Review</a>
+</div>
 <h1>Patient Information</h1>
 <div class=clearfix>
-
+<table>
 	<h2>${patient.firstName}</h2>
 	<h2>${patient.lastName}</h2>
 	<h2>${patient.address}</h2>
@@ -25,7 +27,7 @@
 	<h2>${patient.phone}</h2>
 	<h2>${patient.insurance}</h2>
 	<br />
-
+</table>
 	<!-- 						SCHEDULING BUTTON								 -->
 	<a href="https://app.acuityscheduling.com/schedule.php?owner=16497853"
 		target="_blank" class="acuity-embed-button"
