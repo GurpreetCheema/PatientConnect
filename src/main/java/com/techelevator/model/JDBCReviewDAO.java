@@ -66,6 +66,12 @@ public class JDBCReviewDAO implements ReviewDAO{
 //			return 0;
 //		}
 //	
+
+		@Override
+		public int getReviewCount(long doctor_id) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
 }
 
 
