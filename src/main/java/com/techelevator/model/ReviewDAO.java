@@ -1,6 +1,6 @@
 package com.techelevator.model;
 
-public class ReviewDAO {
+public interface ReviewDAO {
 
 }
 
