@@ -180,6 +180,11 @@ public class UserController {
 	public String viewAdministratorPage() {
 		return "administrator";
 	}
+	@RequestMapping(path="/review", method=RequestMethod.GET)
+	public String viewReviews() {
+		return "review";
+	}
+	
 	
 	
 }
