@@ -125,3 +125,32 @@ img.responsiveDoctor {
 	background-color: #f8f8f8;
 	text-align: center;
 }
+/* Review  */
+
+.docReview {
+	text-align: center;
+	letter-spacing: 1px;
+	margin-top: 80px;
+	color: black;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.form-group {
+	margin-top: 10px;
+	
+}
+
+.btn {
+	transition: .2s;
+	padding: 11px 22px;
+	background-color: #49e33b;
+	color: #071105;
+	border-radius: 20;
+}
+
+
+
+
+
+
+
