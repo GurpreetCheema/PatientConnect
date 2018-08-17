@@ -123,4 +123,14 @@ public class JDBCUserDAO implements UserDAO {
 		String sqlUserIdInRelator = "INSERT INTO user_role(user_id, role_id) VALUES (?, ?);";
 		jdbcTemplate.update(sqlUserIdInRelator, userId, role);
 	}
+	@Override 
+	public Long getRoleFromUserLogin(String userName) {
+		String sqlRolePageFromLogin = "SELECT role_id FROM user_role JOIN app_user "
+									+ "ON app_user.user_id = user_role.user_id WHERE UPPER(user_name) = ?";
+		SqlRowSet id = jdbcTemplate.queryForRowSet(sqlRolePageFromLogin, userName.toUpperCase());
+		id.next();
+		Long longRoleId = id.getLong("role_id");
+		return longRoleId;
+		
+	}
 }

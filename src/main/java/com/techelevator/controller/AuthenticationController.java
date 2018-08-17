@@ -23,48 +23,59 @@ public class AuthenticationController {
 		this.userDAO = userDAO;
 	}
 
-	@RequestMapping(path="/", method=RequestMethod.GET)
+	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public String displayLoginForm() {
 		return "login";
 	}
-	
-	@RequestMapping(path="/login", method=RequestMethod.POST)
-	public String login(@RequestParam String userName, 
-						@RequestParam String password, 
-						@RequestParam(required=false) String destination,
-						HttpSession session) {
-		if(userDAO.searchForUsernameAndPassword(userName, password)) {
+
+	@RequestMapping(path = "/login", method = RequestMethod.POST)
+	public String login(@RequestParam String userName, @RequestParam String password,
+			@RequestParam(required = false) String destination, HttpSession session) {
+		if (userDAO.searchForUsernameAndPassword(userName, password)) {
 			session.setAttribute("currentUser", userDAO.getUserByUserName(userName));
-			
-			if(destination != null && ! destination.isEmpty()) {
+
+			if (destination != null && !destination.isEmpty()) {
 				return "redirect:/";
 			} else {
-				return "redirect:/";
+				if (userDAO.getRoleFromUserLogin(userName) == 3) {
+					return "redirect:/administrator";
+				}
+				else if (userDAO.getRoleFromUserLogin(userName) == 2) {
+					return "redirect:/doctor";
+				}
+				else if (userDAO.getRoleFromUserLogin(userName) == 1) {
+					return "redirect:/patient";
+				}
 			}
 		} else {
-			return "redirect:/patient";
+			return "redirect:/";
 		}
+		return "redirect:/";
 	}
 
-	@RequestMapping(path="/logout", method=RequestMethod.POST)
+	@RequestMapping(path = "/logout", method = RequestMethod.POST)
 	public String logout(ModelMap model, HttpSession session) {
 		model.remove("currentUser");
 		session.invalidate();
 		return "redirect:/";
 	}
-	
-//	@RequestMapping(path = "/autoLogin", method = RequestMethod.POST)
-//	public String autoLogin(@RequestParam String userName, @RequestParam String password, HttpSession session) {
-//		if (userDAO.searchForUsernameAndPassword(userName, password)) {
-//			session.setAttribute("currentUser", userDAO.getUserByUserName(userName));
-//		}
-//		
-//		if(userDAO.getUserRoleByUsername(((User)session.getAttribute("currentUser")).getUserName()) == 1) {
-//			return "redirect:/patientRegistration";
-//		} else if(userDAO.getUserRoleByUsername(((User)session.getAttribute("currentUser")).getUserName()) == 2) {
-//			return "redirect:/doctorRegistration";
-//		} else {
-//			return "redirect:/login";
-//		}
-//	}
+
+	// @RequestMapping(path = "/autoLogin", method = RequestMethod.POST)
+	// public String autoLogin(@RequestParam String userName, @RequestParam String
+	// password, HttpSession session) {
+	// if (userDAO.searchForUsernameAndPassword(userName, password)) {
+	// session.setAttribute("currentUser", userDAO.getUserByUserName(userName));
+	// }
+	//
+	// if(userDAO.getUserRoleByUsername(((User)session.getAttribute("currentUser")).getUserName())
+	// == 1) {
+	// return "redirect:/patientRegistration";
+	// } else
+	// if(userDAO.getUserRoleByUsername(((User)session.getAttribute("currentUser")).getUserName())
+	// == 2) {
+	// return "redirect:/doctorRegistration";
+	// } else {
+	// return "redirect:/login";
+	// }
+	// }
 }
