@@ -17,9 +17,9 @@ public class JDBCDoctorDAO implements DoctorDAO{
 	}
 
 	@Override
-	public void save(Doctor newDoctor) {
-		String sqlInsertDoctor = "INSERT INTO doctor(first_name, last_name, practice) VALUES (?,?,?);";
-		jdbcTemplate.update(sqlInsertDoctor, newDoctor.getFirstName(), newDoctor.getLastName(), newDoctor.getPractice());
+	public long save(Doctor newDoctor) {
+		String sqlInsertDoctor = "INSERT INTO doctor(first_name, last_name, practice) VALUES (?,?,?) returning doctor_id;";
+		return jdbcTemplate.queryForObject(sqlInsertDoctor, Long.class, newDoctor.getFirstName(), newDoctor.getLastName(), newDoctor.getPractice());
 	}
 
 	// SETS PATIENT ID TO RELATE TO USER ID IN DB
