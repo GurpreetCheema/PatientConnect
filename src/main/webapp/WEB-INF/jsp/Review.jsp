@@ -33,34 +33,19 @@
 		});
 	});
 </script>
-
 <c:url var="formAction" value="/Review" />
 <form class="newUserForm" method="POST" action="${formAction}">
 	<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}" />
 
-	<div class="row">
-		<div>
-			<h3 class="docReview">Please submit your Review</h3>
-		</div>
-		
-		
-<%-- 		<div class="starRating">
- <c:url var ="starRatingUrl" value ="/img/star.png"/>
-  <img src="${starRatingUrl}"/>
-</div>
+<div class="row">
+	<div>
+		<h3 class="docReview">Please submit your Review</h3>
+	</div>
 <div class="starRating">
- <c:url var ="starRatingUrl" value ="/img/${Math.round(Review.rating)}-star.png"/>
-    <img src="${starRatingUrl}"/>
-</div> --%>
-<div class="col-md-12 starImage">
-		<img class="center-star" src="<c:out value=‘${Review.imgUrl}'/>" />
-</div> 
 
-<%-- <div class="starRating">
- 	<c:url var ="starRatingUrl" value ="/img/1-star.png"/>
-  	<img src="${starRatingUrl}"/>
-</div> --%>
-	
+ <c:url var ="starRatingUrl" value ="/img/1-star.png"/>
+  <img src="${starRatingUrl}"/>
+</div>		
 <div class="col-sm-4"></div>
 	<div>
 	<fieldset class="docRating">
@@ -99,5 +84,7 @@
 	</div>
 	</div>
 	</div>
-
+	
+	
+	
 	<c:import url="/WEB-INF/jsp/footer.jsp" />

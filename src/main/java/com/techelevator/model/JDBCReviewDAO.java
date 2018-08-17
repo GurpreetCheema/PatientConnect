@@ -19,8 +19,7 @@ public class JDBCReviewDAO implements ReviewDAO{
 		public void save(Review newReview) {
 			String sqlSaveReview = "INSERT INTO reviews(subject, description, rating) VALUES(?,?,?)";
 			jdbcTemplate.update(sqlSaveReview, newReview.getSubject(), newReview.getDescription(), newReview.getRating());
-						
-			
+							
 	}
 	
 }
