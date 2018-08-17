@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.techelevator.model.User;
 import com.techelevator.model.UserDAO;
 
 @Controller
@@ -41,7 +42,7 @@ public class AuthenticationController {
 				return "redirect:/";
 			}
 		} else {
-			return "redirect:/";
+			return "redirect:/patient";
 		}
 	}
 
@@ -51,4 +52,19 @@ public class AuthenticationController {
 		session.invalidate();
 		return "redirect:/";
 	}
+	
+//	@RequestMapping(path = "/autoLogin", method = RequestMethod.POST)
+//	public String autoLogin(@RequestParam String userName, @RequestParam String password, HttpSession session) {
+//		if (userDAO.searchForUsernameAndPassword(userName, password)) {
+//			session.setAttribute("currentUser", userDAO.getUserByUserName(userName));
+//		}
+//		
+//		if(userDAO.getUserRoleByUsername(((User)session.getAttribute("currentUser")).getUserName()) == 1) {
+//			return "redirect:/patientRegistration";
+//		} else if(userDAO.getUserRoleByUsername(((User)session.getAttribute("currentUser")).getUserName()) == 2) {
+//			return "redirect:/doctorRegistration";
+//		} else {
+//			return "redirect:/login";
+//		}
+//	}
 }

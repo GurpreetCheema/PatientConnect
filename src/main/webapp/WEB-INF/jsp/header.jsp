@@ -49,6 +49,7 @@
 				<ul class="nav navbar-nav">
 					<c:url var="homePageHref" value="/" />
 					<li><a href="${homePageHref}">Home</a></li>
+
 					<%-- <c:if test="${not empty currentUser}">
 						<c:url var="dashboardHref" value="/users/${currentUser}" />
 						<li><a href="${dashboardHref}">Private Messages</a></li>
@@ -56,6 +57,8 @@
 						<li><a href="${newMessageHref}">New Message</a></li>
 						<c:url var="sentMessagesHref" value="/users/${currentUser}/messages" />
 						<li><a href="${sentMessagesHref}">Sent Messages</a></li>
+
+					<c:if test="${not empty currentUser}">
 						<c:url var="changePasswordHref" value="/users/${currentUser}/changePassword" />
 						<li><a href="${changePasswordHref}">Change Password</a></li>
 					</c:if> --%>
@@ -80,6 +83,6 @@
 			</div>
 		</nav>
 		<c:if test="${not empty currentUser}">
-			<p id="currentUser">Current User: ${currentUser}</p>
+			<p id="currentUser">Current User: ${currentUser.userName}</p>
 		</c:if>		
 		<div class="container">

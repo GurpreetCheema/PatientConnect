@@ -53,7 +53,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/newUser", method=RequestMethod.POST)
-	public String createUser(@Valid @ModelAttribute User user, @RequestParam String profileType, BindingResult result, RedirectAttributes flash) {
+	public String createUser(@Valid @ModelAttribute User user, @RequestParam String profileType, BindingResult result, RedirectAttributes flash, HttpSession session) {
 		if(result.hasErrors()) {
 			flash.addFlashAttribute("user", user);
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "user", result);
@@ -63,13 +63,25 @@ public class UserController {
 		if(profileType.equals("Doctor"))
 		{
 			userDAO.saveUser(user.getUserName(), user.getPassword());
-			userDAO.insertUserIdInDoctorRelator(user.getUserId());
+			userDAO.insertUserIdInDoctorRelator(userDAO.getUserIdByUsername(user));
+			userDAO.insertUserIdInUserRole(userDAO.getUserIdByUsername(user), 2);
+			
+			if (userDAO.searchForUsernameAndPassword(user.getUserName(), user.getPassword())) {
+				session.setAttribute("currentUser", userDAO.getUserByUserName(user.getUserName()));
+			}
+			
 			return "redirect:/doctorRegistration";
 		}
 		else if(profileType.equals("Patient"))
 		{
 			userDAO.saveUser(user.getUserName(), user.getPassword());
-			userDAO.insertUserIdInPatientRelator(user.getUserId());
+			userDAO.insertUserIdInPatientRelator(userDAO.getUserIdByUsername(user));
+			userDAO.insertUserIdInUserRole(userDAO.getUserIdByUsername(user), 1);
+			
+			if (userDAO.searchForUsernameAndPassword(user.getUserName(), user.getPassword())) {
+				session.setAttribute("currentUser", userDAO.getUserByUserName(user.getUserName()));
+			}
+			
 			return "redirect:/patientRegistration";
 		}
 		else return "redirect:/newUser";
@@ -133,9 +145,14 @@ public class UserController {
 			newPatient.setPhone(phone);
 			newPatient.setInsurance(insurance);
 			
-			patientDAO.save(newPatient);
+			long patientId = patientDAO.save(newPatient);
 			
-			patientDAO.updatePatientRelatorId(newPatient.getPatientId(), ((User)session.getAttribute("currentUser")).getUserId());
+			User sessionUser = (User)session.getAttribute("currentUser");
+			
+			System.out.println(patientDAO);
+			System.out.println(sessionUser);
+			
+			patientDAO.updatePatientRelatorId(patientId, sessionUser.getUserId());
 			
 			flashScope.addFlashAttribute("message", "New patient profile created!");
 			
@@ -144,7 +161,9 @@ public class UserController {
 	
 	@RequestMapping(path="/patient", method=RequestMethod.GET)
 	public String patientProfile(ModelMap modelHolder, HttpSession session) {
-		modelHolder.put("patient", patientDAO.getPatientInfoByUserName(((User)session.getAttribute("currentUser")).getUserName()));
+		User sessionUser = (User)session.getAttribute("currentUser");
+		
+		modelHolder.put("patient", patientDAO.getPatientInfoByUserName(sessionUser.getUserName()));
 		return "patient";
 	}
 	
@@ -157,6 +176,11 @@ public class UserController {
 	@RequestMapping(path="/appointment", method=RequestMethod.GET)
 	public String viewCalendars() {
 		return "appointment";
+	}
+	
+	@RequestMapping(path="/administrator", method=RequestMethod.GET)
+	public String viewAdministratorPage() {
+		return "administrator";
 	}
 	
 	
