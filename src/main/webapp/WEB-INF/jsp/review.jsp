@@ -7,7 +7,6 @@
 		$.validator.addMethod('rating', function(value) {
 			return thing.match(/[1-5]/);
 		});
-
 		$("form").validate({
 			rules : {
 				rating : {
