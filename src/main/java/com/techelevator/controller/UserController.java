@@ -60,7 +60,7 @@ public class UserController {
 			return "redirect:/newUser";
 		}
 		
-		if(profileType.equals("Doctor"))
+		if(profileType.equals("Doctor") && userDAO.getRoleIdFromUserId(((User)session.getAttribute("currentUser"))) == 3)
 		{
 			userDAO.saveUser(user.getUserName(), user.getPassword());
 			userDAO.insertUserIdInDoctorRelator(userDAO.getUserIdByUsername(user));

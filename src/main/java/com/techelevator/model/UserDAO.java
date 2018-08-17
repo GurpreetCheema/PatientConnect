@@ -18,6 +18,6 @@ package com.techelevator.model;
 
 	void insertUserIdInUserRole(long userId, int role);
 
-	long getUserRoleByUsername(String userName);
+	long getRoleIdFromUserId(User user);
 
 }

@@ -68,7 +68,23 @@ public class JDBCUserDAO implements UserDAO {
 		jdbcTemplate.update(sqlUserIdInRelator, userId);
 	}
 
+	@Override
+	public long getRoleIdFromUserId(User user) {
+		long userId = getUserIdByUsername(user);
+		
+		String sqlSearchForUserId ="SELECT role_id "+
+				"FROM user_role "+
+				"WHERE user_id = ? ";
 
+				SqlRowSet userResults = jdbcTemplate.queryForRowSet(sqlSearchForUserId, userId); 
+				long roleId = 0;
+				if(userResults.next()) {
+					roleId = userResults.getLong("role_id");
+				}
+				
+		return roleId;
+	}
+	
 	@Override
 	public Object getUserByUserName(String userName) {
 		String sqlSearchForUsername ="SELECT * "+
@@ -106,22 +122,5 @@ public class JDBCUserDAO implements UserDAO {
 	public void insertUserIdInUserRole(long userId, int role) {
 		String sqlUserIdInRelator = "INSERT INTO user_role(user_id, role_id) VALUES (?, ?);";
 		jdbcTemplate.update(sqlUserIdInRelator, userId, role);
-	}
-	
-	@Override
-	public long getUserRoleByUsername(String userName) {
-		String sqlSearchForUserId ="SELECT role_id "+
-				"FROM app_user "+
-				"JOIN user_role"+
-				"ON user_role.user_id = app_user.user_id"+
-				"WHERE UPPER(user_name) = ? ";
-
-				SqlRowSet user = jdbcTemplate.queryForRowSet(sqlSearchForUserId, userName.toUpperCase()); 
-				long roleId = 0;
-				if(user.next()) {
-					roleId = user.getLong("role_id");
-				}
-				
-		return roleId;
 	}
 }

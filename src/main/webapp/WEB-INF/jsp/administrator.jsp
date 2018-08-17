@@ -2,39 +2,19 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<h1>Welcome Administrator Scott Stapp</h1>
+<h1>Welcome Administrator</h1>
 
-<button>Create Doctor</button>
-<a href="doctorRegistration.jsp"><input type="button" value="" name="Register New Doctor"/></a>
+<c:url var="newUserHref" value="/newUser" />
+<li><a href="${newUserHref}">Create Doctor</a></li>
+
+<!-- <button>Create Doctor</button>
+
 <button>Delete Doctor</button>
 
 <button>Delete Patient</button>
 
 <button>Manage Reviews</button>
 
-<button>View Reviews</button>
-
-
-<button>Play Entire Creed Discography</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<button>View Reviews</button> -->
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />
