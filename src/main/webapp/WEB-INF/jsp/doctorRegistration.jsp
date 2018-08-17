@@ -48,6 +48,7 @@
 
 <c:url var="formAction" value="/doctorRegistration" />
 <form method="POST" action="${formAction}">
+	<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 
 
  <div class="formGroup">
@@ -55,11 +56,11 @@
 	
 <!-- First Name -->
 	<label for="email"> First Name:</label> <br><input type="text"
-	name="doctorFirstName" id="doctorFirstName" />
+	name="firstName" id="doctorFirstName" />
 <br>	
 <!-- Last Name -->
 	<label for="doctorLastName"> Last Name:</label> <br><input type="text"
-	name="dcotorLastName" id="doctorLastName" />
+	name="lastName" id="doctorLastName" />
 <br>
 
 <p> <label for="Practice">Practice: </label><br> 	

@@ -40,8 +40,8 @@ public class UserController {
 	}
 
 	@RequestMapping(path="/newUser", method=RequestMethod.GET)
-	public String displayNewUserForm(ModelMap modelHolder) {
-		if( ! modelHolder.containsAttribute("user")) {
+	public String displayNewUserForm(ModelMap modelHolder, HttpSession session) {
+		if (!modelHolder.containsAttribute("user")) {
 			modelHolder.addAttribute("user", new User());
 		}
 		return "newUser";
@@ -53,7 +53,8 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/newUser", method=RequestMethod.POST)
-	public String createUser(@Valid @ModelAttribute User user, @RequestParam String profileType, BindingResult result, RedirectAttributes flash, HttpSession session) {
+	public String createUser(@Valid @ModelAttribute User user, @RequestParam String profileType,
+							BindingResult result, RedirectAttributes flash, HttpSession session) {
 		if(result.hasErrors()) {
 			flash.addFlashAttribute("user", user);
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "user", result);
@@ -65,10 +66,6 @@ public class UserController {
 			userDAO.saveUser(user.getUserName(), user.getPassword());
 			userDAO.insertUserIdInDoctorRelator(userDAO.getUserIdByUsername(user));
 			userDAO.insertUserIdInUserRole(userDAO.getUserIdByUsername(user), 2);
-			
-			if (userDAO.searchForUsernameAndPassword(user.getUserName(), user.getPassword())) {
-				session.setAttribute("currentUser", userDAO.getUserByUserName(user.getUserName()));
-			}
 			
 			return "redirect:/doctorRegistration";
 		}
@@ -94,6 +91,7 @@ public class UserController {
 	
 	@RequestMapping(path="/doctorRegistration", method=RequestMethod.POST)
 	public String registerDoctor(
+				@Valid @ModelAttribute User user,
 				@RequestParam String firstName,				
 				@RequestParam String lastName,
 				@RequestParam String practice,
@@ -106,12 +104,12 @@ public class UserController {
 			newDoctor.setLastName(lastName);
 			newDoctor.setPractice(practice);
 			
-			doctorDAO.save(newDoctor);
-			doctorDAO.updateDoctorRelatorId(newDoctor.getDoctorId(), ((User)session.getAttribute("currentUser")).getUserId());
+			Long newDoctorId = doctorDAO.save(newDoctor);
+			doctorDAO.updateDoctorRelatorId(newDoctorId, user.getUserId());
 			
 			flashScope.addFlashAttribute("message", "New doctor profile created!");
 			
-			return "redirect:/doctor";
+			return "redirect:/administrator";
 	}
 	
 	@RequestMapping(path="/patientRegistration", method=RequestMethod.GET)
@@ -182,6 +180,11 @@ public class UserController {
 	public String viewAdministratorPage() {
 		return "administrator";
 	}
+	@RequestMapping(path="/review", method=RequestMethod.GET)
+	public String viewReviews() {
+		return "review";
+	}
+	
 	
 	
 }

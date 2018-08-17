@@ -10,13 +10,12 @@ DROP TABLE IF EXISTS user_role;
 DROP TABLE IF EXISTS role;
 DROP TABLE IF EXISTS user_doctor;
 DROP TABLE IF EXISTS doctor;
-DROP TABLE IF EXISTS doctor_office;
 DROP TABLE IF EXISTS office;
 DROP TABLE IF EXISTS user_patient;
 DROP TABLE IF EXISTS patient;
 DROP TABLE IF EXISTS patient_prescriptions;
 DROP TABLE IF EXISTS prescriptions;
-DROP TABLE IF EXISTS appointments;
+DROP TABLE IF EXISTS review;
 
 CREATE TABLE app_user (
   user_id SERIAL PRIMARY KEY,
@@ -50,10 +49,6 @@ CREATE TABLE doctor (
   practice varchar(75)
   );
   
-CREATE TABLE doctor_office (
-  office_id int PRIMARY KEY,
-  doctor_id int
-  );
   
 CREATE TABLE office (
   office_id SERIAL PRIMARY KEY,
@@ -83,6 +78,14 @@ CREATE TABLE patient (
   insurance varchar(100)
   );
   
+CREATE TABLE reviews(
+  review_id SERIAL PRIMARY KEY,
+  doctor_id int,
+  user_id int,
+  review varchar(500),
+  rating int
+  );
+  
 CREATE TABLE patient_prescriptions (
   prescription_id int PRIMARY KEY,
   patient_id int
@@ -92,15 +95,7 @@ CREATE TABLE prescriptions (
   prescription_id SERIAL PRIMARY KEY,
   name varchar(100)
   );
-  
-CREATE TABLE appointments(
-  appt_id SERIAL PRIMARY KEY,
-  doctor_id int,
-  patient_id int,
-  office_id int,
-  appt_date DATE,
-  appt_time TIME
-  );
+ 
   
 --  ADD FOREIGN KEYS --
 
@@ -120,14 +115,6 @@ ALTER TABLE user_doctor
 ADD FOREIGN KEY (user_id)
 REFERENCES app_user(user_id);
 
-ALTER TABLE doctor_office
-ADD FOREIGN KEY (doctor_id)
-REFERENCES doctor(doctor_id);
-
-ALTER TABLE doctor_office
-ADD FOREIGN KEY (office_id)
-REFERENCES office(office_id);
-
 ALTER TABLE user_patient
 ADD FOREIGN KEY (patient_id)
 REFERENCES patient(patient_id);
@@ -144,16 +131,8 @@ ALTER TABLE patient_prescriptions
 ADD FOREIGN KEY (prescription_id)
 REFERENCES prescriptions(prescription_id);
 
-ALTER TABLE appointments
-ADD FOREIGN KEY (patient_id)
-REFERENCES patient(patient_id);
-
-ALTER TABLE appointments
+ALTER TABLE reviews
 ADD FOREIGN KEY (doctor_id)
 REFERENCES doctor(doctor_id);
-
-ALTER TABLE appointments
-ADD FOREIGN KEY (office_id)
-REFERENCES office(office_id);
 
 COMMIT;
