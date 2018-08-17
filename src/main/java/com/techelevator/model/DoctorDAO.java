@@ -7,4 +7,6 @@ public interface DoctorDAO {
 
 	void updateDoctorRelatorId(long doctorId, long userId);
 
+	Doctor getDoctorInfoByUserName(String userName);
+
 }
