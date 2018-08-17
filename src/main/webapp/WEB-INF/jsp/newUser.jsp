@@ -55,13 +55,7 @@
 				<label for="confirmPassword">Confirm Password: </label>
 				<input type="password" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" />	
 			</div>
-			<!-- <form name="form1"> -->
-				Select A Profile Type: <select name="profileType">
-					<option value="Null"></option>
-					<option value="Doctor">Doctor</option>
-					<option value="Patient">Patient</option>
-				</select>
-			<!-- </form> -->
+			<input type="hidden" name="profileType" value="Patient"/>
 			<button type="submit" class="btn btn-default">Create Profile</button>
 		</div>
 		<div class="col-sm-4"></div>

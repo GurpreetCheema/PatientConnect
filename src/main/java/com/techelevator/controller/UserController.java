@@ -120,7 +120,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/patientRegistration", method=RequestMethod.POST)
-	public String patientDoctor(
+	public String patientRegistration(
 				@RequestParam String firstName,				
 				@RequestParam String lastName,
 				@RequestParam String address,
