@@ -163,16 +163,29 @@ img.responsiveDoctor {
 .starRatingUrl {
 	widht:50px;
 }
-
+.patientInfoHead {
+	text-align: center; 
+	background-color: #00bf12; 
+	padding: 10px; 
+	color: white; 
+	border-radius: 10px;
+	border-color: black; 
+	border-width: 3px; 
+	border-style: solid;
+}
 .buttons *{
 	width: 15%;
-	background-color: #95abfe;
+	background-color: #e2ffbc;
 	border-radius: 10%;
 	border-style: solid;
 	border-width: 3px;
+	border-color: black;
 }
 .buttons {
-	margin-left: 10%;
+	text-align: center;
+}
+.emptySpace {
+	padding-bottom: 400px;
 }
 
 

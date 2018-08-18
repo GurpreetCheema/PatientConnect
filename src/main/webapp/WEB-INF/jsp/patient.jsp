@@ -14,14 +14,14 @@
 <div class="reviewPost" style="display: none;">
 <a href="/review" target="_blank" class="review-button">Review</a>
 </div>
-<h1 style= "text-align: center; background-color: grey; padding: 10px; color: white; border-radius: 10px;
-border-color: black; border-width: 3px; border-style: solid;">Patient Information</h1>
+<h1 class= "patientInfoHead">Patient Information</h1>
 <div class="buttons">
 <button>Edit Info</button>
 <button>Write A Review</button>
 <button>Delete A Review</button>
 <button>Message Doctor</button>
 <button>Listen to Scott Stapp</button>
+<button>Check Messages</button>
 </div>
 <div class=clearfix>
  <div class="container"> 
