@@ -32,7 +32,7 @@
 		});
 	});
 </script>
-<c:url var="formAction" value="/Review" />
+<c:url var="formAction" value="/result" />
 <form class="newUserForm" method="POST" action="${formAction}">
 	<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}" />
 
@@ -40,40 +40,38 @@
 	<div>
 		<h3 class="docReview">Please submit your Review</h3>
 	</div>
-<div class="starRating">
+	<div>	
+<p> <label for="docName">Doctor's Name: </label><br> 	
+<select name="docNAME" id="dropDown">
+	<option value="ZC">Pick your Doctor</option>
 
- <c:url var ="starRatingUrl" value ="/img/1-star.png"/>
-  <img src="${starRatingUrl}"/>
-</div>		
-<div class="col-sm-4"></div>
-	<div>
-	<fieldset class="docRating">
-				<form:radiobutton path="review" id="star5" value="5" />
-				<label class="full" for="star5" title="Amazing - 5 stars"></label>
-				<form:radiobutton path="review" id="star4" value="4" />
-				<label class="full" for="star4" title="Good - 4 stars"></label>
-				<form:radiobutton path="review" id="star3" value="3" />
-				<label class="full" for="star3" title="Alright - 3 stars"></label>
-				<form:radiobutton path="review" id="star2" value="2" />
-				<label class="full" for="star2" title="Nope - 2 stars"></label>
-				<form:radiobutton path="review" id="star1" value="1" />
-				<label class="full" for="star1" title="Never Again - 1 star"></label>
-	</fieldset>
-	<br>
+	<option value="ZC">Dr. what name</option>
+	<option value="ZC">Dr. what name1</option>
+	<option value="ZC">Dr. what name2</option>
+	<option value="ZC">Dr. what name3</option>
+	
+</select>				
+</p>	
+</div>	
+<div class="stars">
+  <form action="">
+    <input class="star star-5" id="star-5" type="radio" name="star"/>
+    <label class="star star-5" for="star-5"></label>
+    <input class="star star-4" id="star-4" type="radio" name="star"/>
+    <label class="star star-4" for="star-4"></label>
+    <input class="star star-3" id="star-3" type="radio" name="star"/>
+    <label class="star star-3" for="star-3"></label>
+    <input class="star star-2" id="star-2" type="radio" name="star"/>
+    <label class="star star-2" for="star-2"></label>
+    <input class="star star-1" id="star-1" type="radio" name="star"/>
+    <label class="star star-1" for="star-1"></label>
+  </form>
+</div>	
+	
 
-		</div>
-		<br>
 		<div class="form-group">
-			<div class="col-md-8">
-				<label for="subject">Title: </label>
-			</div>
-			<input type="subject" class="form-control" placeholder="Required" />
-		</div>
-		<div class="form-group">
-			<div class="col-md-8">
-				<label for="description">Review: </label>
-			</div>
-			<input type="description" class="form-control" placeholder="Required" />
+		
+			<input type="description" class="form-control" placeholder="Write Review Here" />
 		</div>
 		<div class="buttonMargin">
 			<button type="submit" class="btn btn-default">Please Submit
@@ -81,8 +79,7 @@
 			<br>
 		</div>
 	</div>
-	</div>
-	</div>
+
 	
 	
 	

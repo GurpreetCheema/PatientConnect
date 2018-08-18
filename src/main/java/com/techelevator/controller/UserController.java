@@ -185,6 +185,10 @@ public class UserController {
 		return "review";
 	}
 	
+	@RequestMapping(path="/result", method=RequestMethod.GET)
+	public String viewResult() {
+		return "result";
+	}
 	
 	
 }
