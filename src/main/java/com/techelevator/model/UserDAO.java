@@ -2,7 +2,7 @@ package com.techelevator.model;
 
  public interface UserDAO {
 
-	public void saveUser(String userName, String password);
+	public long saveUser(String userName, String password);
 
 	public boolean searchForUsernameAndPassword(String userName, String password);
 
@@ -19,5 +19,7 @@ package com.techelevator.model;
 	void insertUserIdInUserRole(long userId, int role);
 
 	long getRoleIdFromUserId(User user);
+
+	Long getRoleFromUserLogin(String userName);
 
 }

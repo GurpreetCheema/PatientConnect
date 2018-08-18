@@ -24,12 +24,12 @@ public class JDBCUserDAO implements UserDAO {
 	}
 	
 	@Override
-	public void saveUser(String userName, String password) {
+	public long saveUser(String userName, String password) {
 		byte[] salt = hashMaster.generateRandomSalt();
 		String hashedPassword = hashMaster.computeHash(password, salt);
 		String saltString = new String(Base64.encode(salt));
 		
-		jdbcTemplate.update("INSERT INTO app_user(user_name, password, salt) VALUES (?, ?, ?)",
+		return jdbcTemplate.queryForObject("INSERT INTO app_user(user_name, password, salt) VALUES (?, ?, ?) returning user_id;", Long.class,
 				userName, hashedPassword, saltString);
 	}
 
@@ -122,5 +122,15 @@ public class JDBCUserDAO implements UserDAO {
 	public void insertUserIdInUserRole(long userId, int role) {
 		String sqlUserIdInRelator = "INSERT INTO user_role(user_id, role_id) VALUES (?, ?);";
 		jdbcTemplate.update(sqlUserIdInRelator, userId, role);
+	}
+	@Override 
+	public Long getRoleFromUserLogin(String userName) {
+		String sqlRolePageFromLogin = "SELECT role_id FROM user_role JOIN app_user "
+									+ "ON app_user.user_id = user_role.user_id WHERE UPPER(user_name) = ?";
+		SqlRowSet id = jdbcTemplate.queryForRowSet(sqlRolePageFromLogin, userName.toUpperCase());
+		id.next();
+		Long longRoleId = id.getLong("role_id");
+		return longRoleId;
+		
 	}
 }
