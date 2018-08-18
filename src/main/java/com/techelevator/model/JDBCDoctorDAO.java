@@ -4,6 +4,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -27,6 +28,34 @@ public class JDBCDoctorDAO implements DoctorDAO{
 	public void updateDoctorRelatorId(long doctorId, long userId) {
 		String sqlUpdatePatientRelatorId = "UPDATE user_doctor SET doctor_id = ? " + "	WHERE user_doctor.user_id = ?";
 		jdbcTemplate.update(sqlUpdatePatientRelatorId, doctorId, userId);
+	}
+	@Override
+	public Doctor getDoctorInfoByUserName(String userName) {
+		String sqlSearchForUsername ="SELECT * "+
+				"FROM doctor "+
+				"JOIN user_doctor ON doctor.doctor_id = user_doctor.doctor_id "+
+				"JOIN app_user ON user_doctor.user_id = app_user.user_id "+
+				"WHERE UPPER(user_name) = ? ";
+
+				SqlRowSet user = jdbcTemplate.queryForRowSet(sqlSearchForUsername, userName.toUpperCase()); 
+				Doctor thisDoctor = null;
+				if(user.next()) {
+					thisDoctor = new Doctor();
+					thisDoctor = mapRowToDoctor(user);
+				}
+
+				return thisDoctor;
+	}
+	
+	public Doctor mapRowToDoctor(SqlRowSet user) {
+		Doctor thisDoctor = new Doctor();
+		
+		thisDoctor.setDoctorId(user.getLong("patient_id"));
+		thisDoctor.setFirstName(user.getString("first_name"));
+		thisDoctor.setLastName(user.getString("last_name"));
+		thisDoctor.setPractice(user.getString("practice"));
+		
+		return thisDoctor;
 	}
 
 }

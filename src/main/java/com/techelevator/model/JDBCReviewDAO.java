@@ -71,12 +71,15 @@ public class JDBCReviewDAO implements ReviewDAO{
 			// TODO Auto-generated method stub
 			return 0;
 		}
+<<<<<<< HEAD
 
 		@Override
 		public void saveReview(Review review) {
 			// TODO Auto-generated method stub
 			
 		}
+=======
+>>>>>>> af59dd8bdebf2091fa5ef30738f837406fe862dd
 }
 
 

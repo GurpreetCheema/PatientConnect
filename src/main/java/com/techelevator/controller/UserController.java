@@ -31,12 +31,15 @@ public class UserController {
 	
 	@Autowired
 	private PatientDAO patientDAO;
+	
+	private long currId;
 
 	@Autowired
 	public UserController(UserDAO userDAO, DoctorDAO doctorDAO, PatientDAO patientDAO) {
 		this.userDAO = userDAO;
 		this.doctorDAO = doctorDAO;
 		this.patientDAO = patientDAO;
+		currId = 0;
 	}
 
 	@RequestMapping(path="/newUser", method=RequestMethod.GET)
@@ -63,7 +66,7 @@ public class UserController {
 		
 		if(profileType.equals("Doctor"))
 		{
-			userDAO.saveUser(user.getUserName(), user.getPassword());
+			currId = userDAO.saveUser(user.getUserName(), user.getPassword());
 			userDAO.insertUserIdInDoctorRelator(userDAO.getUserIdByUsername(user));
 			userDAO.insertUserIdInUserRole(userDAO.getUserIdByUsername(user), 2);
 			
@@ -91,11 +94,9 @@ public class UserController {
 	
 	@RequestMapping(path="/doctorRegistration", method=RequestMethod.POST)
 	public String registerDoctor(
-				@Valid @ModelAttribute User user,
 				@RequestParam String firstName,				
 				@RequestParam String lastName,
 				@RequestParam String practice,
-				ModelMap modelHolder,
 				HttpSession session,
 				RedirectAttributes flashScope  //pass a flash scope variable into save method
 			) {
@@ -105,7 +106,7 @@ public class UserController {
 			newDoctor.setPractice(practice);
 			
 			Long newDoctorId = doctorDAO.save(newDoctor);
-			doctorDAO.updateDoctorRelatorId(newDoctorId, user.getUserId());
+			doctorDAO.updateDoctorRelatorId(newDoctorId, currId);
 			
 			flashScope.addFlashAttribute("message", "New doctor profile created!");
 			
