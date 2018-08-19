@@ -13,13 +13,11 @@
 
 <h2>${review.firstName}</h2>
 <h2>${doctor.rating}</h2>
-<h2>${doctor.rating}</h2>
+<h2>${doctor.review}</h2>
 
-	
 </div>	
 	
-	
-	
+<!-- 	Need to reply to users input too-------->	
 	<%-- <div>
 		<c:forEach items="${reviews}" var="review">
 			<ul>
