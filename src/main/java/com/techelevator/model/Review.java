@@ -3,16 +3,16 @@ package com.techelevator.model;
 public class Review {
 
 	
-	private int review_id;
+	private Long review_id;
 	private int doctor_id;
 	private int user_id;
 	private String review;
 	private int rating;
 	
-	public int getReview_id() {
+	public Long getReview_id() {
 		return review_id;
 	}
-	public void setReview_id(int review_id) {
+	public void setReview_id(Long review_id) {
 		this.review_id = review_id;
 	}
 	public int getDoctor_id() {

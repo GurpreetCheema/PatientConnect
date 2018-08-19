@@ -57,11 +57,11 @@
 						<li><a href="${newMessageHref}">New Message</a></li>
 						<c:url var="sentMessagesHref" value="/users/${currentUser}/messages" />
 						<li><a href="${sentMessagesHref}">Sent Messages</a></li>
-
+--%>
 					<c:if test="${not empty currentUser}">
 						<c:url var="changePasswordHref" value="/users/${currentUser}/changePassword" />
 						<li><a href="${changePasswordHref}">Change Password</a></li>
-					</c:if> --%>
+					</c:if> 
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<c:choose>
@@ -81,8 +81,8 @@
 					</c:choose>
 				</ul>
 			</div>
-		</nav>
+		</nav><%-- 
 		<c:if test="${not empty currentUser}">
 			<p id="currentUser" style="font-size: 20px; margin-left: 50px; font-weight: bold;'">Hello: ${currentUser.userName}</p>
-		</c:if>		
+		</c:if>		 --%>
 		<div class="container">

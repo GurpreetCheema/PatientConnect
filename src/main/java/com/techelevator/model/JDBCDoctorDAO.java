@@ -50,7 +50,7 @@ public class JDBCDoctorDAO implements DoctorDAO{
 	public Doctor mapRowToDoctor(SqlRowSet user) {
 		Doctor thisDoctor = new Doctor();
 		
-		thisDoctor.setDoctorId(user.getLong("patient_id"));
+		thisDoctor.setDoctorId(user.getLong("doctor_id"));
 		thisDoctor.setFirstName(user.getString("first_name"));
 		thisDoctor.setLastName(user.getString("last_name"));
 		thisDoctor.setPractice(user.getString("practice"));

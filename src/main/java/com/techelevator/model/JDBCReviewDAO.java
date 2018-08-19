@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
 public class JDBCReviewDAO implements ReviewDAO{
 		
 		private JdbcTemplate jdbcTemplate;
-		private SqlRowSet row;
 
 		@Autowired
 		public void DBCReviewDAO(DataSource dataSource) {
@@ -41,42 +40,59 @@ public class JDBCReviewDAO implements ReviewDAO{
 		return reviewList;
 	}
 
-		private Review mapRowToReview(SqlRowSet results) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-//		private Review mapRowToReview(SqlRowSet results) {
-//			// TODO Auto-generated method stub
-//				Review review = new Review();
-//				review.setReview_id(row.getInt("review_id"));
-//				review.setDoctor_id(row.getInt("doctor_id"));
-//				review.setUser_id(row.getInt("user_id"));
-//				review.setReview(row.getString("review"));
-//				review.setRating(row.getInt("rating"));
-//
-//				return review;
-//			
-//			
-//		}
-//
-//		@Override
-//		public int getReviewCount(long doctor_id) {
-//			// TODO Auto-generated method stub
-//			return 0;
-//		}
-//	
-
 		@Override
 		public int getReviewCount(long doctor_id) {
 			// TODO Auto-generated method stub
 			return 0;
 		}
 
+//		MOETHOD TO SAVE A NEW REVIEW
 		@Override
-		public void saveReview(Review review) {
-			// TODO Auto-generated method stub
-			
+		public Long saveReview(Review review) {
+			String sqlNewReview = "INSERT INTO reviews(doctor_id, user_id, review, rating)"
+											 + "VALUES(?, ?, ?, ?) RETURNING review_id;";
+			return jdbcTemplate.queryForObject(sqlNewReview, Long.class, review);
 		}
+
+//		METHOD TO GET ALL DOCTORS FROM THE DB TO DISPLAY IN THE SURVEY
+		
+		@Override
+		public List<Doctor> getDoctorNames() {
+			List<Doctor> allDoctors = new ArrayList<>();
+			String sqlGetAllDoctors = "SELECT * FROM doctor";
+			SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllDoctors);
+			while(results.next()) {
+				Doctor doctor = new Doctor();
+				
+				doctor.setDoctorId(results.getLong("doctor_id"));
+				doctor.setLastName(results.getString("last_name"));
+				
+				allDoctors.add(doctor);
+			}
+			return allDoctors;
+		}
+		
+		
+		private Review mapRowToReview(SqlRowSet results) {
+		// TODO Auto-generated method stub
+			Review review = new Review();
+			review.setReview_id(results.getLong("review_id"));
+			review.setDoctor_id(results.getInt("doctor_id"));
+			review.setUser_id(results.getInt("user_id"));
+			review.setReview(results.getString("review"));
+			review.setRating(results.getInt("rating"));
+
+			return review;
+	}
+//
+//	@Override
+//	public int getReviewCount(long doctor_id) {
+//		// TODO Auto-generated method stub
+//		return 0;
+//	}
+//
+
+		
 }
 
 
