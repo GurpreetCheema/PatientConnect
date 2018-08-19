@@ -168,7 +168,9 @@ public class UserController {
 	
 	@RequestMapping(path="/doctor", method=RequestMethod.GET)
 	public String doctorProfile(ModelMap modelHolder, HttpSession session) {
-		modelHolder.put("doctor", session.getAttribute("currentUser"));
+		User sessionUser = (User)session.getAttribute("currentUser");
+		
+		modelHolder.put("doctor", doctorDAO.getDoctorInfoByUserName(sessionUser.getUserName()));
 		return "doctor";
 	}
 	
@@ -180,10 +182,6 @@ public class UserController {
 	@RequestMapping(path="/administrator", method=RequestMethod.GET)
 	public String viewAdministratorPage() {
 		return "administrator";
-	}
-	@RequestMapping(path="/review", method=RequestMethod.GET)
-	public String viewReviews() {
-		return "review";
 	}
 	
 	@RequestMapping(path="/result", method=RequestMethod.GET)
