@@ -191,5 +191,12 @@ public class UserController {
 		return "result";
 	}
 	
+	@RequestMapping(path="/office", method=RequestMethod.GET)
+	public String viewOffice() {
+		return "office";
+	}
+	
+	
+	
 	
 }

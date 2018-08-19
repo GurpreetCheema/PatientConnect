@@ -228,7 +228,6 @@ label.star:before {
 }
 
 
-=======
 .patientInfo {
 	background-color: white;
 	border-radius: 20px;
@@ -240,7 +239,6 @@ label.star:before {
 	float: right;
 	box-shadow: 5px 10px;
 }
->>>>>>> af59dd8bdebf2091fa5ef30738f837406fe862dd
 
 .patImage {
 	width: 60%;
@@ -250,3 +248,11 @@ label.star:before {
 	padding-right: 20px;
 	padding-bottom: 20px;
 }
+
+#map{
+	height:400px;
+	width:100%;
+}
+
+
+
