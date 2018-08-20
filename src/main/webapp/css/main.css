@@ -169,7 +169,7 @@ img.responsiveDoctor {
 
 .buttons *{
 	width: 15%;
-	background-color: #e2ffbc;
+	background-color: white;
 	border-radius: 10%;
 	border-style: solid;
 	border-width: 3px;
@@ -210,4 +210,9 @@ footer{
 	float: left;
 	padding-right: 20px;
 	padding-bottom: 20px;
+	position: relative;
+}
+.patientTable {
+	float: right;
+	font-size: 15pt;
 }

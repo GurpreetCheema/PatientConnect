@@ -28,25 +28,48 @@
 <div class="patientInfo">
 <br>
 <img class="patImage" src="img/patientSideBar.jpg" alt="doctorWho">
-	<h3>First Name: ${patient.firstName} </h3>
-<hr>
-	<h3>Last Name: ${patient.lastName} </h3>
-<hr>
-	<h3>Address: ${patient.address}</h3> 
-<hr>
-	<h3>City: ${patient.city}</h3>
-<hr>
-	<h3>State: ${patient.state}</h3>
-<hr>	
-	<h3>Zip: ${patient.zip}</h3>
-<hr style="margin-left:60%;">
-	<h3>Email: ${patient.email}</h3>
-<hr style="margin-left:60%;">
-	<h3 style="margin-left:60%;">Phone Number: ${patient.phone}</h3>
-<hr style="margin-left:60%;">	
-	<h3 style="margin-left:60%;">Insurance: ${patient.insurance}</h3>
-	<hr style="margin-left:60%;">
-	
+<table class= "patientTable" style="width:40%">
+  <tr>
+    <th>First Name:</th>
+    <td>${patient.firstName}</td>
+    <hr>
+  </tr>
+  <tr>
+    <th>Last Name: </th>
+    <td>${patient.lastName}</td>
+  </tr>
+    <tr>
+    <th>Address: </th>
+    <td>${patient.address}</td>
+  </tr>
+  <tr>
+    <th>City: </th>
+    <td>${patient.city}</td>
+  </tr>
+  <tr>
+    <th>State: </th>
+    <td>${patient.state}</td>
+  </tr>
+  <tr>
+    <th>Zip: </th>
+    <td>${patient.zip}</td>
+  </tr>
+  <tr>
+    <th>Email: </th>
+    <td>${patient.email}</td>
+  </tr>
+  <tr>
+    <th>Phone Number: </th>
+    <td>${patient.phone}</td>
+  </tr>
+        <tr>
+    <th>Inusurance: </th>
+    <td>${patient.insurance}</td>
+  </tr>
+    <br>
+    <br>
+  
+</table>
 	</div>
 	<br>
 	<br>
