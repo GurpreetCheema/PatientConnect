@@ -28,11 +28,11 @@
 <div class="patientInfo">
 <br>
 <img class="patImage" src="img/patientSideBar.jpg" alt="doctorWho">
+<h1 class="greeting">Hello, ${patient.firstName} ${patient.lastName}</h1>
 <table class= "patientTable" style="width:40%">
   <tr>
     <th>First Name:</th>
     <td>${patient.firstName}</td>
-    <hr>
   </tr>
   <tr>
     <th>Last Name: </th>

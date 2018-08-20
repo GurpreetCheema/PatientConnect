@@ -167,21 +167,6 @@ img.responsiveDoctor {
 	box-shadow: 2px 5px;
 }
 
-.buttons *{
-	width: 15%;
-	background-color: white;
-	border-radius: 10%;
-	border-style: solid;
-	border-width: 3px;
-	border-color: #5c5c5c;
-	padding-bottom: 5px;
-	padding-top: 5px;
-	font-size: 13pt;
-	box-shadow: 2px 5px;
-}
-.buttons {
-	text-align: center;
-}
 .emptySpace {
 	padding-bottom: 400px;
 }
@@ -191,7 +176,6 @@ footer{
 	text-align: bottom;
 }
 
-<<<<<<< HEAD
 /* --------------Star Rating------------------*/
 div.stars {
   width: 470px;
@@ -241,19 +225,87 @@ label.star:before {
 }
 
 .patImage {
-	width: 60%;
+	width: 50%;
 	border-radius: 10%;
 	opacity: .5;
 	float: left;
-	padding-right: 20px;
+	padding-right: 10px;
 	padding-bottom: 20px;
 	position: relative;
 }
 .patientTable {
-	float: right;
+ 	float: right;
 	font-size: 15pt;
+	margin-right: 50px; 
+	width: 100px;
+    height: 100px;
+    background-color: white;
+    position: relative;
+ /* animation-name: example;
+    animation-duration: 2s; */
+}
+/* @keyframes example {
+    0%   {background-color:white; left:0px; top:0px;}
+    25%  {background-color:white; left:200px; top:0px;}
+    50%  {background-color:white; left:200px; top:200px;}
+    75%  {background-color:white; left:0px; top:200px;}
+    100% {background-color:white; left:0px; top:0px;}
+} */
+/* @keyframes button1 {
+    0%   {background-color:white; left:0px; top:0px;}
+    25%  {background-color:white; left:200px; top:0px;}
+    50%  {background-color:white; left:200px; top:200px;}
+    75%  {background-color:white; left:0px; top:200px;}
+    100% {background-color:white; left:0px; top:0px;}
+} */
+
+.buttons *{
+	width: 15%;
+	background-color: white;
+	border-radius: 10%;
+	border-style: solid;
+	border-width: 3px;
+	border-color: #5c5c5c;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	font-size: 13pt;
+	box-shadow: 2px 5px;
+	animation-name: buttons1;
+	animation-duration: 2s; 
 }
 
+.buttons {
+	text-align: center;
+}
+.patientTable th{
+	font-size: 15pt;
+	border-width: 3px;
+	border-style: solid;
+	border-color: grey;
+	padding-bottom: 2px; 	
+	padding-right: 10px;
+	padding-left: 3px;
+}
+.patientTable td{
+	float: center;
+	border-width: 3px;
+	border-color: grey;
+	border-style: solid;
+	padding-left: 3px;
+	padding-right: 10px;
+	}
+.greeting {
+	text-align: center;
+	margin-bottom: -31px;
+	color: #2a2a2a;
+/*     text-shadow:
+     1px -1px 0 #000,  
+     3px -1px 0 #000,
+     -1px 1px 0 #000,
+     1px 1px 0 #000;
+      */
+      font-family: helvetica;
+}
 #map{
 	height:400px;
 	width:100%;
