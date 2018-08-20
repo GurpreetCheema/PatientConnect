@@ -63,7 +63,7 @@
     <td>${patient.phone}</td>
   </tr>
         <tr>
-    <th>Inusurance: </th>
+    <th>Insurance: </th>
     <td>${patient.insurance}</td>
   </tr>
     <br>
