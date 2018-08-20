@@ -194,7 +194,15 @@ public class UserController {
 		return "office";
 	}
 	
+	@RequestMapping(path="/deleteDoctor", method=RequestMethod.GET)
+	public String displayDoctors(ModelMap modelHolder) {
+		modelHolder.put("doctors", doctorDAO.getAllDoctors());
+		return "deleteDoctor";
+	}
 	
-	
-	
+	@RequestMapping(path="/deleteDoctor", method=RequestMethod.POST)
+	public String deleteDoctors(@RequestParam long doctorId, ModelMap modelHolder) {
+		doctorDAO.deleteDoctorById(doctorId);
+		return "redirect:/deleteDoctor";
+	}
 }
