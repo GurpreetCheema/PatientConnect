@@ -18,10 +18,8 @@
 <div class="buttons">
 <a href="/">Edit Info</a>
 <a href="/capstone/review">Write A Review</a>
-<a href="/">Delete A Review</a>
 <a href="/message.jsp">Message Doctor</a>
 <a href="/">Check Messages</a>
-<a href="/">Delete Messages</a>
 </div>
 <div class=clearfix>
 <br>
