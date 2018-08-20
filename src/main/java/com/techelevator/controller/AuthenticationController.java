@@ -25,18 +25,18 @@ public class AuthenticationController {
 
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public String displayLoginForm(@RequestParam(required = false) String userName, HttpSession session, ModelMap modelHolder) {
-		if (modelHolder.containsAttribute("user")){
+		if(session.getAttribute("currentUser") != null) {
 			User sessionUser = (User)session.getAttribute("currentUser");
 			if (userDAO.getRoleFromUserLogin(sessionUser.getUserName()) == 3) {
-				return "/administrator";
+				return "redirect:/administrator";
 			}
 			else if (userDAO.getRoleFromUserLogin(sessionUser.getUserName()) == 2) {
-				return "/doctor";
+				return "redirect:/doctor";
 			}
 			else if (userDAO.getRoleFromUserLogin(sessionUser.getUserName()) == 1) {
-				return "/patient";
+				return "redirect:/patient";
 			}
-		} 
+		}
 		return "login";
 		
 	}
