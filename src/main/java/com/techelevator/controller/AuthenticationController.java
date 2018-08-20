@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.techelevator.model.User;
 import com.techelevator.model.UserDAO;
 
 @Controller
@@ -23,16 +24,19 @@ public class AuthenticationController {
 	}
 
 	@RequestMapping(path = "/", method = RequestMethod.GET)
-	public String displayLoginForm(@RequestParam(required = false) String userName) {
-//		if (userDAO.getRoleFromUserLogin(userName) == 3) {
-//			return "/administrator";
-//		}
-//		else if (userDAO.getRoleFromUserLogin(userName) == 2) {
-//			return "/doctor";
-//		}
-//		else if (userDAO.getRoleFromUserLogin(userName) == 1) {
-//			return "/patient";
-//		}
+	public String displayLoginForm(@RequestParam(required = false) String userName, HttpSession session, ModelMap modelHolder) {
+		if (modelHolder.containsAttribute("user")){
+			User sessionUser = (User)session.getAttribute("currentUser");
+			if (userDAO.getRoleFromUserLogin(sessionUser.getUserName()) == 3) {
+				return "/administrator";
+			}
+			else if (userDAO.getRoleFromUserLogin(sessionUser.getUserName()) == 2) {
+				return "/doctor";
+			}
+			else if (userDAO.getRoleFromUserLogin(sessionUser.getUserName()) == 1) {
+				return "/patient";
+			}
+		} 
 		return "login";
 		
 	}
