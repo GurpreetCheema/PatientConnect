@@ -3,6 +3,9 @@
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
 
+<c:url var="formAction" value="/result" />
+<form class="newUserForm" method="POST" action="${formAction}">
+	<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}" />
 
 <div>
 	<h3 class="otherSaying">
@@ -14,38 +17,16 @@
 <h2>${review.firstName}</h2>
 <h2>${doctor.rating}</h2>
 <h2>${doctor.review}</h2>
-
 </div>	
+
+<div>
+
+	<c:forEach items="${reviews}" var="review">
+	<option value="${reviews.review_id}">
+	<c:out value="${Reviews.review}" />
+	<c:out value="${Reviews.rating}" />
+	</c:forEach>
 	
-<!-- 	Need to reply to users input too-------->	
-	<%-- <div>
-		<c:forEach items="${reviews}" var="review">
-			<ul>
-			<strong><li><c:out value="${Review.review}" /></li></strong>
-				<c:choose>
-					<c:when test="${review.starRating == 0}">
-								No Rating
-							</c:when>
-					<c:otherwise>
-						<c:url var="imageName" value="/img/${review.rating}-star.png" />
-					</c:otherwise>
-				</c:choose>
+</div>
 
-
-
- --%>
-			
-			
-			
-
-
-
-
-
-
-
-
-
-
-
-		<c:import url="/WEB-INF/jsp/footer.jsp" />
+<c:import url="/WEB-INF/jsp/footer.jsp" />
