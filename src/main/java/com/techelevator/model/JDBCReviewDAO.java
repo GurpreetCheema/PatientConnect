@@ -49,9 +49,10 @@ public class JDBCReviewDAO implements ReviewDAO{
 //		MOETHOD TO SAVE A NEW REVIEW
 		@Override
 		public Long saveReview(Review review) {
-			String sqlNewReview = "INSERT INTO reviews(doctor_id, user_id, review, rating)"
+			String sqlNewReview = "INSERT INTO reviews(doctor_id, user_id, review, rating) "
 											 + "VALUES(?, ?, ?, ?) RETURNING review_id;";
-			return jdbcTemplate.queryForObject(sqlNewReview, Long.class, review);
+			return jdbcTemplate.queryForObject(sqlNewReview, Long.class, review.getDoctor_id(), review.getUser_id(), 
+												review.getReview(), review.getRating());
 		}
 
 //		METHOD TO GET ALL DOCTORS FROM THE DB TO DISPLAY IN THE SURVEY

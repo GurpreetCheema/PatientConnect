@@ -36,12 +36,12 @@ public class ReviewController {
 		return "review";
 	}
 	
-	@RequestMapping(path="/review", method=RequestMethod.POST)
-	public String postNewReview(@RequestParam int rating, @RequestParam String review, HttpSession session) {
+	@RequestMapping(path= {"/review"}, method=RequestMethod.POST)
+	public String postNewReview(@RequestParam int doctorId, @RequestParam int rating, @RequestParam String review, HttpSession session) {
 		Review newReview = new Review();
 		User sessionUser = (User)session.getAttribute("currentUser");
 		
-//		newReview.setDoctor_id(doctorId);
+		newReview.setDoctor_id(doctorId);
 		newReview.setUser_id((int) userDAO.getUserIdByUsername(sessionUser));
 		newReview.setRating(rating);
 		newReview.setReview(review);
