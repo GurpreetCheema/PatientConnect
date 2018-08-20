@@ -14,14 +14,14 @@
 <div class="reviewPost" style="display: none;">
 <a href="/review" target="_blank" class="review-button">Review</a>
 </div>
-<h1 class= "patientInfoHead">Patient Information</h1>
+<h1 class="patientInfoHead">PATIENT INFORMATION</h1>
 <div class="buttons">
-<button>Edit Info</button>
-<button>Write A Review</button>
-<button>Delete A Review</button>
-<button>Message Doctor</button>
-<button>Check Messages</button>
-<button>Delete Messages</button>
+<a href="/">Edit Info</a>
+<a href="/capstone/review">Write A Review</a>
+<a href="/">Delete A Review</a>
+<a href="/message.jsp">Message Doctor</a>
+<a href="/">Check Messages</a>
+<a href="/">Delete Messages</a>
 </div>
 <div class=clearfix>
 <br>
@@ -71,6 +71,7 @@
   
 </table>
 	</div>
+	
 	<br>
 	<br>
 
