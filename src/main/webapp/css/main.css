@@ -220,9 +220,10 @@ label.star:before {
 	border-color: #515151;
 	padding-left: 10px;
 	border-style: solid;
-	opacity: .9;
+	opacity: .8;
 	float: right;
 	box-shadow: 1px 10px;
+	margin-bottom: 20px;
 }
 
 .patImage {
@@ -271,7 +272,36 @@ label.star:before {
 	text-decoration: none;
 	/* text-shadow: 0px 1px 0px #aade7c; */
 }
-
+.buttonsDoc *{
+	width: 15%;
+	padding-left: 3px;
+	padding-right: 3px;
+	font-family: harmonia-sans;
+	background-color: #000000;
+	opacity: .8;
+	border-radius: 6px;
+	border: 1px solid #d7d1e7;
+	display: inline-block;
+	cursor: pointer;
+	color: #fffdf9;
+	font-family: Arial;
+	font-size: 15px;
+	padding: 6px 6px;
+	text-decoration: none;
+}
+.buttonsDoc {
+	text-align: center;
+}
+.whatsUpDoc {
+	text-align: center; 
+	padding: 10px; 
+	opacity: .8;
+	color: White; 
+	font-family: Helvetica;
+	background-color: black;
+	font-weight: lighter;
+	margin-top: 5%;
+}
 
 .buttons {
 	text-align: center;
@@ -312,6 +342,43 @@ label.star:before {
 	height:400px;
 	width:100%;
 }
+.appointmentsDoc {
+	float: right;
+	border-width: 2px;
+	border-style: solid;
+	border-color: black;
+	opacity: 8.;
+	margin-top: 3%;
+	margin-right: 10%;
+}
+.infoDoc {
+	margin-top: 2%;
+	padding-top: 0%;
+	float: left;
+}
 
+.infoDoc h3{
+	text-align: left; 
+	padding: 10px; 
+	opacity: .6;
+	color: White; 
+	font-family: Helvetica;
+	background-color: black;
+	font-weight: lighter;
+	border-size: 1px;
+	border-color: black;
+	border-style: solid;
+	border-radius: 20%;
+}
 
-
+.infoDoc h2 {
+	text-align: left; 
+	padding: 5px; 
+	opacity: .8;
+	color: black; 
+	font-family: Helvetica;
+	background-color: white;
+	font-weight: lighter;
+	text-size: 12pt;
+	margin-left: 10px;
+}
