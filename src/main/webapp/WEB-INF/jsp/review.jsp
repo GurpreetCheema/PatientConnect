@@ -31,10 +31,11 @@
 			errorClass : "error"
 		});
 	});
+	
 </script>
 <c:url var="formAction" value="/review" />
 <form class="newUserForm" method="POST" action="${formAction}">
-	<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}" />
+<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}" />
 
 	<div class="row">
 		<div>

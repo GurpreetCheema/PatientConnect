@@ -9,7 +9,7 @@
 
 <div>
 	<h3 class="otherSaying">
-		<c:out value="See what others are saying about ${doctor.first_name }!" />
+		<c:out value="See what others are saying about ${doctor.first_name}!" />
 	</h3>
 	
 <div class=otherDocSaying>

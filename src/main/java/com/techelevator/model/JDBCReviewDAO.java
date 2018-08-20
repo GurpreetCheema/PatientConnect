@@ -60,7 +60,7 @@ public class JDBCReviewDAO implements ReviewDAO{
 		@Override
 		public List<Doctor> getDoctorNames() {
 			List<Doctor> allDoctors = new ArrayList<>();
-			String sqlGetAllDoctors = "SELECT * FROM doctor";
+			String sqlGetAllDoctors = "SELECT * FROM doctor;";
 			SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllDoctors);
 			while(results.next()) {
 				Doctor doctor = new Doctor();
