@@ -5,11 +5,14 @@
 <h1>Welcome Administrator</h1>
 
 <c:url var="newUserHref" value="/newUser" />
-<li><a href="${newUserHref}">Create Doctor</a></li>
+<li><a href="${newUserHref}"><button>Create Doctor</button></a></li>
 
-<!-- <button>Create Doctor</button>
 
-<button>Delete Doctor</button>
+
+<c:url var="deleteDoctorHref" value="/deleteDoctor" />
+<li><a href="${deleteDoctorHref}">Delete Doctor</a></li>
+
+<!--<button>Delete Doctor</button>
 
 <button>Delete Patient</button>
 
