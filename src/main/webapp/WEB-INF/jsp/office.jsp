@@ -6,11 +6,10 @@
 href="/maps/documentation/javascript/cgc/demos.css">
 
 <h3>View Office information Below:</h3>
-
-<div id="map"></div>
+<!-- Trying to push so adding something here.
+ --><div id="map"></div>
 <script>
 function initMap() {
-//map option
 var options = {
 zoom : 8,
 center : {
@@ -19,10 +18,8 @@ lng : -81.6944
 }
 
     }
-    //new map
     var map = new google.maps.Map(document.getElementById('map'), options);
 
-    //add marker
     var marker = new google.maps.Marker({
         position : {
             lat : 41.4993,
