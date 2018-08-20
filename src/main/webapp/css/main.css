@@ -1,5 +1,7 @@
 body { 
     background: url("../img/background8.jpg") repeat 0 0;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .headerIMG {
@@ -155,18 +157,6 @@ img.responsiveDoctor {
 .starRatingUrl {
 	widht:50px;
 }
-.patientInfoHead {
-	text-align: center; 
-	background-color: #00bf12; 
-	padding: 10px; 
-	color: white; 
-	border-radius: 10px;
-	border-color: #5e5e5e; 
-	border-width: 3px; 
-	border-style: solid;
-	box-shadow: 2px 5px;
-	font-family: futura;
-}
 
 .emptySpace {
 	padding-bottom: 400px;
@@ -212,33 +202,42 @@ label.star:before {
   content: '\2605';
 }
 
+.patientInfoHead {
+	text-align: center; 
+	padding: 10px; 
+	opacity: .8;
+	color: White; 
+	font-family: Helvetica;
+	background-color: black;
+	font-weight: lighter;
+	
+}
 
 .patientInfo {
 	background-color: white;
 	border-radius: 20px;
 	border-color: #515151;
-	border-size: 3px;
 	padding-left: 10px;
 	border-style: solid;
 	opacity: .9;
 	float: right;
-	box-shadow: 5px 10px;
+	box-shadow: 1px 10px;
 }
 
 .patImage {
 	width: 50%;
 	border-radius: 10%;
 	opacity: .5;
-	float: left;
+	float: right;
 	padding-right: 10px;
 	padding-bottom: 20px;
 	position: relative;
 }
 
 .patientTable {
- 	float: right;
+ 	float: left;
 	font-size: 15pt;
-	margin-right: 50px; 
+	margin-left: 50px; 
 	width: 100px;
     height: 100px;
     background-color: white;
@@ -259,19 +258,20 @@ label.star:before {
 	padding-left: 3px;
 	padding-right: 3px;
 	font-family: harmonia-sans;
-	background-color: #77d42a;
+	background-color: #000000;
+	opacity: .8;
 	border-radius: 6px;
-	border: 1px solid #268a16;
+	border: 1px solid #d7d1e7;
 	display: inline-block;
 	cursor: pointer;
-	color: #306108;
+	color: #fffdf9;
 	font-family: Arial;
 	font-size: 15px;
-	font-weight: bold;
 	padding: 6px 24px;
 	text-decoration: none;
-	text-shadow: 0px 1px 0px #aade7c;
+	/* text-shadow: 0px 1px 0px #aade7c; */
 }
+
 
 .buttons {
 	text-align: center;
@@ -288,34 +288,25 @@ label.star:before {
 }
 .patientTable td{
 	float: center;
-/*  	border-width: 1px;
-	border-color: #449a00;
-	border-style: solid; 
-	
-	font-family: harmonia-sans;
-	box-shadow: 10px 0px 6px #888888;
-	box-shadow-direction: right;
-	padding-bottom: 1px; */	
+	padding-bottom: 3px;
 	padding-left: 6px;
 	padding-right: 10px;
-	background-color: #77d42a;
-	border-radius: 6px;
-	border: 1px solid #268a16;
 	display: inline-block;
-	color: #306108;
-	font-family: Arial;
-	font-size: 15px;
-	font-weight: bold;
+	color: #1f1f1f;
+	font-family: harmonis-sans;
+	font-size: 20px;
+/* 	font-weight: bold; */
 	/* padding: 4px 34px; */
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #aade7c;
+/* 	text-decoration: none;
+	text-shadow: 0px 1px 0px #aade7c; */
 	/*  background-image: linear-gradient(to right, white , green); */
 	}
 .greeting {
-	text-align: center;
+	text-align: left;
 	margin-bottom: -31px;
 	color: #2a2a2a;
     font-family: futura;
+    text-decoration: underline;
 }
 #map{
 	height:400px;
