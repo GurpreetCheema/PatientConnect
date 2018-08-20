@@ -20,9 +20,21 @@
 		<h2>${doctor.practice}</h2>
 </div>
 <div class="appointmentsDoc">
-<iframe src="https://calendar.google.com/calendar/b/1/embed?showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%2333cc00&amp;src=patientconnect1%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FNew_York" 
-style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-</div>
+	<c:if test="${doctor.doctorId == '1'}">
+		<iframe src="https://calendar.google.com/calendar/b/2/embed?title=Dr.%20Toboggan&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23666666&amp;src=mantistob1%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FNew_York" 
+		style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+		<br/>
+	</c:if>
+	<c:if test="${doctor.doctorId == '2'}">
+		<iframe src="https://calendar.google.com/calendar/b/3/embed?title=Dr.%20Kevorkian&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23666666&amp;src=jackkevorks%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FNew_York" 
+		style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+		<br/>
+	</c:if>
+	<c:if test="${doctor.doctorId == '3'}">
+		<iframe src="https://calendar.google.com/calendar/b/4/embed?title=Dr.%20Hooks&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23666666&amp;src=barbhooks3%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FNew_York" 
+		style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+		<br/>
+	</c:if>
 
 
 

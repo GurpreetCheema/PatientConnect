@@ -2,13 +2,25 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<!-- 						VIEW APPOINTMENTS					 -->
-<iframe src="https://calendar.google.com/calendar/b/1/embed?showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%2333cc00&amp;src=patientconnect1%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FNew_York" 
+<!-- 						VIEW ALL APPOINTMENTS				 -->
+<iframe src="https://calendar.google.com/calendar/b/1/embed?showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23666666&amp;src=patientconnect1%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FNew_York" 
 style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<br/>
 
 <!-- 						MANTIS APPOINTMENT					 -->
+<iframe src="https://calendar.google.com/calendar/b/2/embed?title=Dr.%20Toboggan&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23666666&amp;src=mantistob1%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FNew_York" 
+style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<br/>
 
 <!-- 						JACK APPOINTMENTS					 -->
+<iframe src="https://calendar.google.com/calendar/b/3/embed?title=Dr.%20Kevorkian&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23666666&amp;src=jackkevorks%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FNew_York" 
+style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<br/>
+
+<!-- 						BARB APPOINTMENTS					 -->
+<iframe src="https://calendar.google.com/calendar/b/4/embed?title=Dr.%20Hooks&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23666666&amp;src=barbhooks3%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FNew_York" 
+style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<br/>
 
 <!-- 						SCHEDULE WITH MANTIS					 -->
 <!-- MANTIS BUTTON -->
@@ -53,8 +65,11 @@ Patient Connect
 <a href="https://app.acuityscheduling.com/schedule.php?owner=16497853&calendarID=2487129" target="_blank" class="acuity-embed-button">Schedule Appointment With Dr. Hooks</a>
 </div>
 <script src="https://embed.acuityscheduling.com/embed/bar/16497853.js" async></script>
-
-
-
+<br/>
+<!-- WHERE TO CANCEL APPOINTMENTS -->
+<iframe src="https://secure.acuityscheduling.com/appointments.php" 
+style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<br/>
+https://secure.acuityscheduling.com/appointments.php
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />
