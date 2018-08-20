@@ -13,6 +13,24 @@
 <br/>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fof40yqaW1U?start=11;&autoplay=1" 
 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+
+
+
+
+
+
 </div>
+
+
+
+
+
+
+
+
+
+
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />
