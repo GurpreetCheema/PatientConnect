@@ -7,8 +7,9 @@
 		<tr>
 			<td><c:out value="${doctor.firstName}"/></td>
 			<td><c:out value="${doctor.lastName}"/></td>
-			<c:url var="deleteThisDoctorUrl" value="/deleteDoctor?doctorId=${doctor.doctorId}"/>
-			<td><a href="${deleteThisDoctorUrl}"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+			<td><form method="POST" action="${formAction}"><input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
+				<input type="hidden" name="doctorId" value="${doctor.doctorId}"/>
+				<input class="formSubmitButton" type="submit" value="DELETE"/></form></td>
 		</tr>
 	</c:forEach>
 </table>
