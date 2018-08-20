@@ -256,19 +256,21 @@ label.star:before {
 } */
 .buttons *{
 	width: 15%;
-	background-color: white;
-	border-radius: 10%;
-	border-style: solid;
-	border-width: 3px;
-	border-color: #5c5c5c;
-	padding-bottom: 5px;
-	padding-top: 5px;
-	font-size: 13pt;
-	box-shadow: 2px 5px;
-	color: black;
 	padding-left: 3px;
 	padding-right: 3px;
 	font-family: harmonia-sans;
+	background-color: #77d42a;
+	border-radius: 6px;
+	border: 1px solid #268a16;
+	display: inline-block;
+	cursor: pointer;
+	color: #306108;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #aade7c;
 }
 
 .buttons {
@@ -286,15 +288,27 @@ label.star:before {
 }
 .patientTable td{
 	float: center;
- 	border-width: 1px;
+/*  	border-width: 1px;
 	border-color: #449a00;
 	border-style: solid; 
-	padding-left: 6px;
-	padding-right: 10px;
+	
 	font-family: harmonia-sans;
 	box-shadow: 10px 0px 6px #888888;
 	box-shadow-direction: right;
-	padding-bottom: 1px;
+	padding-bottom: 1px; */	
+	padding-left: 6px;
+	padding-right: 10px;
+	background-color: #77d42a;
+	border-radius: 6px;
+	border: 1px solid #268a16;
+	display: inline-block;
+	color: #306108;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	/* padding: 4px 34px; */
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #aade7c;
 	/*  background-image: linear-gradient(to right, white , green); */
 	}
 .greeting {
