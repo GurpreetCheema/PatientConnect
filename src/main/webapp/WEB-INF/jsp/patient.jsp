@@ -14,21 +14,20 @@
 <div class="reviewPost" style="display: none;">
 <a href="/review" target="_blank" class="review-button">Review</a>
 </div>
-<h1 class="patientInfoHead">PATIENT INFORMATION</h1>
+<h1 class="patientInfoHead"><strong style="font-weight: bold">PATIENT</strong> INFORMATION</h1>
 <div class="buttons">
 <a href="/">Edit Info</a>
 <a href="/capstone/review">Write A Review</a>
-<a href="/">Delete A Review</a>
 <a href="/message.jsp">Message Doctor</a>
 <a href="/">Check Messages</a>
-<a href="/">Delete Messages</a>
 </div>
 <div class=clearfix>
 <br>
 <div class="patientInfo">
 <br>
 <img class="patImage" src="img/patientSideBar.jpg" alt="doctorWho">
-<h1 class="greeting">Hello, ${patient.firstName} ${patient.lastName}</h1>
+<h1 class="greeting" style="margin-right: 20px;">Hello, ${patient.firstName} ${patient.lastName}</h1>
+
 <table class= "patientTable" style="width:40%">
   <tr>
     <th>First Name:</th>
@@ -68,17 +67,14 @@
   </tr>
     <br>
     <br>
-  
 </table>
 	</div>
-	
 	<br>
 	<br>
-
 	<!-- 						SCHEDULING BUTTON								 -->
 	<a href="https://app.acuityscheduling.com/schedule.php?owner=16497853"
 		target="_blank" class="acuity-embed-button"
-		style="background: #00af32; color: #fff; padding: 8px 12px; border: 0px;
+		style="background: #5a8cfe; color: #fff; padding: 8px 12px; border: 0px;
 		 -webkit-box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset;
 		  -moz-box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset; 
 		  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset; 

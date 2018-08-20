@@ -33,7 +33,7 @@
 			<c:url var="homePageHref" value="/" />
 			<div class="headerIMG">
 			<div>
-				<c:url var="imgSrc1" value="/img/header22.jpg" />
+				<c:url var="imgSrc1" value="/img/header23.jpg" />
 				<a href="${homePageHref}"><img src="${imgSrc1}"
 					class="img-responsive" /></a>
 			</div>
@@ -81,8 +81,8 @@
 					</c:choose>
 				</ul>
 			</div>
-		</nav><%-- 
+		</nav> 
 		<c:if test="${not empty currentUser}">
 			<p id="currentUser" style="font-size: 20px; margin-left: 50px; font-weight: bold;'">Hello: ${currentUser.userName}</p>
-		</c:if>		 --%>
+		</c:if>
 		<div class="container">
