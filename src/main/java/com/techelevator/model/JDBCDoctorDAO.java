@@ -72,7 +72,7 @@ public class JDBCDoctorDAO implements DoctorDAO{
    			 								 "WHERE doctor_id = ?";
 		jdbcTemplate.update(sqlDeleteDoctorFromUserDoctor, doctorId);
 		String sqlDeleteDoctorFromUserRole ="DELETE "+
-   			 							   "FROM doctor " +
+   			 							   "FROM user_role " +
    			 							   "WHERE user_id = ?";
    		jdbcTemplate.update(sqlDeleteDoctorFromUserRole, userId);
 		String sqlDeleteDoctorFromAppUser ="DELETE "+

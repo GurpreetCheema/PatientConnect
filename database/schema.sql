@@ -101,38 +101,47 @@ CREATE TABLE prescriptions (
 
 ALTER TABLE user_role
 ADD FOREIGN KEY (user_id)
-REFERENCES app_user(user_id);
+REFERENCES app_user(user_id)
+ON DELETE CASCADE;
   
 ALTER TABLE user_role
 ADD FOREIGN KEY (role_id)
-REFERENCES role(role_id);
+REFERENCES role(role_id)
+ON DELETE CASCADE;
 
 ALTER TABLE user_doctor
 ADD FOREIGN KEY (doctor_id)
-REFERENCES doctor(doctor_id);
+REFERENCES doctor(doctor_id)
+ON DELETE CASCADE;
 
 ALTER TABLE user_doctor
 ADD FOREIGN KEY (user_id)
-REFERENCES app_user(user_id);
+REFERENCES app_user(user_id)
+ON DELETE CASCADE;
 
 ALTER TABLE user_patient
 ADD FOREIGN KEY (patient_id)
-REFERENCES patient(patient_id);
+REFERENCES patient(patient_id)
+ON DELETE CASCADE;
 
 ALTER TABLE user_patient
 ADD FOREIGN KEY (user_id)
-REFERENCES app_user(user_id);
+REFERENCES app_user(user_id)
+ON DELETE CASCADE;
 
 ALTER TABLE patient_prescriptions
 ADD FOREIGN KEY (patient_id)
-REFERENCES patient(patient_id);
+REFERENCES patient(patient_id)
+ON DELETE CASCADE;
 
 ALTER TABLE patient_prescriptions
 ADD FOREIGN KEY (prescription_id)
-REFERENCES prescriptions(prescription_id);
+REFERENCES prescriptions(prescription_id)
+ON DELETE CASCADE;
 
 ALTER TABLE reviews
 ADD FOREIGN KEY (doctor_id)
-REFERENCES doctor(doctor_id);
+REFERENCES doctor(doctor_id)
+ON DELETE CASCADE;
 
 COMMIT;
