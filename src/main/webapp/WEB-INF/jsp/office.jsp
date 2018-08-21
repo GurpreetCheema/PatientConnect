@@ -4,27 +4,29 @@
 
 <link rel="stylesheet" href="/maps/documentation/javascript/cgc/demos.css">
 <h3>View Office information Below:</h3>
- <h1 class="greeting">Hello, ${patient.firstName} ${patient.lastName}</h1>
-<!-- <table class= "patientTable" style="width:40%">
+<%--  <h1 class="greeting">Hello, ${patient.firstName} ${patient.lastName}</h1>
+ --%><!-- <table class= "patientTable" style="width:40%">
  -->
+<div class = "address">Office Location is: 9500 Euclid Ave, Cleveland, OH 44195</div>
+ <div class="imgContainerOffice">
+ 
 <div>
-
-
-
 	<c:url var="imgSrcDoc" value="/img/Doctor1.jpg" />
 	<a href="${homePageHref}"><img src="${imgSrcDoc}"
-	class="responsiveDoctorOffice" />Dr.Toboggan</a>
+	class="responsiveDoctorOffice" /></a>
+	<p>Dr.Toboggan</p>
 	<c:url var="imgSrcDoc" value="/img/Doctor2.jpg" />
 	<a href="${homePageHref}"><img src="${imgSrcDoc}"
-	class="responsiveDoctorOffice" />Dr.Kevorkian</a>
+	class="responsiveDoctorOffice" /></a>
+		<p>Dr.Kevorkian</p>
 	<c:url var="imgSrcDoc" value="/img/Doctor3.jpg" />
 	<a href="${homePageHref}"><img src="${imgSrcDoc}"
-	class="responsiveDoctorOffice" />Dr.Hooks</a>
-	
+	class="responsiveDoctorOffice" /></a>
+			<p>Dr.Hooks</p>
+
 </div>	
 	
-<div class = "address">Address: 9500 Euclid Ave, Cleveland, OH 44195</div>
-
+</div>
 <!-- Not getting from Database -->
 <%-- <c:forEach var="office" items="${officeInfo}">
 <div>
@@ -39,8 +41,7 @@
 
 <div>
 </c:forEach> --%>
-<div id="map"></div>
-
+<div id="map">
 <script>
 function initMap() {
 var options = {
@@ -62,6 +63,6 @@ lng : -81.6223497
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBodxd1y10yvBwDoy1REzINaTjtjcEpUb4&callback=initMap"
 async defer></script>
-
+</div>
 </div>
 <c:import url="/WEB-INF/jsp/footer.jsp" />
