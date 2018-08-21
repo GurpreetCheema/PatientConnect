@@ -4,6 +4,8 @@
 
 <h1>Welcome Administrator</h1>
 
+<c:out value="${message}"/>
+
 <c:url var="newUserHref" value="/newUser" />
 <li><a href="${newUserHref}"><button>Create Doctor</button></a></li><br>
 
