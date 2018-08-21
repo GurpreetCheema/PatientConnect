@@ -85,6 +85,10 @@ INSERT INTO prescriptions ( name   )
                 VALUES    ( 'Ammodium');
                 
 INSERT INTO prescriptions ( name   )
-                VALUES    ( 'Prednisone');                
+                VALUES    ( 'Prednisone');       
+                
+--       ADDS OFFICE TO DB			--
+INSERT INTO office(name, address, city, state, zip, phone)
+	VALUES	('Patient Connect Office', '11031 Clifton Blvd.', 'Cleveland', 'OH', 44102, '216-212-2666');
         
 COMMIT;
