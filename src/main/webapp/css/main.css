@@ -381,6 +381,7 @@ label.star:before {
 	border-size: 1px;
 	border-color: black;
 	border-style: solid;
+	border-radius: 20%;
 }
 .practice {
 	display: inline-block;
@@ -390,7 +391,7 @@ label.star:before {
 	font-weight: lighter;
 	text-size: 12pt;
 	margin-left: 15px;
-	border-style: solid;
+	text-decoration: underline;
 	
 }
 .docImage img{
@@ -404,3 +405,30 @@ label.star:before {
 }
 
 
+<<<<<<< HEAD
+=======
+/*------------------ Office doctors images----------------*/
+.responsiveDoctorOffice{
+    position: relative;
+    float: left;
+    width:  200px;
+    height: 200px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+
+.address{
+/* 	display: center;
+ */	color: black; 
+	font-family: Helvetica;
+	font-weight: bold;
+	font:center;
+	text-size: 12pt;
+	margin-left: 15px;
+	border-style: solid;
+}
+.drInfo{
+	margin-top: -35%;
+}
+>>>>>>> d471f0c7e376f7888ebb169ef1514ab236f36ad3
