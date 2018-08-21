@@ -7,22 +7,28 @@
 <%--  <h1 class="greeting">Hello, ${patient.firstName} ${patient.lastName}</h1>
  --%><!-- <table class= "patientTable" style="width:40%">
  -->
-<div class = "address">Office Location is: 9500 Euclid Ave, Cleveland, OH 44195</div>
- <div class="imgContainerOffice">
+<div class = "address">
+Address : Patient Connect Office <br>
+11031 Clifton Blvd.<br>
+Cleveland, OH 44102<br>
+
+Phone # : 216-212-2666 <br>
+
+
  
 <div>
+	<p>Dr.Toboggan</p>
+	<p>Dr.Kevorkian</p>
+	<p>Dr.Hooks</p>
 	<c:url var="imgSrcDoc" value="/img/Doctor1.jpg" />
 	<a href="${homePageHref}"><img src="${imgSrcDoc}"
 	class="responsiveDoctorOffice" /></a>
-	<p>Dr.Toboggan</p>
 	<c:url var="imgSrcDoc" value="/img/Doctor2.jpg" />
 	<a href="${homePageHref}"><img src="${imgSrcDoc}"
 	class="responsiveDoctorOffice" /></a>
-		<p>Dr.Kevorkian</p>
 	<c:url var="imgSrcDoc" value="/img/Doctor3.jpg" />
 	<a href="${homePageHref}"><img src="${imgSrcDoc}"
 	class="responsiveDoctorOffice" /></a>
-			<p>Dr.Hooks</p>
 
 </div>	
 	
@@ -63,6 +69,5 @@ lng : -81.6223497
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBodxd1y10yvBwDoy1REzINaTjtjcEpUb4&callback=initMap"
 async defer></script>
-</div>
 </div>
 <c:import url="/WEB-INF/jsp/footer.jsp" />
