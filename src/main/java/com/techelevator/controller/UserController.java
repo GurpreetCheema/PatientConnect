@@ -200,4 +200,16 @@ public class UserController {
 		doctorDAO.deleteDoctorById(doctorId);
 		return "redirect:/deleteDoctor";
 	}
+	
+	@RequestMapping(path="/deletePatient", method=RequestMethod.GET)
+	public String displayPatients(ModelMap modelHolder) {
+		modelHolder.put("patients", patientDAO.getAllPatients());
+		return "deletePatient";
+	}
+	
+	@RequestMapping(path="/deletePatient", method=RequestMethod.POST)
+	public String deletePatients(@RequestParam long patientId, ModelMap modelHolder) {
+		patientDAO.deletePatientById(patientId);
+		return "redirect:/deletePatient";
+	}
 }

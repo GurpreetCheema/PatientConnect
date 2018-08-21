@@ -1,5 +1,8 @@
 package com.techelevator.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +69,56 @@ public class JDBCPatientDAO implements PatientDAO{
 		String sqlUpdatePatientRelatorId = "UPDATE user_patient SET patient_id = ? "
 				+ " WHERE user_patient.user_id = ?";
 		jdbcTemplate.update(sqlUpdatePatientRelatorId, patientId, userId);
+	}
+
+	@Override
+	public long getUserIdFromPatientId(long patientId) {
+		String sqlGetUserId = "SELECT user_id " +
+							  "FROM user_patient " +
+							  "WHERE patient_id = ?";
+		
+		SqlRowSet thisDoctorId = jdbcTemplate.queryForRowSet(sqlGetUserId, patientId);
+		long currentPatientId = 0;
+		if(thisDoctorId.next()) {
+			currentPatientId = thisDoctorId.getLong("user_id");
+		}
+		
+		return currentPatientId;
+	}
+	
+	@Override
+	public void deletePatientById(long patientId) {
+		long userId = getUserIdFromPatientId(patientId);
+		String sqlDeleteDoctorFromDoctor ="DELETE "+
+							    			 "FROM patient " +
+							    			 "WHERE patient_id = ?";
+		jdbcTemplate.update(sqlDeleteDoctorFromDoctor, patientId);
+		String sqlDeleteDoctorFromUserDoctor ="DELETE "+
+   			 								 "FROM user_patient " +
+   			 								 "WHERE patient_id = ?";
+		jdbcTemplate.update(sqlDeleteDoctorFromUserDoctor, patientId);
+		String sqlDeleteDoctorFromUserRole ="DELETE "+
+   			 							   "FROM user_role " +
+   			 							   "WHERE user_id = ?";
+   		jdbcTemplate.update(sqlDeleteDoctorFromUserRole, userId);
+		String sqlDeleteDoctorFromAppUser ="DELETE "+
+   			 							   "FROM app_user " +
+   			 							   "WHERE user_id = ?";
+		jdbcTemplate.update(sqlDeleteDoctorFromAppUser, userId);
+		
+	}
+
+	@Override
+	public List<Patient> getAllPatients() {
+		List<Patient> allPatients = new ArrayList<Patient>();
+		String sqlGetAllPatients ="SELECT * "+
+								"FROM patient;";
+
+				SqlRowSet patients = jdbcTemplate.queryForRowSet(sqlGetAllPatients);
+				while(patients.next()) {
+					allPatients.add(mapRowToPatient(patients));
+				}
+		return allPatients;
 	}
 
 }
