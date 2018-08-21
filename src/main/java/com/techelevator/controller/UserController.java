@@ -184,11 +184,6 @@ public class UserController {
 		return "administrator";
 	}
 	
-	@RequestMapping(path="/result", method=RequestMethod.GET)
-	public String viewResult() {
-		return "result";
-	}
-	
 	@RequestMapping(path="/office", method=RequestMethod.GET)
 	public String viewOffice() {
 		return "office";

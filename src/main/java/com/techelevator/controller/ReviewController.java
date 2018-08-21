@@ -49,5 +49,12 @@ public class ReviewController {
 		reviewDAO.saveReview(newReview);
 		return "redirect:/result";
 	}
+	
+	@RequestMapping(path="/result", method=RequestMethod.GET)
+	public String viewResult(@RequestParam(required = false) Long doctorId, ModelMap docHolder, ModelMap allReviews) {
+		docHolder.put("doctorsDropdown", reviewDAO.getDoctorNames());
+		allReviews.put("reviews", reviewDAO.displayAllReviews());
+		return "result";
+	}
 
 }

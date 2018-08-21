@@ -20,31 +20,44 @@ public class JDBCReviewDAO implements ReviewDAO{
 			this.jdbcTemplate = new JdbcTemplate(dataSource);
 		}
 
-//		@Override
-//		public void saveReview(Review review) {
-//			String sqlSaveReview = "INSERT INTO reviews(doctor_id, user_id, review, rating) VALUES(?,?,?,?)";
-//			jdbcTemplate.update(sqlSaveReview, review.getDoctor_id(), review.getUser_id(), review.getReview(), 
-//					review.getRating());
-										
-	//}
+//		METHOD TO DISPLAY ALL THE REVIEWS SUBMITTED
+		@Override
+		public List<Review> displayAllReviews(){
+			List<Review> reviews = new ArrayList<>();
+			String sqlDisplayAllReviews = "SELECT * " + 
+										  "FROM reviews r ";
+			SqlRowSet results = jdbcTemplate.queryForRowSet(sqlDisplayAllReviews);
+			
+			while(results.next()) {
+				reviews.add(mapRowToReview(results));
+			}
+			return reviews;
+		}
+		
+//				GET DOCTOR NAME FOR SPECIFIC REVIEWS
+		@Override
+		public Doctor getDoctorNameByReview(Long doctorId) {
+			Doctor reviewDoctor = new Doctor();
+			String sqlDoctorNameByReview = "SELECT d.last_name, d.first_name" + 
+					  					   "FROM doctor d " + 
+					  					   "JOIN review r " + 
+					  					   "ON d.doctor_id = r.doctor_id " +
+					  					   "WHERE r.doctor_id = ?;";
+			SqlRowSet results = jdbcTemplate.queryForRowSet(sqlDoctorNameByReview, doctorId);
+			return reviewDoctor;
+		}
 
 		@Override
-		public List<Review> searchReviewsByDoctorId(long doctor_id) {
+		public List<Review> searchReviewsByDoctorId(Long doctorId) {
 			List<Review> reviewList = new ArrayList<>();
-			String sqlSearchReviewByDoctorId = "SELECT * FROM reviews WHERE doctor_id = ? ORDER BY";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchReviewByDoctorId, doctor_id);
+			String sqlSearchReviewByDoctorId = "SELECT * FROM reviews WHERE doctor_id = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchReviewByDoctorId, doctorId);
 		
 		while(results.next()){
 			reviewList.add(mapRowToReview(results));
 		}	
 		return reviewList;
 	}
-
-		@Override
-		public int getReviewCount(long doctor_id) {
-			// TODO Auto-generated method stub
-			return 0;
-		}
 
 //		MOETHOD TO SAVE A NEW REVIEW
 		@Override
@@ -73,7 +86,6 @@ public class JDBCReviewDAO implements ReviewDAO{
 			return allDoctors;
 		}
 		
-		
 		private Review mapRowToReview(SqlRowSet results) {
 		// TODO Auto-generated method stub
 			Review review = new Review();
@@ -84,16 +96,7 @@ public class JDBCReviewDAO implements ReviewDAO{
 			review.setRating(results.getInt("rating"));
 
 			return review;
-	}
-//
-//	@Override
-//	public int getReviewCount(long doctor_id) {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-//
-
-		
+	}		
 }
 
 
