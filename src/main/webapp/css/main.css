@@ -25,8 +25,7 @@ input {
 
 
 /* Button for Doctor and Patient Registration */
-.
-formSubmitButton {
+.formSubmitButton {
 	background-color: #77d42a;
 	border-radius: 6px;
 	border: 1px solid #268a16;
@@ -345,27 +344,27 @@ label.star:before {
 }
 #map{
 	height:400px;
-	width:100%;
 }
 .appointmentsDoc {
-	float: right;
+	display: inline-block;
 	border-width: 2px;
 	border-style: solid;
 	border-color: black;
 	opacity: 8.;
-	margin-top: 3%;
-	margin-right: 10%;
+	margin-top: 0%;
+	margin-left: 40px;
 }
+
 .infoDoc {
-	margin-top: 2%;
 	padding-top: 0%;
-	float: left;
+	display: inline-block;
+	margin-left: 40px;
 }
 
 .infoDoc h3{
-	text-align: left; 
-	padding: 10px; 
-	opacity: .6;
+	display: inline-block;
+	padding: 2px; 
+	opacity: .8;
 	color: White; 
 	font-family: Helvetica;
 	background-color: black;
@@ -373,17 +372,25 @@ label.star:before {
 	border-size: 1px;
 	border-color: black;
 	border-style: solid;
-	border-radius: 20%;
 }
-.infoDoc h2 {
-	text-align: left; 
-	padding: 5px; 
+.practice {
+	display: inline-block;
 	opacity: .8;
 	color: black; 
 	font-family: Helvetica;
-	background-color: white;
 	font-weight: lighter;
 	text-size: 12pt;
-	margin-left: 10px;
+	margin-left: 15px;
+	border-style: solid;
+	
+}
+.docImage img{
+	margin-top: 20px;
+	width: 20%;
+	float: left;
+	opacity: .8;
+	border-style: solid;
+	border-width: 10px;
+	border-color: black;
 }
 
