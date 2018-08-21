@@ -82,7 +82,7 @@ INSERT INTO prescriptions ( name   )
                 VALUES    ( 'Vicodin');
                 
 INSERT INTO prescriptions ( name   )
-                VALUES    ( 'Ammodium');
+                VALUES    ( 'Imodium');
                 
 INSERT INTO prescriptions ( name   )
                 VALUES    ( 'Prednisone');       
