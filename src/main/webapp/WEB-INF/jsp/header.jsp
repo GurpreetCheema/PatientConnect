@@ -12,7 +12,12 @@
 	    <script src="https://cdn.jsdelivr.net/jquery.timeago/1.4.1/jquery.timeago.min.js"></script>
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	    <c:url var="cssHref" value="./css/main.css" />
+	    	<c:url var="styleCssHref" value="./css/style.css" />
+	    	<c:url var="adminCssHref" value="./css/admin.css" />
+	    
 		<link rel="stylesheet" type="text/css" href="${cssHref}">
+		<link rel="stylesheet" type="text/css" href="${styleCssHref}">
+		<link rel="stylesheet" type="text/css" href="${adminCssHref}">
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$("time.timeago").timeago();

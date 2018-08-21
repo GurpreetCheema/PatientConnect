@@ -54,4 +54,5 @@ public class Doctor {
 	public void setPractice(String practice) {
 		this.practice = practice;
 	}
+
 }

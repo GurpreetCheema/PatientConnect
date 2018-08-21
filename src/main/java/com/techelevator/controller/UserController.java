@@ -88,23 +88,20 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/doctorRegistration", method=RequestMethod.GET)
-	public String registerDoctor() {
-		return "doctorRegistration";
+	public String registerDoctor(HttpSession session) {
+		if (userDAO.getRoleFromUserLogin(((User)session.getAttribute("currentUser")).getUserName()) == 3) {
+			return "doctorRegistration";
+		} else {
+			return "redirect:/";
+		}
 	}
 	
 	@RequestMapping(path="/doctorRegistration", method=RequestMethod.POST)
 	public String registerDoctor(
-				@RequestParam String firstName,				
-				@RequestParam String lastName,
-				@RequestParam String practice,
+				@ModelAttribute Doctor newDoctor,
 				HttpSession session,
 				RedirectAttributes flashScope  //pass a flash scope variable into save method
 			) {
-			Doctor newDoctor = new Doctor();
-			newDoctor.setFirstName(firstName);
-			newDoctor.setLastName(lastName);
-			newDoctor.setPractice(practice);
-			
 			Long newDoctorId = doctorDAO.save(newDoctor);
 			doctorDAO.updateDoctorRelatorId(newDoctorId, currId);
 			
@@ -120,36 +117,15 @@ public class UserController {
 	
 	@RequestMapping(path="/patientRegistration", method=RequestMethod.POST)
 	public String patientRegistration(
-				@RequestParam String firstName,				
-				@RequestParam String lastName,
-				@RequestParam String address,
-				@RequestParam String city,				
-				@RequestParam String state,
-				@RequestParam String zip,
-				@RequestParam String email,				
-				@RequestParam String phone,
-				@RequestParam String insurance,
+				@ModelAttribute Patient newPatient,
 				ModelMap modelHolder,
 				HttpSession session,
 				RedirectAttributes flashScope  //pass a flash scope variable into save method
 			) {
-			Patient newPatient = new Patient();
-			newPatient.setFirstName(firstName);
-			newPatient.setLastName(lastName);
-			newPatient.setAddress(address);
-			newPatient.setCity(city);
-			newPatient.setState(state);
-			newPatient.setZip(zip);
-			newPatient.setEmail(email);
-			newPatient.setPhone(phone);
-			newPatient.setInsurance(insurance);
 			
 			long patientId = patientDAO.save(newPatient);
 			
 			User sessionUser = (User)session.getAttribute("currentUser");
-			
-			System.out.println(patientDAO);
-			System.out.println(sessionUser);
 			
 			patientDAO.updatePatientRelatorId(patientId, sessionUser.getUserId());
 			
@@ -180,8 +156,12 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/administrator", method=RequestMethod.GET)
-	public String viewAdministratorPage() {
-		return "administrator";
+	public String viewAdministratorPage(HttpSession session) {
+		if(((User)session.getAttribute("currentUser")).getUserId() == 1) {
+			return "administrator";
+		} else {
+			return "redirect:/";
+		}
 	}
 	
 	@RequestMapping(path="/office", method=RequestMethod.GET)
@@ -190,9 +170,13 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/deleteDoctor", method=RequestMethod.GET)
-	public String displayDoctors(ModelMap modelHolder) {
-		modelHolder.put("doctors", doctorDAO.getAllDoctors());
-		return "deleteDoctor";
+	public String displayDoctors(ModelMap modelHolder, HttpSession session) {
+		if(userDAO.getRoleFromUserLogin(((User)session.getAttribute("currentUser")).getUserName()) == 3) {
+			modelHolder.put("doctors", doctorDAO.getAllDoctors());
+			return "deleteDoctor";
+		} else {
+			return "redirect:/";
+		}
 	}
 	
 	@RequestMapping(path="/deleteDoctor", method=RequestMethod.POST)
@@ -202,9 +186,13 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/deletePatient", method=RequestMethod.GET)
-	public String displayPatients(ModelMap modelHolder) {
-		modelHolder.put("patients", patientDAO.getAllPatients());
-		return "deletePatient";
+	public String displayPatients(ModelMap modelHolder, HttpSession session) {
+		if(userDAO.getRoleFromUserLogin(((User)session.getAttribute("currentUser")).getUserName()) == 3) {
+			modelHolder.put("patients", patientDAO.getAllPatients());
+			return "deletePatient";
+		} else {
+			return "redirect:/";
+		}
 	}
 	
 	@RequestMapping(path="/deletePatient", method=RequestMethod.POST)

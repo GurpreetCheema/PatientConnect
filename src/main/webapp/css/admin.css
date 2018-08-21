@@ -1,0 +1,14 @@
+.deleteDoctorDiv {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-template-rows: auto;
+	align-items: center;
+}
+
+input.formSubmitButton {
+	width: 120px;
+}
+
+.doctorName {
+	padding-right: 12px;
+}
