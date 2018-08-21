@@ -5,21 +5,28 @@
 <link rel="stylesheet" href="/maps/documentation/javascript/cgc/demos.css">
 <h3>View Office information Below:</h3>
  <h1 class="greeting">Hello, ${patient.firstName} ${patient.lastName}</h1>
-<table class= "patientTable" style="width:40%">
-
+<!-- <table class= "patientTable" style="width:40%">
+ -->
 <div>
+
+
+
 	<c:url var="imgSrcDoc" value="/img/Doctor1.jpg" />
 	<a href="${homePageHref}"><img src="${imgSrcDoc}"
-	class="responsiveDoctorT" /></a>
+	class="responsiveDoctorOffice" />Dr.Toboggan</a>
 	<c:url var="imgSrcDoc" value="/img/Doctor2.jpg" />
 	<a href="${homePageHref}"><img src="${imgSrcDoc}"
-	class="responsiveDoctorK" /></a>
+	class="responsiveDoctorOffice" />Dr.Kevorkian</a>
 	<c:url var="imgSrcDoc" value="/img/Doctor3.jpg" />
 	<a href="${homePageHref}"><img src="${imgSrcDoc}"
-	class="responsiveDoctorH" /></a>
+	class="responsiveDoctorOffice" />Dr.Hooks</a>
 	
 </div>	
-<c:forEach var="office" items="${officeInfo}">
+	
+<div class = "address">Address: 9500 Euclid Ave, Cleveland, OH 44195</div>
+
+<!-- Not getting from Database -->
+<%-- <c:forEach var="office" items="${officeInfo}">
 <div>
 <h2>${office.name}</h2>
 <h2>${office.address}</h2>
@@ -30,10 +37,8 @@
 <h2>${office.phone}</h2>
 </div> 
 
-
-
-
-</c:forEach>
+<div>
+</c:forEach> --%>
 <div id="map"></div>
 
 <script>
@@ -41,23 +46,22 @@ function initMap() {
 var options = {
 zoom : 12,
 center : {
-lat : 41.4993,
-lng : -81.6944
+lat : 41.5022739,
+lng : -81.6223497
 }}
  var map = new google.maps.Map(document.getElementById('map'), options);
  var marker = new google.maps.Marker({
         position : {
-            lat : 41.4993,
-            lng : -81.6944},
+            lat : 41.5022739,
+            lng : -81.6223497},
         map : map,
     });
     var infoWindow = new google.maps.infoWindow({});
 }
 </script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBodxd1y10yvBwDoy1REzINaTjtjcEpUb4&libraries=places&callback=initAutocomplete" async defer></script>
+</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBodxd1y10yvBwDoy1REzINaTjtjcEpUb4&callback=initMap"
 async defer></script>
-</body>
-</html>
 
+</div>
 <c:import url="/WEB-INF/jsp/footer.jsp" />

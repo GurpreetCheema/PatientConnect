@@ -394,3 +394,20 @@ label.star:before {
 	border-color: black;
 }
 
+
+/*------------------ Office doctors images----------------*/
+.responsiveDoctorOffice{
+position: relative;
+    float: left;
+    width:  200px;
+    height: 200px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+
+.address{
+margin: 20px;	
+padding:20px;
+}
+}
