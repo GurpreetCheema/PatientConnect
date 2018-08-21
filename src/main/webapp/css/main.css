@@ -177,7 +177,7 @@ div.stars {
 input.star { display: none; }
 
 label.star {
-  float: left;
+  float: right;
   padding: 10px;
   font-size: 36px;
   color: #444;

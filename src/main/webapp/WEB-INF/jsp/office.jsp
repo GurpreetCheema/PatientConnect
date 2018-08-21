@@ -2,13 +2,23 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<link rel="stylesheet"
-href="/maps/documentation/javascript/cgc/demos.css">
-
+<link rel="stylesheet" href="/maps/documentation/javascript/cgc/demos.css">
 <h3>View Office information Below:</h3>
-  <h1 class="greeting">Hello, ${patient.firstName} ${patient.lastName}</h1>
+ <h1 class="greeting">Hello, ${patient.firstName} ${patient.lastName}</h1>
 <table class= "patientTable" style="width:40%">
 
+<div>
+	<c:url var="imgSrcDoc" value="/img/Doctor1.jpg" />
+	<a href="${homePageHref}"><img src="${imgSrcDoc}"
+	class="responsiveDoctorT" /></a>
+	<c:url var="imgSrcDoc" value="/img/Doctor2.jpg" />
+	<a href="${homePageHref}"><img src="${imgSrcDoc}"
+	class="responsiveDoctorK" /></a>
+	<c:url var="imgSrcDoc" value="/img/Doctor3.jpg" />
+	<a href="${homePageHref}"><img src="${imgSrcDoc}"
+	class="responsiveDoctorH" /></a>
+	
+</div>	
 <c:forEach var="office" items="${officeInfo}">
 <div>
 <h2>${office.name}</h2>
@@ -19,7 +29,10 @@ href="/maps/documentation/javascript/cgc/demos.css">
 <h2>${office.practice}</h2>
 <h2>${office.phone}</h2>
 </div> 
-  
+
+
+
+
 </c:forEach>
 <div id="map"></div>
 
