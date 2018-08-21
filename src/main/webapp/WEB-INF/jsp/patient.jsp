@@ -71,6 +71,7 @@
 	</div>
 	<br>
 	<br>
+	<div class="patientAPP" style="align-text: center; margin-left: 60px; opacity: .9;">
 	<!-- 						SCHEDULING BUTTON								 -->
 	<a href="https://app.acuityscheduling.com/schedule.php?owner=16497853" 
 	target="_blank" class="acuity-embed-button" 
@@ -115,6 +116,7 @@
 	 target="_blank" 
 	 class="acuity-embed-button">Schedule Appointment</a></div>
 	 <script src="https://embed.acuityscheduling.com/embed/bar/16497853.js" async></script>
+	 </div>
 </div>
 
 
