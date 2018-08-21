@@ -47,8 +47,7 @@
 
 				<!-- 				DOCTOR DROPDOWN	¯\_( ( )_/¯				 -->
 
-
-				<select name="doctorId" id="dropDown">
+				<select name="doctorId" id="dropDown" style="width:150px;" >
 					<c:forEach var="doctors" items="${doctorsDropdown}">
 						<option value="${doctors.doctorId}">
 							<c:out value="Dr. ${doctors.lastName}" />
@@ -57,7 +56,7 @@
 				</select>
 			</p>
 	
-		<div class="stars">		
+		<div class="stars" style="margin-right: 90%;">		
 			<input class="star star-5" id="star-5" type="radio" value="5" name="rating" /> 
 				<label class="star star-5" for="star-5"></label> 
 			<input class="star star-4" id="star-4" type="radio" value="4" name="rating" />

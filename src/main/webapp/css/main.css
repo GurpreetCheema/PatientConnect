@@ -164,9 +164,6 @@ img.responsiveDoctor {
 	border-radius: 20;
 }
 
-.starRatingUrl {
-	widht:50px;
-}
 
 .emptySpace {
 	padding-bottom: 400px;
@@ -178,15 +175,14 @@ footer{
 }
 
 /* --------------Star Rating------------------*/
-.stars {
-  display: inline-block;
-  margin-right: 20%;
-}
+
 .stars h3{
 	display: inline-block;
 	margin-top: 25px;
 }
-
+.stars {
+	max-width: 280px;
+}
 input.star { display: none; }
 
 label.star {
