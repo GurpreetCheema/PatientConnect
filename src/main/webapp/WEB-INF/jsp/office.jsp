@@ -11,11 +11,7 @@
 Address : Patient Connect Office <br>
 11031 Clifton Blvd.<br>
 Cleveland, OH 44102<br>
-
 Phone # : 216-212-2666 <br>
-
-
- 
 <div>
 	<p>Dr.Toboggan</p>
 	<p>Dr.Kevorkian</p>

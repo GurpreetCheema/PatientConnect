@@ -352,6 +352,8 @@ label.star:before {
 }
 #map{
 	height:400px;
+	position:relative;
+	
 	
 }
 .appointmentsDoc {
@@ -404,3 +406,27 @@ label.star:before {
 }
 
 
+
+
+
+/*------------------ Office doctors images----------------*/
+.responsiveDoctorOffice{
+position: relative;
+    float: left;
+    width:  200px;
+    height: 200px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+
+.address{
+/* 	display: center;
+ */	color: black; 
+	font-family: Helvetica;
+	font-weight: bold;
+	font:center;
+	text-size: 12pt;
+	margin-left: 15px;
+	border-style: solid;
+}
