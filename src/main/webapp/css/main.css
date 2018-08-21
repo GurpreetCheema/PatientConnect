@@ -381,6 +381,7 @@ label.star:before {
 	border-size: 1px;
 	border-color: black;
 	border-style: solid;
+	border-radius: 20%;
 }
 .practice {
 	display: inline-block;
@@ -390,7 +391,7 @@ label.star:before {
 	font-weight: lighter;
 	text-size: 12pt;
 	margin-left: 15px;
-	border-style: solid;
+	text-decoration: underline;
 	
 }
 .docImage img{
@@ -406,7 +407,7 @@ label.star:before {
 
 /*------------------ Office doctors images----------------*/
 .responsiveDoctorOffice{
-position: relative;
+    position: relative;
     float: left;
     width:  200px;
     height: 200px;
@@ -424,4 +425,7 @@ position: relative;
 	text-size: 12pt;
 	margin-left: 15px;
 	border-style: solid;
+}
+.drInfo{
+	margin-top: -35%;
 }
