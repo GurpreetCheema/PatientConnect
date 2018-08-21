@@ -105,6 +105,7 @@ public class JDBCDoctorDAO implements DoctorDAO{
 				return thisDoctor;
 	}
 	
+	
 	public Doctor mapRowToDoctor(SqlRowSet user) {
 		Doctor thisDoctor = new Doctor();
 		

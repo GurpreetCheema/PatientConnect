@@ -62,7 +62,8 @@ public class JDBCReviewDAO implements ReviewDAO{
 		return reviewList;
 	}
 
-//		MOETHOD TO SAVE A NEW REVIEW
+//		METHOD TO SAVE A NEW REVIEW
+		
 		@Override
 		public Long saveReview(Review review) {
 			String sqlNewReview = "INSERT INTO reviews(doctor_id, user_id, review, rating) "
@@ -83,10 +84,31 @@ public class JDBCReviewDAO implements ReviewDAO{
 				
 				doctor.setDoctorId(results.getLong("doctor_id"));
 				doctor.setLastName(results.getString("last_name"));
+				doctor.setFirstName(results.getString("first_name"));
 				
 				allDoctors.add(doctor);
 			}
 			return allDoctors;
+		}
+		
+//		GET DOCTOR INFO FROM DR ID
+		
+		@Override
+		public List<Doctor> getDoctorInfoFromId(Long doctorId) {
+			List<Doctor> doctorList = new ArrayList<>();
+			String sqlDoctorNameByReview = "SELECT * " + 
+										   "FROM doctor d " + 
+										   "WHERE d.doctor_id = ?;";
+			SqlRowSet results = jdbcTemplate.queryForRowSet(sqlDoctorNameByReview, doctorId);
+			while(results.next()) {
+				Doctor doctor = new Doctor();
+				doctor.setDoctorId(results.getLong("doctor_id"));
+				doctor.setLastName(results.getString("last_name"));
+				doctor.setFirstName(results.getString("first_name"));
+				doctor.setPractice(results.getString("practice"));
+				doctorList.add(doctor);
+			}
+			return doctorList;
 		}
 		
 		private Review mapRowToReview(SqlRowSet results) {
