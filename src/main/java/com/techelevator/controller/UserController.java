@@ -184,11 +184,6 @@ public class UserController {
 		return "administrator";
 	}
 	
-	@RequestMapping(path="/result", method=RequestMethod.GET)
-	public String viewResult() {
-		return "result";
-	}
-	
 	@RequestMapping(path="/office", method=RequestMethod.GET)
 	public String viewOffice() {
 		return "office";
@@ -204,5 +199,17 @@ public class UserController {
 	public String deleteDoctors(@RequestParam long doctorId, ModelMap modelHolder) {
 		doctorDAO.deleteDoctorById(doctorId);
 		return "redirect:/deleteDoctor";
+	}
+	
+	@RequestMapping(path="/deletePatient", method=RequestMethod.GET)
+	public String displayPatients(ModelMap modelHolder) {
+		modelHolder.put("patients", patientDAO.getAllPatients());
+		return "deletePatient";
+	}
+	
+	@RequestMapping(path="/deletePatient", method=RequestMethod.POST)
+	public String deletePatients(@RequestParam long patientId, ModelMap modelHolder) {
+		patientDAO.deletePatientById(patientId);
+		return "redirect:/deletePatient";
 	}
 }
