@@ -148,10 +148,12 @@ img.responsiveDoctor {
 	color: black;
 	margin-left: 8px;
 	margin-right: 8px;
+	padding-bottom: 30px;
+	text-decoration: underline;
+	font-family: Helvetica;
 }
 .form-group {
 	margin-top: 10px;
-	
 }
 
 .btn {
@@ -176,9 +178,13 @@ footer{
 }
 
 /* --------------Star Rating------------------*/
-div.stars {
-  width: 470px;
+.stars {
   display: inline-block;
+  margin-right: 20%;
+}
+.stars h3{
+	display: inline-block;
+	margin-top: 25px;
 }
 
 input.star { display: none; }
@@ -214,8 +220,7 @@ label.star:before {
 	height:80%;
 }
 /*---------------- star rating ends here ------------------*/
-.patientInfoHead 
-{
+.patientInfoHead {
 	text-align: center; 
 	padding: 10px; 
 	opacity: .8;
@@ -429,3 +434,25 @@ label.star:before {
 .drInfo{
 	margin-top: -35%;
 }
+
+.form-groupReview {
+	width: 50%;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
