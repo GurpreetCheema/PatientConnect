@@ -41,7 +41,7 @@
 	</c:if>
 	</div>
 <div class="drInfo">
-<h4>NAME: ${doctor.firstName} ${doctor.lastName}</h4>
+<h4>NAME: <em>${doctor.firstName} ${doctor.lastName}</em></h4>
 <%-- <h4>EMAIL: ${doctor.email}</h4> --%>
 </div>
 
