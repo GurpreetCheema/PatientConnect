@@ -11,11 +11,10 @@
 <button>Message A Patient</button>
 <a href="https://www.spotify.com/us/">Listen to Spotify</a>
 </div>
+<div class ="docImage">
+<img src="Doctor${doctor.doctorId}.img">
+</div>
 <div class=infoDoc>
-<%-- 	<h3><strong>First</strong> Name:</h3> 
-		<h2>${doctor.firstName}</h2>
-	<h3><strong>Last</strong> Name:</h3> 
-		<h2>${doctor.lastName}</h2> --%>
 	<h3><strong>Practice</strong> Type:</h3> 
 		<h2>${doctor.practice}</h2>
 </div>
