@@ -148,12 +148,10 @@ img.responsiveDoctor {
 	color: black;
 	margin-left: 8px;
 	margin-right: 8px;
-	padding-bottom: 30px;
-	text-decoration: underline;
-	font-family: Helvetica;
 }
 .form-group {
 	margin-top: 10px;
+	
 }
 
 .btn {
@@ -178,13 +176,9 @@ footer{
 }
 
 /* --------------Star Rating------------------*/
-.stars {
+div.stars {
+  width: 470px;
   display: inline-block;
-  margin-right: 20%;
-}
-.stars h3{
-	display: inline-block;
-	margin-top: 25px;
 }
 
 input.star { display: none; }
@@ -220,7 +214,8 @@ label.star:before {
 	height:80%;
 }
 /*---------------- star rating ends here ------------------*/
-.patientInfoHead {
+.patientInfoHead 
+{
 	text-align: center; 
 	padding: 10px; 
 	opacity: .8;
@@ -357,6 +352,8 @@ label.star:before {
 }
 #map{
 	height:400px;
+	position:relative;
+	
 	
 }
 .appointmentsDoc {
@@ -386,7 +383,6 @@ label.star:before {
 	border-size: 1px;
 	border-color: black;
 	border-style: solid;
-	border-radius: 20%;
 }
 .practice {
 	display: inline-block;
@@ -396,7 +392,7 @@ label.star:before {
 	font-weight: lighter;
 	text-size: 12pt;
 	margin-left: 15px;
-	text-decoration: underline;
+	border-style: solid;
 	
 }
 .docImage img{
@@ -410,9 +406,12 @@ label.star:before {
 }
 
 
+
+
+
 /*------------------ Office doctors images----------------*/
 .responsiveDoctorOffice{
-    position: relative;
+position: relative;
     float: left;
     width:  200px;
     height: 200px;
@@ -431,13 +430,3 @@ label.star:before {
 	margin-left: 15px;
 	border-style: solid;
 }
-.drInfo{
-	margin-top: -35%;
-}
-
-
-.form-groupReview {
-	width: 50%;
-}
-
-
