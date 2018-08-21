@@ -78,7 +78,7 @@
 				placeholder="Write Review Here" required/>
 		</div>
 		<div class="buttonMargin">
-			<button type="submit" class="btn btn-default">Please Submit
+			<button type="submit" class="btn btn-default">Submit
 				Your Review</button>
 			<br>
 		</div>
