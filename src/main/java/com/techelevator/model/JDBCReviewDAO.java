@@ -38,12 +38,15 @@ public class JDBCReviewDAO implements ReviewDAO{
 		@Override
 		public Doctor getDoctorNameByReview(Long doctorId) {
 			Doctor reviewDoctor = new Doctor();
-			String sqlDoctorNameByReview = "SELECT d.last_name, d.first_name" + 
+			String sqlDoctorNameByReview = "SELECT d.last_name, d.first_name " + 
 					  					   "FROM doctor d " + 
-					  					   "JOIN review r " + 
+					  					   "JOIN reviews r " + 
 					  					   "ON d.doctor_id = r.doctor_id " +
 					  					   "WHERE r.doctor_id = ?;";
 			SqlRowSet results = jdbcTemplate.queryForRowSet(sqlDoctorNameByReview, doctorId);
+			while(results.next()) {
+				
+			}
 			return reviewDoctor;
 		}
 
@@ -64,7 +67,7 @@ public class JDBCReviewDAO implements ReviewDAO{
 		public Long saveReview(Review review) {
 			String sqlNewReview = "INSERT INTO reviews(doctor_id, user_id, review, rating) "
 											 + "VALUES(?, ?, ?, ?) RETURNING review_id;";
-			return jdbcTemplate.queryForObject(sqlNewReview, Long.class, review.getDoctor_id(), review.getUser_id(), 
+			return jdbcTemplate.queryForObject(sqlNewReview, Long.class, review.getDoctorId(), review.getUserId(), 
 												review.getReview(), review.getRating());
 		}
 
@@ -89,9 +92,9 @@ public class JDBCReviewDAO implements ReviewDAO{
 		private Review mapRowToReview(SqlRowSet results) {
 		// TODO Auto-generated method stub
 			Review review = new Review();
-			review.setReview_id(results.getLong("review_id"));
-			review.setDoctor_id(results.getInt("doctor_id"));
-			review.setUser_id(results.getInt("user_id"));
+			review.setReviewId(results.getLong("review_id"));
+			review.setDoctorId(results.getInt("doctor_id"));
+			review.setUserId(results.getInt("user_id"));
 			review.setReview(results.getString("review"));
 			review.setRating(results.getInt("rating"));
 
