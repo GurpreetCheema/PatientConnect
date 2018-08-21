@@ -56,6 +56,14 @@ input {
 	border-radius: 50%;
 } */
 
+.newDoctorMessage {
+	font-size: 2em;
+	color: white;
+	background-color: green;
+	width: 100%;
+	text-align: center;
+}
+
 .doctorRegistration {
 	text-align: center;
 }
