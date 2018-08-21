@@ -6,9 +6,10 @@ public interface ReviewDAO {
 	
 	public Long saveReview(Review review);
 	public List<Doctor> getDoctorNames();
-	List<Review> searchReviewsByDoctorId(Long doctorId);
-	List<Review> displayAllReviews();
-	Doctor getDoctorNameByReview(Long doctorId);
+	public List<Review> searchReviewsByDoctorId(Long doctorId);
+	public List<Review> displayAllReviews();
+	public Doctor getDoctorNameByReview(Long doctorId);
+	public List<Doctor> getDoctorInfoFromId(Long doctorId);
 
 }
 

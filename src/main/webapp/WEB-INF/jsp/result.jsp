@@ -35,22 +35,22 @@
 </form>
 <div>
 
-<c:if test="${doctorId == null}">
-	<c:forEach items="${reviews}" var="review">
-		<c:out value="${doctors.lastName}" />
+</div>
+ <c:forEach var="doctors" items="${docName}" >
+	<div class ="docImage">
+		<img src="/capstone/img/Doctor${doctors.doctorId}.jpg">
+	</div>
+		<c:out value="${doctors.lastName}, " />
 		<c:out value="${doctors.firstName}" />
-		<c:out value="${review.rating}" />
-		<c:out value="${review.review}" />
-	</c:forEach>
-</c:if>
-<c:if test="${doctorId != null}">
+		<c:out value="${doctors.practice}" />
+	<br/> 
 	<c:forEach items="${docReviews}" var="review">
-		<c:out value="${doctors.lastName}" />
-		<c:out value="${doctors.firstName}" />
+
 		<c:out value="${review.rating}" />
+			<br/>
 		<c:out value="${review.review}" />
-	</c:forEach>
-</c:if>
+	</c:forEach> 
+</c:forEach> 
 </div>
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />
