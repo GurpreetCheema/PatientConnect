@@ -16,8 +16,7 @@ public interface PatientDAO {
 
 	public long getUserIdFromPatientId(long patientId);
 
-	public void updatePatientInfo(String firstName, String lastName, String address, String city, String state, int zip,
-			String email, String phone, String insurance, Long patientId);
+	public void updatePatientInfo(Patient update, Long patientId);
 
 	public long getPatientIdFromUserId(long userId);
 }

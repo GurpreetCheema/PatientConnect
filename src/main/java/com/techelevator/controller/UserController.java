@@ -223,4 +223,27 @@ public class UserController {
 		flashScope.addFlashAttribute("message", "Patient Deleted");
 		return "redirect:/deletePatient";
 	}
+	
+	@RequestMapping(path="/updatePatientInfo", method=RequestMethod.GET)
+	public String updatePatient() {
+		return "updatePatientInfo";
+	}
+	
+	@RequestMapping(path="/updatePatientInfo", method=RequestMethod.POST)
+	public String updatePatient(
+				@ModelAttribute Patient newPatient,
+				ModelMap modelHolder,
+				HttpSession session,
+				RedirectAttributes flashScope  //pass a flash scope variable into save method
+			) {
+			currId = ((User)session.getAttribute("currentUser")).getUserId();
+			long patientId = patientDAO.getPatientIdFromUserId(currId);
+	
+			patientDAO.updatePatientInfo(newPatient, patientId);
+			
+			flashScope.addFlashAttribute("message", "Information updated!");
+			
+			return "redirect:/patient";
+	}
+
 }
