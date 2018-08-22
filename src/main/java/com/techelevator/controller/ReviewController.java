@@ -47,21 +47,22 @@ public class ReviewController {
 		newReview.setReview(review);
 		
 		reviewDAO.saveReview(newReview);
-		return "redirect:/result";
+		return "redirect:/result?doctorId="+doctorId;
 	}
 	
 	@RequestMapping(path="/result", method=RequestMethod.POST)
-	public String viewSpecificReviews(@RequestParam(required = false) Long doctorId, ModelMap docHolder, ModelMap modelHolder) {
+	public String viewSpecificReviews(@RequestParam(required = false) Long doctorId, ModelMap docHolder, ModelMap docNameHolder, ModelMap modelHolder) {
 		docHolder.put("doctorsDropdown", reviewDAO.getDoctorNames());
+		docNameHolder.put("docName", reviewDAO.getDoctorInfoFromId(doctorId));
 		modelHolder.put("docReviews", reviewDAO.searchReviewsByDoctorId(doctorId));
 		
-		return "redirect:/result";
+		return "redirect:/result?doctorId="+doctorId;
 	}
 	
 	@RequestMapping(path="/result", method=RequestMethod.GET)
-	public String viewResult(@RequestParam(required = false) Long doctorId, ModelMap docHolder, ModelMap allReviews, ModelMap modelHolder) {
+	public String viewResult(@RequestParam(required = false) Long doctorId, ModelMap docHolder, ModelMap docNameHolder, ModelMap modelHolder) {
 		docHolder.put("doctorsDropdown", reviewDAO.getDoctorNames());
-		allReviews.put("reviews", reviewDAO.displayAllReviews());
+		docNameHolder.put("docName", reviewDAO.getDoctorInfoFromId(doctorId));
 		modelHolder.put("docReviews", reviewDAO.searchReviewsByDoctorId(doctorId));
 		return "result";
 	}

@@ -143,14 +143,13 @@ img.responsiveDoctor {
 
 .docReview {
 	text-align: center;
-	letter-spacing: 1px;
-	margin-top: 80px;
-	color: black;
-	margin-left: 8px;
-	margin-right: 8px;
-	padding-bottom: 30px;
-	text-decoration: underline;
+	background-color: black;
 	font-family: Helvetica;
+	padding: 10px;
+	opacity: .8;
+	font-size: 3em;
+	font-weight: lighter;
+
 }
 .form-group {
 	margin-top: 10px;
@@ -164,9 +163,6 @@ img.responsiveDoctor {
 	border-radius: 20;
 }
 
-.starRatingUrl {
-	widht:50px;
-}
 
 .emptySpace {
 	padding-bottom: 400px;
@@ -178,13 +174,22 @@ footer{
 }
 
 /* --------------Star Rating------------------*/
-.stars {
-  display: inline-block;
-  margin-right: 20%;
-}
+
 .stars h3{
 	display: inline-block;
 	margin-top: 25px;
+}
+.stars {
+	max-width: 280px;
+}
+
+.row {
+/* 	border-style: solid;
+	border-color: black;
+	border-width: 2px; */
+	padding-left: 5px;
+	padding-bottom: 20px;
+	
 }
 
 input.star { display: none; }
@@ -229,6 +234,7 @@ label.star:before {
 	background-color: black;
 	font-weight: lighter;
 	margin-top: 5%;
+	font-size: 3em;
 	
 }
 
@@ -354,6 +360,7 @@ label.star:before {
 	color: #2a2a2a;
     font-family: futura;
     text-decoration: underline;
+    padding-bottom: 5px;
 }
 #map{
 	height:400px;
@@ -438,6 +445,31 @@ label.star:before {
 
 .form-groupReview {
 	width: 50%;
+}
+
+.reviewAll {
+	background-color: white;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	margin-right: 5px;
+	opacity: .8;
+	display: inline-block;
+	
+}
+.reviewAll img {
+	width: 40%;
+	margin-left:30%;
+	float: right;
+	margin-top: -20%;
+	margin-right: 10%;
+	opacity: .7;
+
+}
+.clearfix {
+	overflow: auto;
 }
 
 
