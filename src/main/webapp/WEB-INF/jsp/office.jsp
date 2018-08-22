@@ -24,9 +24,36 @@ Phone # : 216-212-2666 <br>
 	<p>Dr.Kevorkian</p>
 	<p>Dr.Hooks</p>
 </div> -->
-<div class ="threeMusketeer">
-	 <span class="tooltiptext">Dr.Toboggan</span>
 
+<div>
+<figure>
+  <p><img src="/img/Doctor1.jpg"
+    width="136" height="200"
+    alt="Dr.Toboggan">
+  <figcaption>Dr.Toboggan</figcaption>
+</figure>
+<figure>
+  <p><img src="/img/Doctor2.jpg"
+    width="136" height="200"
+    alt="Kevorkian">
+  <figcaption>Dr.Kevorkian</figcaption>
+</figure>
+
+<figure>
+  <p><img src="/img/Doctor3.jpg"
+    width="136" height="200"
+    alt="Dr.	Hooks">
+  <figcaption>Dr.Hooks</figcaption>
+</figure>
+
+</div>
+
+
+
+
+
+<%-- <div class ="threeMusketeer">
+	<span class="tooltiptext">Dr.Toboggan</span>
 	<c:url var="imgSrcDoc" value="/img/Doctor1.jpg" />
 	<a href="${homePageHref}"><img src="${imgSrcDoc}"
 	class="responsiveDoctorOffice" /></a>
@@ -42,8 +69,9 @@ Phone # : 216-212-2666 <br>
 	<a href="${homePageHref}"><img src="${imgSrcDoc}"
 	class="responsiveDoctorOffice" /></a>
 
+</div> --%>
+<div id ="spaceBetweenMapandDoc">
 </div>
-
 <div id="map">
 <script>
 function initMap() {

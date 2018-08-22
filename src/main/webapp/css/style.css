@@ -1,9 +1,4 @@
-body { 
-    background: url("../img/background8.jpg") repeat 0 0;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-}
+
 
 .headerIMG {
 	display: flex;
@@ -466,8 +461,15 @@ h2{
 	float:left;
 }
 
+#spaceBetweenMapandDoc{
+margin:30px;	
+	
+}
+figure {
+  float: right;
+  width: 30%;
 
-
+}
 
 
 
