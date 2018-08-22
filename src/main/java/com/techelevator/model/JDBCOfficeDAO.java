@@ -4,6 +4,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 public class JDBCOfficeDAO implements OfficeDAO{
 	
@@ -17,7 +18,13 @@ public class JDBCOfficeDAO implements OfficeDAO{
 	@Override
 	public Office getOfficeInfo() {
 		Office newOffice = new Office();
+		String sqlGetOffice = "SELECT * "+
+							 "FROM office;";
 		
+		SqlRowSet location = jdbcTemplate.queryForRowSet(sqlGetOffice);
+		if(location.next()) {
+			newOffice
+		}
 		
 		return newOffice;
 	}
