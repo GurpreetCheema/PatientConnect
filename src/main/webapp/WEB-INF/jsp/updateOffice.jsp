@@ -2,6 +2,37 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
+
+<script type="text/javascript">
+	$(document).ready(function () {
+	
+		$("form").validate({
+			
+			rules : {
+				name : {
+					required : true
+				},
+				address : {
+					required : true
+				},
+				city : {
+					required : true
+				},
+				state : {
+					required : true
+				},
+				zip : {
+					required : true
+				},
+				phone : {
+					required : true
+				}
+			},
+			errorClass : "error"
+		});
+	});
+</script>
+
 <h1>Update Office Info</h1>
 <div class= "patLayout">
 <h1 class=patientRegistration><br>Please Fill Out The Information Below</h1>
@@ -24,15 +55,15 @@
 <br>
 <!--  Address -->
 	<label for="officeAddress"> Street Address:</label> <br> <input type="text"
-	name="address" id="address" />	
+	name="address" id="address" />
 	<br>	
 <!--  City -->
 <label for="officeCity"> City:</label> <br> <input type="text"
-	name="city" id="city" />	
+	name="city" id="city" />
 <br>		
 <!--  State -->	
 	<p> <label for="state">State: </label><br> 	
-<select name="state" id="dropDown">
+<select name="state" id="state">
 	<option value="AL">Alabama</option>
 	<option value="AK">Alaska</option>
 	<option value="AZ">Arizona</option>
