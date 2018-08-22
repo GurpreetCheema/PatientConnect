@@ -8,9 +8,6 @@ div.stars {
 	display:in-line;
 }
 
-
-
-
 /*------------------ Office doctors images----------------*/
 .responsiveDoctorOffice{
     float: center;
@@ -28,7 +25,7 @@ div.stars {
 	font-weight: lighter;
 	font:center;
 	text-size: 12pt;
-	margin-left: 15px;
+	margin-left: 10px;
 	border-style: solid;
 }
 
@@ -50,7 +47,7 @@ div.stars {
 .topSearchOffice{
 	text-align:center;
 }
-.addressOffice1{
+.address{
 		text-align:center;
 	font:bold;
 	   border:1px solid #021a40;
@@ -72,16 +69,25 @@ margin:30px;
 	
 }
 figure {
-  float: right;
-  width: 30%;
+  
   text-align: center;
   font-style: italic;
   font-size: smaller;
   text-indent: 0;
   border: thin silver solid;
-  margin: 0.5em;
-  padding: 0.5em;
+  padding: 2rem;
+  width: 100%;
+  height: auto;
 }
 
+#map1{
+margin-top:200px;
 
+}
 
+.threeImg{
+display:flex;
+flex: 1 0 33%;
+min-width:50px;
+ width: 100%;
+   height: auto;}
