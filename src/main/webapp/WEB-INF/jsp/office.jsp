@@ -25,9 +25,29 @@ Phone # : 216-212-2666 <br>
 	<p>Dr.Hooks</p>
 </div> -->
 
+
 <div>
 <figure>
-  <p><img src="/img/Doctor1.jpg"
+<img src="/capstone/img/Doctor1.jpg"
+    width="136" height="200"/>
+ <figcaption>Dr.Toboggan</figcaption>
+</figure>
+<figure>
+<img src="/capstone/img/Doctor2.jpg"
+    width="136" height="200"/>
+ <figcaption>Dr.Toboggan</figcaption>
+</figure>
+
+<figure>
+<img src="/capstone/img/Doctor3.jpg"
+    width="136" height="200"/>
+ <figcaption>Dr.Toboggan</figcaption>
+</figure>
+
+
+</div>
+ 
+<!--   <p><img src="/img/Doctor1.jpg"
     width="136" height="200"
     alt="Dr.Toboggan">
   <figcaption>Dr.Toboggan</figcaption>
@@ -44,9 +64,8 @@ Phone # : 216-212-2666 <br>
     width="136" height="200"
     alt="Dr.	Hooks">
   <figcaption>Dr.Hooks</figcaption>
-</figure>
+</figure> -->
 
-</div>
 
 
 
