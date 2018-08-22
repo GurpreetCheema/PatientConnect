@@ -2,7 +2,7 @@ package com.techelevator.model;
 
 public class Office {
 	
-	public int office_id;
+	public int officeId;
 	public String name;
 	public String address;
 	public String city;
@@ -11,10 +11,10 @@ public class Office {
 	public String phone;
 	
 	public int getOffice_id() {
-		return office_id;
+		return officeId;
 	}
 	public void setOffice_id(int office_id) {
-		this.office_id = office_id;
+		this.officeId = office_id;
 	}
 	public String getName() {
 		return name;
