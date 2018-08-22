@@ -30,7 +30,7 @@
 
 <h2>Change Password</h2>
 
-<c:url var="formAction" value="/users/${userName}/changePassword" />
+<c:url var="formAction" value="/changePassword" />
 
 <div class="row">
 	<div class="col-md-5">

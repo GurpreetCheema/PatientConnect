@@ -4,15 +4,20 @@ import java.util.List;
 
 public interface PatientDAO {
 
-	long save(Patient newPatient);
+	public long save(Patient newPatient);
 
-	Patient getPatientInfoByUserName(String userName);
+	public Patient getPatientInfoByUserName(String userName);
 
-	void updatePatientRelatorId(long patientId, long userId);
+	public void updatePatientRelatorId(long patientId, long userId);
 
-	void deletePatientById(long patientId);
+	public void deletePatientById(long patientId);
 
-	List<Patient> getAllPatients();
+	public List<Patient> getAllPatients();
 
-	long getUserIdFromPatientId(long patientId);
+	public long getUserIdFromPatientId(long patientId);
+
+	public void updatePatientInfo(String firstName, String lastName, String address, String city, String state, int zip,
+			String email, String phone, String insurance, Long patientId);
+
+	public long getPatientIdFromUserId(long userId);
 }
