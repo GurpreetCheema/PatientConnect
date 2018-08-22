@@ -1,4 +1,5 @@
 
+
 .headerIMG {
 	display: flex;
 	margin-left: 26.5%;
@@ -70,69 +71,11 @@
 .formGroup {
 	text-align: left;
 	padding-left: 50px;
+=======
+>>>>>>> 19ced003f621163f069539314e1a5432da4c7feb
 
-	}
-/* input{
-    width: 50%;
-    padding: 10px 16px;
-    margin: 4px 0;
-    display: inline-block;
-    border: 1px solid #59595a;
-    box-sizing: border-box;
-    align:center;
-} */
 
-.patientRegistration{
-    text-align: center;
-}
-fun{
-	width: 500%;
-}
 
-hide{
-	width: 100%;
-}
-
-input {
-	width: 30%;
-	padding: 5px 16px;
-	margin: 2px 0;
-	display: inline-block;
-	border: 1px solid #59595a;
-	box-sizing: border-box; 
-	align: left;
-}
-
-#dropDown {
-	width: 18%;
-	padding: 10px 16px;
-	margin: 4px 0;
-	display: inline-block;
-	border: 1px solid #59595a;
-	box-sizing: border-box;
-}
-
-img.responsiveDoctor {
-	width: 50%;
-	border-radius: 0%;
-	opacity: .5;
-	float: right;
-	padding-bottom: 40px;
-	padding-top: 20px;
-
-}
-.docLayout {
-	border: 3px solid #f1f1f1;
-}
-.patLayout {
-	border: 3px solid #f1f1f1;
-}
-
-.footer {
-	padding: 44px;
-	background-color: #f8f8f8;
-	text-align: center;
-}
 /* Review  */
 
 .docReview {
@@ -460,8 +403,15 @@ h2{
 	float:left;
 }
 
+#spaceBetweenMapandDoc{
+margin:30px;	
+	
+}
+figure {
+  float: right;
+  width: 30%;
 
-
+}
 
 
 
