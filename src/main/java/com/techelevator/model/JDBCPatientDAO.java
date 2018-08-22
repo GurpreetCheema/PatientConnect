@@ -124,17 +124,17 @@ public class JDBCPatientDAO implements PatientDAO{
 //	UPDATES THE PATIENT'S INFORMATION BASED OFF WHAT THEY ENTER
 	@Override
 	public void updatePatientInfo(Patient update, Long patientId) {
-		String sqlUpdatePatientInfo = "UPDATE patient SET first_name = ?"
-													   + "last_name = ?"
-													   + "address = ?"
-													   + "city = ?"
-													   + "state = ?"
-													   + "zip = ?"
-													   + "email = ?"
-													   + "phone = ?"
-													   + "insurance = ?"
+		String sqlUpdatePatientInfo = "UPDATE patient SET first_name = ?, "
+													   + "last_name = ?, "
+													   + "address = ?, "
+													   + "city = ?, "
+													   + "state = ?, "
+													   + "zip = ?, "
+													   + "email = ?, "
+													   + "phone = ?, "
+													   + "insurance = ? "
 													   + "WHERE patient_id = ?";
-		jdbcTemplate.queryForRowSet(sqlUpdatePatientInfo, update.getFirstName(), update.getLastName(),
+		jdbcTemplate.update(sqlUpdatePatientInfo, update.getFirstName(), update.getLastName(),
 									update.getAddress(), update.getCity(), update.getState(), update.getZip(),
 									update.getEmail(), update.getPhone(), update.getInsurance(), patientId);
 	}
@@ -149,7 +149,7 @@ public class JDBCPatientDAO implements PatientDAO{
 		SqlRowSet thisPatientId = jdbcTemplate.queryForRowSet(sqlGetUserId, userId);
 		long currentPatientId = 0;
 		if(thisPatientId.next()) {
-			currentPatientId = thisPatientId.getLong("user_id");
+			currentPatientId = thisPatientId.getLong("patient_id");
 		}
 		
 		return currentPatientId;

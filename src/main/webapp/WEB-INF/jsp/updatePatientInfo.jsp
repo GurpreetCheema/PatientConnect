@@ -4,19 +4,16 @@
 <c:import url="/WEB-INF/jsp/header.jsp" />
 <h3><em>Hello Patient:</em></h3>
 
-<div class= "patLayout">
+<div class="patLayout">
 <h1 class=patientRegistration><br>Update Your Information:</h1>
-<div class = "imgcontainer">
-	<c:url var="imgSrcDoc" value="/img/patientSideBar.jpg" />
-	<a href="${homePageHref}"><img src="${imgSrcDoc}"
-	class="responsiveDoctor" /></a>
+<div class ="imgcontainer">
 </div>
 </div>
 <!-- <h3>Please Fill out the Information below:</h3> -->
 <br/>
   <div class="container">
 <div>
-<c:url var="formAction" value="/patientRegistration" />
+<c:url var="formAction" value="/updatePatientInfo" />
 <form class="newUserForm" method="POST" action="${formAction}">
 <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 
