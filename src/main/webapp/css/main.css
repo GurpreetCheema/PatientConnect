@@ -1,9 +1,11 @@
 body { 
-    background: url("../img/background8.jpg") repeat 0 0;
+    background: url("../img/docBackground2.jpg") repeat 0 0;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
+	
+	background-position: 0px 200px;
 }
+
 
 .headerIMG {
 	display: flex;
@@ -403,7 +405,6 @@ label.star:before {
 	font-weight: lighter;
 	text-size: 12pt;
 	margin-left: 15px;
-	text-decoration: underline;
 	
 }
 .docImage img{
@@ -417,27 +418,7 @@ label.star:before {
 }
 
 
-/*------------------ Office doctors images----------------*/
-.responsiveDoctorOffice{
-    position: relative;
-    float: left;
-    width:  200px;
-    height: 200px;
-    background-position: 50% 50%;
-    background-repeat:   no-repeat;
-    background-size:     cover;
-}
 
-.address{
-/* 	display: center;
- */	color: black; 
-	font-family: Helvetica;
-	font-weight: bold;
-	font:center;
-	text-size: 12pt;
-	margin-left: 15px;
-	border-style: solid;
-}
 .drInfo{
 	margin-top: -35%;
 }
