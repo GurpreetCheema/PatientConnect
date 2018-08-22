@@ -63,7 +63,7 @@
 <br>		
 <!--  State -->	
 	<p> <label for="state">State: </label><br> 	
-<select name="state" id="state">
+<select name="state" id="state" >
 	<option value="AL">Alabama</option>
 	<option value="AK">Alaska</option>
 	<option value="AZ">Arizona</option>
