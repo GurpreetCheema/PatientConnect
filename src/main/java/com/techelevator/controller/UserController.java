@@ -15,6 +15,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.model.Doctor;
 import com.techelevator.model.DoctorDAO;
+import com.techelevator.model.Office;
+import com.techelevator.model.OfficeDAO;
 import com.techelevator.model.Patient;
 import com.techelevator.model.PatientDAO;
 import com.techelevator.model.User;
@@ -31,6 +33,9 @@ public class UserController {
 	
 	@Autowired
 	private PatientDAO patientDAO;
+	
+	@Autowired
+	private OfficeDAO officeDAO;
 	
 	private long currId;
 
@@ -165,8 +170,24 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/office", method=RequestMethod.GET)
-	public String viewOffice() {
+	public String viewOffice(ModelMap modelHolder) {
+		modelHolder.put("office", officeDAO.getOfficeInfo());
 		return "office";
+	}
+	
+	@RequestMapping(path="/updateOffice", method=RequestMethod.GET)
+	public String updateOffice(ModelMap modelHolder) {
+		modelHolder.put("office", officeDAO.getOfficeInfo());
+		return "/updateOffice";
+	}
+	
+	@RequestMapping(path="/updateOffice", method=RequestMethod.POST)
+	public String updateOffice(@ModelAttribute Office newOffice,
+							  ModelMap modelHolder,
+							  RedirectAttributes flashScope) {
+		modelHolder.put("office", officeDAO.getOfficeInfo());
+		officeDAO.update(newOffice);
+		return "/updateOffice";
 	}
 	
 	@RequestMapping(path="/deleteDoctor", method=RequestMethod.GET)
