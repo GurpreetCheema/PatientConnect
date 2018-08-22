@@ -25,7 +25,7 @@ div.stars {
 	font-weight: lighter;
 	font:center;
 	text-size: 12pt;
-	margin-left: 15px;
+	margin-left: 10px;
 	border-style: solid;
 }
 
@@ -69,19 +69,25 @@ margin:30px;
 	
 }
 figure {
-  float: right;
+  
   text-align: center;
   font-style: italic;
   font-size: smaller;
   text-indent: 0;
   border: thin silver solid;
-
+  padding: 2rem;
   width: 100%;
   height: auto;
 }
 
 #map1{
-margin-top:400px;
+margin-top:200px;
 
 }
 
+.threeImg{
+display:flex;
+flex: 1 0 33%;
+min-width:50px;
+ width: 100%;
+   height: auto;}

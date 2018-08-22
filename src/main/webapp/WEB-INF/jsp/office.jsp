@@ -4,14 +4,10 @@
 
 <link rel="stylesheet" href="/maps/documentation/javascript/cgc/demos.css">
 <h2>View Office information Below:</h2>
-<div class="containerplanet1">
-  <div class="planet"></div>
-  <div class="rocket"></div>
-</div>
 
-<%--  <h1 class="greeting">Hello, ${patient.firstName} ${patient.lastName}</h1>
- --%><!-- <table class= "patientTable" style="width:40%">
- -->
+<div class ="holdTogether">
+
+
 <div class = "address">
 Patient Connect Office <br>
 11031 Clifton Blvd.<br>
@@ -20,7 +16,7 @@ Phone # : 216-212-2666 <br>
 </div>
 
 
-<div>
+<div class= "threeImg">
 <figure>
 <img src="/capstone/img/Doctor1.jpg"
     width="136" height="200"/>
@@ -65,5 +61,5 @@ lng : -81.6223497
 async defer></script>
 </div>	
 
-
+</div>
 <c:import url="/WEB-INF/jsp/footer.jsp" />
