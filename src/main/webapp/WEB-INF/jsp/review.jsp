@@ -39,9 +39,10 @@
 
 	<div class="row">
 		<div>
-			<h3 class="docReview">Please submit your Review</h3>
+			<h3 class="docReview" style="margin-top: 3%; color: white; font-family: Furtura">Please submit your Review</h3>
+			<hr id="move" style="width:1000px;">
 		</div>
-		<div>
+		<div class="reviewAll">
 			<p>
 				<label for="docName"><h3>Doctor's Name:</h3> </label><br>
 
@@ -68,16 +69,19 @@
 			<input class="star star-1" id="star-1" type="radio" value="1" name="rating" />
 				<label class="star star-1" for="star-1"></label>
 		</div>
-</div>
+
 
 		<div class="form-groupReview">
 			<input type="Text" class="form-control" name="review" 
-				placeholder="Write Review Here" required />
+				placeholder="Write Your Review Here" required />
 		</div>
 		<div class="buttonMargin">
 			<button type="submit" class="btn btn-default">Submit
 				Your Review</button>
+	
+			<img src="/capstone/img/docImageRev.jpg"/>
 			<br>
+			</div>
 		</div>
 	</div>
 </form>
