@@ -142,7 +142,6 @@ public class UserController {
 	@RequestMapping(path="/patient", method=RequestMethod.GET)
 	public String patientProfile(ModelMap modelHolder, HttpSession session) {
 		User sessionUser = (User)session.getAttribute("currentUser");
-		
 		modelHolder.put("patient", patientDAO.getPatientInfoByUserName(sessionUser.getUserName()));
 		return "patient";
 	}
@@ -150,7 +149,6 @@ public class UserController {
 	@RequestMapping(path="/doctor", method=RequestMethod.GET)
 	public String doctorProfile(ModelMap modelHolder, HttpSession session) {
 		User sessionUser = (User)session.getAttribute("currentUser");
-		
 		modelHolder.put("doctor", doctorDAO.getDoctorInfoByUserName(sessionUser.getUserName()));
 		return "doctor";
 	}
@@ -187,7 +185,8 @@ public class UserController {
 							  RedirectAttributes flashScope) {
 		modelHolder.put("office", officeDAO.getOfficeInfo());
 		officeDAO.update(newOffice);
-		return "/updateOffice";
+		flashScope.addFlashAttribute("message", "Office Information Updated");
+		return "redirect:/administrator";
 	}
 	
 	@RequestMapping(path="/deleteDoctor", method=RequestMethod.GET)
@@ -203,7 +202,7 @@ public class UserController {
 	@RequestMapping(path="/deleteDoctor", method=RequestMethod.POST)
 	public String deleteDoctors(@RequestParam long doctorId, ModelMap modelHolder, RedirectAttributes flashScope) {
 		doctorDAO.deleteDoctorById(doctorId);
-		flashScope.addFlashAttribute("message", "Doctor Deleted");
+		flashScope.addFlashAttribute("message", "User Doctor Deleted");
 		return "redirect:/deleteDoctor";
 	}
 	
@@ -220,7 +219,30 @@ public class UserController {
 	@RequestMapping(path="/deletePatient", method=RequestMethod.POST)
 	public String deletePatients(@RequestParam long patientId, ModelMap modelHolder, RedirectAttributes flashScope) {
 		patientDAO.deletePatientById(patientId);
-		flashScope.addFlashAttribute("message", "Patient Deleted");
+		flashScope.addFlashAttribute("message", "User Patient Deleted");
 		return "redirect:/deletePatient";
 	}
+	
+	@RequestMapping(path="/updatePatientInfo", method=RequestMethod.GET)
+	public String updatePatient() {
+		return "updatePatientInfo";
+	}
+	
+	@RequestMapping(path="/updatePatientInfo", method=RequestMethod.POST)
+	public String updatePatient(
+				@ModelAttribute Patient newPatient,
+				ModelMap modelHolder,
+				HttpSession session,
+				RedirectAttributes flashScope  //pass a flash scope variable into save method
+			) {
+			currId = ((User)session.getAttribute("currentUser")).getUserId();
+			long patientId = patientDAO.getPatientIdFromUserId(currId);
+	
+			patientDAO.updatePatientInfo(newPatient, patientId);
+			
+			flashScope.addFlashAttribute("message", "Information updated!");
+			
+			return "redirect:/patient";
+	}
+
 }

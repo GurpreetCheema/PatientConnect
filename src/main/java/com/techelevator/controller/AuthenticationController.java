@@ -73,6 +73,11 @@ public class AuthenticationController {
 		session.invalidate();
 		return "redirect:/";
 	}
+	
+	@RequestMapping(path="changePassword", method=RequestMethod.GET)
+	public String updatePassword() {
+		return "changePassword";
+	}
 
 	// @RequestMapping(path = "/autoLogin", method = RequestMethod.POST)
 	// public String autoLogin(@RequestParam String userName, @RequestParam String

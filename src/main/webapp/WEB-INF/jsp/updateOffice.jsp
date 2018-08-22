@@ -33,9 +33,8 @@
 	});
 </script>
 
-<h1>Update Office Info</h1>
 <div class= "patLayout">
-<h1 class=patientRegistration><br>Please Fill Out The Information Below</h1>
+<h1 class=patientRegistration><br>Update Office Info</h1>
 <div class = "imgcontainer">
 </div>
 </div>
@@ -63,7 +62,7 @@
 <br>		
 <!--  State -->	
 	<p> <label for="state">State: </label><br> 	
-<select name="state" id="state">
+<select name="state" id="state" >
 	<option value="AL">Alabama</option>
 	<option value="AK">Alaska</option>
 	<option value="AZ">Arizona</option>
