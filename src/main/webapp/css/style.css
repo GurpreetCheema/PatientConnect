@@ -20,12 +20,13 @@ div.stars {
 }
 
 .address{
+	font-size: 150%;
  	color: black; 
 	font-family: Helvetica;
 	font-weight: lighter;
 	font:center;
 	text-size: 12pt;
-	margin-left: 10px;
+	margin-left: 0px;
 	border-style: solid;
 }
 
@@ -48,9 +49,9 @@ div.stars {
 	text-align:center;
 }
 .address{
-		text-align:center;
+	text-align:center;
 	font:bold;
-	   border:1px solid #021a40;
+	  border:1px solid ;
 	
 }
 
@@ -80,6 +81,12 @@ figure {
   height: auto;
 }
 
+
+figcaption{
+    font-size: 150%;
+	
+	
+}
 #map1{
 margin-top:200px;
 
