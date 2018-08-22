@@ -50,9 +50,16 @@ public class JDBCUserDAO implements UserDAO {
 		}
 	}
 
+	//		UPDATES PASSWORD
 	@Override
 	public void updatePassword(String userName, String password) {
-		jdbcTemplate.update("UPDATE app_user SET password = ? WHERE user_name = ?", password, userName);
+		// Generate a Salt
+		byte[] salt = hashMaster.generateRandomSalt();
+		// Hash password
+		String hashedPassword = hashMaster.computeHash(password, salt);	
+		//Change SQL to save the hashed password and the salt
+		String saltString = new String(Base64.encode(salt));
+		jdbcTemplate.update("UPDATE app_user SET password = ?, salt = ? WHERE user_name = ?", hashedPassword, saltString, userName);
 	}
 	
 //	SETS USER ID IN RELATOR DB
@@ -131,6 +138,6 @@ public class JDBCUserDAO implements UserDAO {
 		id.next();
 		Long longRoleId = id.getLong("role_id");
 		return longRoleId;
-		
 	}
+
 }
