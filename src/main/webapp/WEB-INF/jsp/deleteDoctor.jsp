@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<div class="newUserMessage">${message}</div>
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
 <h1>Delete Doctors</h1>
@@ -9,13 +9,13 @@
 	<c:forEach var="doctor" items="${doctors}">
 			<div class="deleteDoctorDiv">
 				
-					<div class="doctorName"><h2>Dr. ${doctor.lastName}</h2></div>
+					<div class="doctorName"><h3>Dr. ${doctor.lastName}</h3></div>
 					<div><form method="POST" action="${formAction}"><input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 						<input type="hidden" name="doctorId" value="${doctor.doctorId}"/>
 						<input class="formSubmitButton" type="submit" value="DELETE"/></form>
 					</div>		
 			</div>
-		<c:out value="-------------------------------------------------------------------"/>
+		<c:out value="-----------------------------------------------------------------------"/>
 	</c:forEach>
 	
 <c:import url="/WEB-INF/jsp/footer.jsp" />
