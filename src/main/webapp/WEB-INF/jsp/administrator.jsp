@@ -13,8 +13,9 @@
 <c:url var="deletePatientHref" value="/deletePatient" />
 <li><a href="${deletePatientHref}"><button>Delete Patient</button></a></li><br>
 
-<!-- <button>Manage Reviews</button>
+<!-- <button>Manage Reviews</button> -->
 
-<button>View Reviews</button> -->
+<c:url var="updateOfficeHref" value="/updateOffice" />
+<li><a href="${updateOfficeHref}"><button>Update Office Info</button></a></li><br>
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />
