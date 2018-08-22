@@ -1,5 +1,80 @@
 
 
+.headerIMG {
+	display: flex;
+	margin-left: 26.5%;
+	margin-right: auto;
+	width: 50%;
+	padding-top: 10px;
+	background-color: white;
+	max-width: 960px;
+}
+
+.newUserForm {
+	padding-bottom: 30px;
+}
+
+.input {
+	width: 50px;
+}
+
+
+/* Button for Doctor and Patient Registration */
+.formSubmitButton {
+	background-color: #77d42a;
+	border-radius: 6px;
+	border: 1px solid #268a16;
+	display: inline-block;
+	cursor: pointer;
+	color: #306108;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #aade7c;
+}
+
+.formSubmitButton:hover {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811',
+		endColorstr='#77d42a', GradientType=0);
+	background-color: #5cb811;
+}
+
+.formSubmitButton:active {
+	position: relative;
+	top: 1px;
+}
+
+/* .doctorImg {
+	width: 40%;
+	border-radius: 50%;
+} */
+
+.newUserMessage {
+	font-size: 2em;
+	color: white;
+	background-color: green;
+	width: 100%;
+	text-align: center;
+}
+
+.doctorRegistration {
+	text-align: center;
+}
+
+.imgcontainer {
+	text-align: center;
+	margin: 24px 0 12px 0;
+}
+  /* User input fields */
+.formGroup {
+	text-align: left;
+	padding-left: 50px;
+=======
+>>>>>>> 19ced003f621163f069539314e1a5432da4c7feb
+
+
 
 /* Review  */
 
