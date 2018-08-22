@@ -23,16 +23,22 @@ public class JDBCOfficeDAO implements OfficeDAO{
 		
 		SqlRowSet location = jdbcTemplate.queryForRowSet(sqlGetOffice);
 		if(location.next()) {
-			newOffice
+			newOffice.setOfficeId(location.getInt("office_id"));;
+			newOffice.setName(location.getString("name"));
+			newOffice.setAddress(location.getString("address"));
+			newOffice.setCity(location.getString("city"));
+			newOffice.setState(location.getString("state"));
+			newOffice.setZip(location.getInt("zip"));
+			newOffice.setPhone(location.getString("phone"));
 		}
 		
 		return newOffice;
 	}
 	
 	@Override
-	public long update(Office newOffice) {
-		String sqlUpdateOffice = "UPDATE office SET "+
-								  "returning patient_id;";
-		return jdbcTemplate.update(sqlUpdateOffice,  ;
+	public void update(Office newOffice) {
+		String sqlUpdateOffice = "UPDATE office SET name = ?, address = ?, city = ?, state = ?, zip = ?, phone = ?"+
+								  "WHERE office_id = 1;";
+		jdbcTemplate.update(sqlUpdateOffice, newOffice.getName(), newOffice.getAddress(), newOffice.getCity(), newOffice.getState(), newOffice.getZip(), newOffice.getPhone());
 	}
 }
