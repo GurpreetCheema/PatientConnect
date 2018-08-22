@@ -7,7 +7,18 @@
 <div class="buttonsDoc">
 <button>Edit Info</button>
 <a href="/capstone/appointment">Office Appointments</a>
-<button>Update Availability</button>
+<c:if test="${doctor.doctorId == '1'}">
+	<!-- MANTIS AVAILABILITY BUTTON -->
+	<a target="_blank" href="https://secure.acuityscheduling.com/preferences.php?tab=schedule&calendar=2473471">Change Availability</a>
+</c:if>
+<c:if test="${doctor.doctorId == '2'}">
+	<!-- JACK AVAILABILITY BUTTON -->
+	<a target="_blank" href="https://secure.acuityscheduling.com/preferences.php?tab=schedule&calendar=2473523">Change Availability</a>
+</c:if>
+<c:if test="${doctor.doctorId == '3'}">
+	<!-- BARB AVAILABILITY BUTTON -->
+	<a target="_blank" href="https://secure.acuityscheduling.com/preferences.php?tab=schedule&calendar=2487129">Change Availability</a>
+</c:if>
 <!-- <button>Message A Patient</button> -->
 <a href="https://www.spotify.com/us/">Listen to Spotify</a>
 </div>

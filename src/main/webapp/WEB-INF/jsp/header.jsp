@@ -65,7 +65,7 @@
 						<li><a href="${sentMessagesHref}">Sent Messages</a></li>
 --%>
 					<c:if test="${not empty currentUser}">
-						<c:url var="changePasswordHref" value="/users/${currentUser}/changePassword" />
+						<c:url var="changePasswordHref" value="/changePassword" />
 						<li><a href="${changePasswordHref}">Change Password</a></li>
 					</c:if> 
 				</ul>

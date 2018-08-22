@@ -77,10 +77,10 @@ public class JDBCPatientDAO implements PatientDAO{
 							  "FROM user_patient " +
 							  "WHERE patient_id = ?";
 		
-		SqlRowSet thisDoctorId = jdbcTemplate.queryForRowSet(sqlGetUserId, patientId);
+		SqlRowSet thisPatientId = jdbcTemplate.queryForRowSet(sqlGetUserId, patientId);
 		long currentPatientId = 0;
-		if(thisDoctorId.next()) {
-			currentPatientId = thisDoctorId.getLong("user_id");
+		if(thisPatientId.next()) {
+			currentPatientId = thisPatientId.getLong("user_id");
 		}
 		
 		return currentPatientId;
@@ -119,6 +119,38 @@ public class JDBCPatientDAO implements PatientDAO{
 					allPatients.add(mapRowToPatient(patients));
 				}
 		return allPatients;
+	}
+	
+//	UPDATES THE PATIENT'S INFORMATION BASED OFF WHAT THEY ENTER
+	@Override
+	public void updatePatientInfo(String firstName, String lastName, String address, String city, String state, int zip, String email, String phone, String insurance, Long patientId) {
+		String sqlUpdatePatientInfo = "UPDATE patient SET first_name = ?"
+													   + "last_name = ?"
+													   + "address = ?"
+													   + "city = ?"
+													   + "state = ?"
+													   + "zip = ?"
+													   + "email = ?"
+													   + "phone = ?"
+													   + "insurance = ?"
+													   + "WHERE patient_id = ?";
+		jdbcTemplate.queryForRowSet(sqlUpdatePatientInfo, firstName, lastName, address, city, state, zip, email, phone, insurance);
+	}
+	
+//	GETS CURRENT PATIENT ID FROM THE USER THAT'S CURRENTLY LOGGED IN
+	@Override
+	public long getPatientIdFromUserId(long userId) {
+		String sqlGetUserId = "SELECT patient_id " +
+							  "FROM user_patient " +
+							  "WHERE user_id = ?";
+		
+		SqlRowSet thisPatientId = jdbcTemplate.queryForRowSet(sqlGetUserId, userId);
+		long currentPatientId = 0;
+		if(thisPatientId.next()) {
+			currentPatientId = thisPatientId.getLong("user_id");
+		}
+		
+		return currentPatientId;
 	}
 
 }

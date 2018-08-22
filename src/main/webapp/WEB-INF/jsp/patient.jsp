@@ -16,7 +16,7 @@
 </div>
 <h1 class="patientInfoHead"><strong style="font-weight: bold">PATIENT</strong> INFORMATION</h1>
 <div class="buttons">
-<a href="/">Edit Info</a>
+<a href="/capstone/updatePatientInfo">Edit Info</a>
 <a href="/capstone/review">Write A Review</a>
 <!-- <a href="/message.jsp">Message Doctor</a>
 <a href="/">Check Messages</a> -->

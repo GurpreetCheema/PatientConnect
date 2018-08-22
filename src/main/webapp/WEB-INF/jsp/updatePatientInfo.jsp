@@ -2,32 +2,41 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
-<h1>Update Office Info</h1>
+<h3><em>Hello Patient:</em></h3>
+
 <div class= "patLayout">
-<h1 class=patientRegistration><br>Please Fill Out The Information Below</h1>
+<h1 class=patientRegistration><br>Update Your Information:</h1>
 <div class = "imgcontainer">
+	<c:url var="imgSrcDoc" value="/img/patientSideBar.jpg" />
+	<a href="${homePageHref}"><img src="${imgSrcDoc}"
+	class="responsiveDoctor" /></a>
 </div>
 </div>
 <!-- <h3>Please Fill out the Information below:</h3> -->
 <br/>
   <div class="container">
 <div>
-<c:url var="formAction" value="/updateOffice" />
+<c:url var="formAction" value="/patientRegistration" />
 <form class="newUserForm" method="POST" action="${formAction}">
 <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 
  <div class="formGroup">
-
-<!-- Name -->
-	<label for="officeName"> Practice Name:</label> <br> <input type="text"
-	name="name" id="name" />
+	
+	
+<!-- First Name -->
+	<label> First Name:</label> <br><input type="text"
+	name="firstName" id="firstName" />
+<br>	
+<!-- Last Name -->
+	<label for="patientLastName"> Last Name:</label> <br> <input type="text"
+	name="lastName" id="lastName" />
 <br>
 <!--  Address -->
-	<label for="officeAddress"> Street Address:</label> <br> <input type="text"
+	<label for="patientAddress"> Street Address:</label> <br> <input type="text"
 	name="address" id="address" />	
 	<br>	
 <!--  City -->
-<label for="officeCity"> City:</label> <br> <input type="text"
+<label for="patientCity"> City:</label> <br> <input type="text"
 	name="city" id="city" />	
 <br>		
 <!--  State -->	
@@ -84,15 +93,26 @@
 	<option value="WV">West Virginia</option>
 	<option value="WI">Wisconsin</option>
 	<option value="WY">Wyoming</option>
-</select>
+</select>				
 </p>		
 <!--  Zip Code -->
-<label for="officeZip"> Zip Code:</label><br> <input type="text"
-name="zip" id="zip" /><br>	
+		
+<label for="patientZip"> Zip Code:</label><br> <input type="text"
+name="zip" id="zip" />	
+<!--  Email -->
+	</br>					
+<label for="patientEmail">Email:</label><br> <input type="text"
+name="email" id="email" />	
+</br>	
 <!--  Phone Number -->	
-<label for="officePhone"> Phone number:</label><br> <input type="text"
+<label for="patientPhone"> Phone number:</label><br> <input type="text"
 name="phone" id="phone" />	
 </br>
+<!--  Insurance, Do we add few type of Insurances or getting them from somewhere, lets just put trumpCare -->
+
+<label for="patientInsurance"> Name of Your Insurance Company:</label><br> <input type="text"
+name="insurance" id="insurance" />				
+<br>	
 <!--  Submit button -->
 
 <input class="formSubmitButton" type="submit" value="Submit" />
@@ -105,3 +125,4 @@ name="phone" id="phone" />
 
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />
+	

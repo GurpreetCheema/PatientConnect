@@ -2,18 +2,18 @@ package com.techelevator.model;
 
 public class Office {
 	
-	public int officeId;
-	public String name;
-	public String address;
-	public String city;
-	public String state;
-	public int zip;
-	public String phone;
+	private long officeId;
+	private String name;
+	private String address;
+	private String city;
+	private String state;
+	private int zip;
+	private String phone;
 	
-	public int getOffice_id() {
+	public long getOfficeId() {
 		return officeId;
 	}
-	public void setOffice_id(int office_id) {
+	public void setOfficeId(int office_id) {
 		this.officeId = office_id;
 	}
 	public String getName() {
