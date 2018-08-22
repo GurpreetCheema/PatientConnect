@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<div class="newUserMessage">${message}</div>
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
 <!-- 						BOOKING BAR							 -->
@@ -18,8 +18,6 @@
 <div class="buttons">
 <a href="/capstone/updatePatientInfo">Edit Info</a>
 <a href="/capstone/review">Write A Review</a>
-<!-- <a href="/message.jsp">Message Doctor</a>
-<a href="/">Check Messages</a> -->
 </div>
 <div class=clearfix>
 <br>

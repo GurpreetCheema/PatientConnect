@@ -23,10 +23,9 @@ div.stars {
  	color: black; 
 	font-family: Helvetica;
 	font-weight: lighter;
-	font:center;
 	text-size: 12pt;
-	margin-left: 10px;
-	border-style: solid;
+	margin-left: 0px;
+	width:100%;
 }
 
 /* 
@@ -48,9 +47,8 @@ div.stars {
 	text-align:center;
 }
 .address{
-		text-align:center;
+	text-align:center;
 	font:bold;
-	   border:1px solid #021a40;
 	
 }
 
@@ -80,6 +78,12 @@ figure {
   height: auto;
 }
 
+
+figcaption{
+    font-size: 150%;
+	
+	
+}
 #map1{
 margin-top:200px;
 
@@ -91,3 +95,70 @@ flex: 1 0 33%;
 min-width:50px;
  width: 100%;
    height: auto;}
+   
+   
+  
+
+    HTML CSS 
+
+    Result 
+
+EDIT ON
+  
+    
+    
+    
+    
+    
+    
+    
+  
+
+.quotation{
+  font-size: 30px;
+  //margin: 0 auto;
+  quotes: "\201C""\201D""\2018""\2019";
+  padding: 10px 20px;
+  line-height: 1.4;
+}
+
+.quotation:before {
+  content: open-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: -10px;
+  position: relative;
+  top: 30px;
+  color: #ccc;
+  font-size: 3em;
+}
+.quotation::after {
+  content: close-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: 10px;
+  position: relative;
+  top: 35px;
+  color: #ccc;
+  font-size: 3em;
+}
+footerdoc{
+  margin:0;
+  text-align: right;
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+  .spacebetweenMapandTable{
+  padding:20px;
+  }
+   
+   
+   
+   
+   
+   
+   
+   

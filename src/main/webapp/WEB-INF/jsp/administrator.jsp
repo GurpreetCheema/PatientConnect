@@ -20,6 +20,6 @@
 
 <!-- MANAGE APPOINTMENTS BUTTON -->
 <c:url var="updateAppointmentHref" value="https://secure.acuityscheduling.com/appointments.php?rs=1" />
-<li><a target="_blank" href="${updateAppointmentHref}"><button>Manage Info</button></a></li><br>
+<li><a target="_blank" href="${updateAppointmentHref}"><button>Manage Office Schedule</button></a></li><br>
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />

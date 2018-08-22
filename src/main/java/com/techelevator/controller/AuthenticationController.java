@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -73,23 +74,19 @@ public class AuthenticationController {
 		session.invalidate();
 		return "redirect:/";
 	}
-
-	// @RequestMapping(path = "/autoLogin", method = RequestMethod.POST)
-	// public String autoLogin(@RequestParam String userName, @RequestParam String
-	// password, HttpSession session) {
-	// if (userDAO.searchForUsernameAndPassword(userName, password)) {
-	// session.setAttribute("currentUser", userDAO.getUserByUserName(userName));
-	// }
-	//
-	// if(userDAO.getUserRoleByUsername(((User)session.getAttribute("currentUser")).getUserName())
-	// == 1) {
-	// return "redirect:/patientRegistration";
-	// } else
-	// if(userDAO.getUserRoleByUsername(((User)session.getAttribute("currentUser")).getUserName())
-	// == 2) {
-	// return "redirect:/doctorRegistration";
-	// } else {
-	// return "redirect:/login";
-	// }
-	// }
+	
+//		CHANGE PASSWORD GET
+	@RequestMapping(path="/changePassword", method=RequestMethod.GET)
+	public String updatePassword() {
+		return "changePassword";
+	}
+	
+//		CHANGE PASSWORD POST
+	@RequestMapping(path="/changePassword", method=RequestMethod.POST)
+	public String changePassword(@RequestParam String password, 
+								HttpSession session) {
+		User sessionUser = (User)session.getAttribute("currentUser");
+		userDAO.updatePassword(sessionUser.getUserName(), password);
+		return "redirect:/";
+	}
 }
