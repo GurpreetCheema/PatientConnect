@@ -35,13 +35,13 @@ Phone # : 216-212-2666 <br>
 <figure>
 <img src="/capstone/img/Doctor2.jpg"
     width="136" height="200"/>
- <figcaption>Dr.Toboggan</figcaption>
+ <figcaption>Dr.Kevorkian</figcaption>
 </figure>
 
 <figure>
 <img src="/capstone/img/Doctor3.jpg"
     width="136" height="200"/>
- <figcaption>Dr.Toboggan</figcaption>
+ <figcaption>Dr.Hooks</figcaption>
 </figure>
 
 
