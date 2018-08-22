@@ -1,343 +1,9 @@
 
-
-.headerIMG {
-	display: flex;
-	margin-left: 26.5%;
-	margin-right: auto;
-	width: 50%;
-	padding-top: 10px;
-	background-color: white;
-	max-width: 960px;
-}
-
-.newUserForm {
-	padding-bottom: 30px;
-}
-
-.input {
-	width: 50px;
-}
-
-
-/* Button for Doctor and Patient Registration */
-.formSubmitButton {
-	background-color: #77d42a;
-	border-radius: 6px;
-	border: 1px solid #268a16;
-	display: inline-block;
-	cursor: pointer;
-	color: #306108;
-	font-family: Arial;
-	font-size: 15px;
-	font-weight: bold;
-	padding: 6px 24px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #aade7c;
-}
-
-.formSubmitButton:hover {
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811',
-		endColorstr='#77d42a', GradientType=0);
-	background-color: #5cb811;
-}
-
-.formSubmitButton:active {
-	position: relative;
-	top: 1px;
-}
-
-/* .doctorImg {
-	width: 40%;
-	border-radius: 50%;
-} */
-
-.newUserMessage {
-	font-size: 2em;
-	color: white;
-	background-color: green;
-	width: 100%;
-	text-align: center;
-}
-
-.doctorRegistration {
-	text-align: center;
-}
-
-.imgcontainer {
-	text-align: center;
-	margin: 24px 0 12px 0;
-}
-  /* User input fields */
-.formGroup {
-	text-align: left;
-	padding-left: 50px;
-
-
-
-/* Review  */
-
-.docReview {
-	text-align: center;
-	letter-spacing: 1px;
-	margin-top: 80px;
-	color: black;
-	margin-left: 8px;
-	margin-right: 8px;
-}
-.form-group {
-	margin-top: 10px;
-	
-}
-
-.btn {
-	transition: .2s;
-	padding: 11px 22px;
-	background-color: #49e33b;
-	color: #071105;
-	border-radius: 20;
-}
-
-.starRatingUrl {
-	widht:50px;
-}
-
-.emptySpace {
-	padding-bottom: 400px;
-}
-
-
-footer{
-	text-align: bottom;
-}
-
-/* --------------Star Rating------------------*/
 div.stars {
   width: 470px;
   display: inline-block;
 }
 
-input.star { display: none; }
-
-label.star {
-  float: right;
-  padding: 10px;
-  font-size: 36px;
-  color: #444;
-  transition: all .2s;
-}
-
-input.star:checked ~ label.star:before {
-  content: '\2605';
-  color: #FD4;
-  transition: all .25s;
-}
-
-input.star-5:checked ~ label.star:before {
-  color: #FE7;
-  text-shadow: 0 0 20px #952;
-}
-
-input.star-1:checked ~ label.star:before { color: #F62; }
-
-label.star:hover { transform: rotate(-15deg) scale(1.3); }
-
-label.star:before {
-  content: '\2605';
-}
-.form-control{
-	width:70%;
-	height:80%;
-}
-/*---------------- star rating ends here ------------------*/
-.patientInfoHead 
-{
-	text-align: center; 
-	padding: 10px; 
-	opacity: .8;
-	color: White; 
-	font-family: Helvetica;
-	background-color: black;
-	font-weight: lighter;
-	margin-top: 5%;
-	
-}
-
-.patientInfo {
-	background-color: white;
-	border-color: #515151;
-	padding-left: 10px;
-	border-style: solid;
-	opacity: .8;
-	float: right;
-	box-shadow: 1px 10px;
-	margin-bottom: 20px;
-}
-
-.patImage {
-	width: 50%;
-	opacity: .5;
-	float: right;
-	padding-right: 30px;
-	padding-bottom: 20px;
-	position: relative;
-}
-
-.patientTable {
- 	float: left;
-	font-size: 15pt;
-	margin-left: 50px; 
-	width: 100px;
-    height: 100px;
-    background-color: white;
-    position: relative;
-    font-family: harmonia-sans;
- /* animation-name: example;
-    animation-duration: 2s; */
-}
-/* @keyframes example {
-    0%   {background-color:white; left:0px; top:0px;}
-    25%  {background-color:white; left:200px; top:0px;}
-    50%  {background-color:white; left:200px; top:200px;}
-    75%  {background-color:white; left:0px; top:200px;}
-    100% {background-color:white; left:0px; top:0px;}
-} */
-.buttons *{
-	width: 15%;
-	padding-left: 3px;
-	padding-right: 3px;
-	font-family: harmonia-sans;
-	background-color: #000000;
-	opacity: .8;
-	border-radius: 6px;
-	border: 1px solid #d7d1e7;
-	display: inline-block;
-	cursor: pointer;
-	color: #fffdf9;
-	font-family: Arial;
-	font-size: 15px;
-	padding: 6px 6px;
-	text-decoration: none;
-	/* text-shadow: 0px 1px 0px #aade7c; */
-}
-.buttonsDoc *{
-	width: 15%;
-	padding-left: 3px;
-	padding-right: 3px;
-	font-family: harmonia-sans;
-	background-color: #000000;
-	opacity: .8;
-	border-radius: 6px;
-	border: 1px solid #d7d1e7;
-	display: inline-block;
-	cursor: pointer;
-	color: #fffdf9;
-	font-family: Arial;
-	font-size: 15px;
-	padding: 6px 6px;
-	text-decoration: none;
-}
-.buttonsDoc {
-	text-align: center;
-}
-.whatsUpDoc {
-	text-align: center; 
-	padding: 10px; 
-	opacity: .8;
-	color: White; 
-	font-family: Helvetica;
-	background-color: black;
-	font-weight: lighter;
-	margin-top: 5%;
-}
-
-.buttons {
-	text-align: center;
-}
-.patientTable th{
-	font-size: 15pt;
- 	/* border-width: 3px;
-	border-style: solid;
-	border-color: grey; */ 
-	padding-bottom: 2px; 	
-	padding-right: 10px;
-	padding-left: 3px;
-	font-family: harmonia-sans;
-}
-.patientTable td{
-	float: center;
-	padding-bottom: 3px;
-	padding-left: 6px;
-	padding-right: 10px;
-	display: inline-block;
-	color: #1f1f1f;
-	font-family: harmonis-sans;
-	font-size: 20px;
-/* 	font-weight: bold; */
-	/* padding: 4px 34px; */
-/* 	text-decoration: none;
-	text-shadow: 0px 1px 0px #aade7c; */
-	/*  background-image: linear-gradient(to right, white , green); */
-	}
-.greeting {
-	text-align: left;
-	margin-bottom: -31px;
-	color: #2a2a2a;
-    font-family: futura;
-    text-decoration: underline;
-}
-#map{
-	height:400px;
-	position: fixed;	
-	
-}
-.appointmentsDoc {
-	display: inline-block;
-	border-width: 2px;
-	border-style: solid;
-	border-color: black;
-	opacity: 8.;
-	margin-top: 0%;
-	margin-left: 40px;
-}
-
-.infoDoc {
-	padding-top: 0%;
-	display: inline-block;
-	margin-left: 40px;
-}
-
-.infoDoc h3{
-	display: inline-block;
-	padding: 2px; 
-	opacity: .8;
-	color: White; 
-	font-family: Helvetica;
-	background-color: black;
-	font-weight: lighter;
-	border-size: 1px;
-	border-color: black;
-	border-style: solid;
-}
-.practice {
-	display: inline-block;
-	opacity: .8;
-	color: black; 
-	font-family: Helvetica;
-	font-weight: lighter;
-	text-size: 12pt;
-	margin-left: 15px;
-	border-style: solid;
-	
-}
-.docImage img{
-	margin-top: 20px;
-	width: 20%;
-	float: left;
-	opacity: .8;
-	border-style: solid;
-	border-width: 10px;
-	border-color: black;
-}
 .docName{
 	display:in-line;
 }
@@ -366,14 +32,14 @@ label.star:before {
 	border-style: solid;
 }
 
-
+/* 
 .threeMusketeer{
 	width: 100%;
     height: auto;
     align:center;
     margin-left:30px;
     
-}
+} */
 
 /* img{
 	  padding:1px;
@@ -408,10 +74,14 @@ margin:30px;
 figure {
   float: right;
   width: 30%;
-
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  text-indent: 0;
+  border: thin silver solid;
+  margin: 0.5em;
+  padding: 0.5em;
 }
-
-
 
 
 
