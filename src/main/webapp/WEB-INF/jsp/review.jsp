@@ -39,7 +39,7 @@
 
 	<div class="row">
 		<div>
-			<h3 class="docReview" style="margin-top: 3%; color: white; font-family: Furtura">Please submit your Review</h3>
+			<h4 class="docReview" style="margin-top: 3%; color: white; font-weight: light;"><strong>PLEASE</strong> SUBMIT YOUR REVIEW</h4>
 			<hr id="move" style="width:1000px;">
 		</div>
 		<div class="reviewAll">

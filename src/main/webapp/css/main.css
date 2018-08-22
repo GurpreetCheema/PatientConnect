@@ -145,9 +145,10 @@ img.responsiveDoctor {
 	text-align: center;
 	background-color: black;
 	font-family: Helvetica;
-	padding: 40px;
+	padding: 10px;
 	opacity: .8;
-	font-size: 4em;
+	font-size: 3em;
+	font-weight: lighter;
 
 }
 .form-group {
@@ -183,9 +184,9 @@ footer{
 }
 
 .row {
-	border-style: solid;
+/* 	border-style: solid;
 	border-color: black;
-	border-width: 2px;
+	border-width: 2px; */
 	padding-left: 5px;
 	padding-bottom: 20px;
 	
@@ -233,6 +234,7 @@ label.star:before {
 	background-color: black;
 	font-weight: lighter;
 	margin-top: 5%;
+	font-size: 3em;
 	
 }
 
@@ -358,6 +360,7 @@ label.star:before {
 	color: #2a2a2a;
     font-family: futura;
     text-decoration: underline;
+    padding-bottom: 5px;
 }
 #map{
 	height:400px;
@@ -448,7 +451,7 @@ label.star:before {
 	background-color: white;
 	border-style: solid;
 	border-color: black;
-	border-width: 5px;
+	border-width: 2px;
 	padding-left: 10px;
 	padding-bottom: 10px;
 	margin-right: 5px;
