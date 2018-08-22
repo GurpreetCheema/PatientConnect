@@ -180,8 +180,9 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/deleteDoctor", method=RequestMethod.POST)
-	public String deleteDoctors(@RequestParam long doctorId, ModelMap modelHolder) {
+	public String deleteDoctors(@RequestParam long doctorId, ModelMap modelHolder, RedirectAttributes flashScope) {
 		doctorDAO.deleteDoctorById(doctorId);
+		flashScope.addFlashAttribute("message", "Doctor Deleted");
 		return "redirect:/deleteDoctor";
 	}
 	
@@ -196,8 +197,9 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/deletePatient", method=RequestMethod.POST)
-	public String deletePatients(@RequestParam long patientId, ModelMap modelHolder) {
+	public String deletePatients(@RequestParam long patientId, ModelMap modelHolder, RedirectAttributes flashScope) {
 		patientDAO.deletePatientById(patientId);
+		flashScope.addFlashAttribute("message", "Patient Deleted");
 		return "redirect:/deletePatient";
 	}
 }
