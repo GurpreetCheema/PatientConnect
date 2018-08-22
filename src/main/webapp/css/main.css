@@ -1,9 +1,8 @@
 body { 
-    background: url("../img/docBackground2.jpg") repeat 0 0;
+    background: url("../img/docBackground3.jpg") repeat 0 0;
 	background-size: cover;
 	background-repeat: no-repeat;
-	
-	background-position: 0px 200px;
+	background-attachment: fixed;
 }
 
 
@@ -364,10 +363,7 @@ label.star:before {
     text-decoration: underline;
     padding-bottom: 5px;
 }
-#map{
-	height:400px;
-	
-}
+
 .appointmentsDoc {
 	display: inline-block;
 	border-width: 2px;
@@ -388,23 +384,19 @@ label.star:before {
 	display: inline-block;
 	padding: 2px; 
 	opacity: .8;
-	color: White; 
+	color: black; 
 	font-family: Helvetica;
-	background-color: black;
 	font-weight: lighter;
-	border-size: 1px;
-	border-color: black;
-	border-style: solid;
-	border-radius: 20%;
 }
-.practice {
-	display: inline-block;
+
+.practice h2{
 	opacity: .8;
 	color: black; 
 	font-family: Helvetica;
 	font-weight: lighter;
-	text-size: 12pt;
+	text-size: 3pt;
 	margin-left: 15px;
+	margin-top: -2%;
 	
 }
 .docImage img{
@@ -413,11 +405,9 @@ label.star:before {
 	float: left;
 	opacity: .8;
 	border-style: solid;
-	border-width: 10px;
+	border-width: 2px;
 	border-color: black;
 }
-
-
 
 .drInfo{
 	margin-top: -35%;
@@ -453,4 +443,19 @@ label.star:before {
 	overflow: auto;
 }
 
+.starImg img {
+	width: 15%;
+}
+.docRevAll{
+	padding-left: 20px;
+	font-size: 2em;
+	font-family: Helvetica;
+}
+.allButPic {
+	margin-left: 30%;
+	padding-top: 10px;
+}
 
+.allButPic hr{
+	color: black;
+}
