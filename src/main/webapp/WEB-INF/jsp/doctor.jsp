@@ -7,8 +7,8 @@
 <div class="buttonsDoc">
 <button>Edit Info</button>
 <a href="/capstone/appointment">Office Appointments</a>
-<button>Prescribe Medication</button>
-<button>Message A Patient</button>
+<button>Update Availability</button>
+<!-- <button>Message A Patient</button> -->
 <a href="https://www.spotify.com/us/">Listen to Spotify</a>
 </div>
 <div class ="docImage">
