@@ -62,8 +62,9 @@ public class UserController {
 	
 	@RequestMapping(path="/newUser", method=RequestMethod.POST)
 	public String createUser(@Valid @ModelAttribute User user, @RequestParam String profileType,
-							BindingResult result, RedirectAttributes flash, HttpSession session) {
-		if(result.hasErrors()) {
+							BindingResult result, RedirectAttributes flash, HttpSession session, RedirectAttributes flashScope) {
+		try { 
+			if(result.hasErrors()) {
 			flash.addFlashAttribute("user", user);
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "user", result);
 			return "redirect:/newUser";
@@ -90,6 +91,11 @@ public class UserController {
 			return "redirect:/patientRegistration";
 		}
 		else return "redirect:/newUser";
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+			flashScope.addAttribute("message", "Username already exists!");
+			return "redirect:/newUser";
+		}
 	}
 	
 	@RequestMapping(path="/doctorRegistration", method=RequestMethod.GET)
