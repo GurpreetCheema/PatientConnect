@@ -19,6 +19,7 @@
 		<link rel="stylesheet" type="text/css" href="${cssHref}">
 		<link rel="stylesheet" type="text/css" href="${styleCssHref}">
 		<link rel="stylesheet" type="text/css" href="${adminCssHref}">
+		<link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$("time.timeago").timeago();
@@ -56,7 +57,8 @@
 				<ul class="nav navbar-nav">
 					<c:url var="homePageHref" value="/" />
 					<li><a href="${homePageHref}">Home</a></li>
-
+<%-- 					<c:url var="officePageHref" value="/office" />
+					<li><a href="${officePageHref}">Office Info</a></li> --%>
 					<c:if test="${not empty currentUser}">
 						<c:url var="changePasswordHref" value="/changePassword" />
 						<li><a href="${changePasswordHref}">Change Password</a></li>
