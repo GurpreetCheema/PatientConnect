@@ -6,8 +6,7 @@
 	href="/maps/documentation/javascript/cgc/demos.css">
 
 <div class="holdTogether">
-
-	<img src="/capstone/img/hosp.jpg"width="350" height="250" />
+<img src="/capstone/img/hosp.jpg"width="350" height="250" />
 	<table class="patientPicAndinfo">
 		<tr>
 		<td class ="officeName"> ${office.name} </td>
@@ -19,10 +18,9 @@
 			<td class ="officeCityState">${office.city}, ${office.state} ${office.zip}
 			</td>
 		</tr>
-		 
-		
-		<td class ="officePhone"><a href="tel:+1-303-499-7111">${office.phone}</td></a>
-			<td class ="officePhone"><a href="">Home Page</td></a>
+		 <tr>
+	<td class ="officePhone"><a href="https://www.prankdial.com/us">${office.phone}</td></a>
+			<td class ="officePhone"><a href="/capstone/patient">Home Page</td></a>
 	
 		</tr>
 	
