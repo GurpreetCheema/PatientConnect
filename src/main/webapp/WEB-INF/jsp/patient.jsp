@@ -19,13 +19,14 @@
 <div class="buttons">
 <a href="/capstone/updatePatientInfo">Edit Info</a>
 <a href="/capstone/review">Write A Review</a>
+<a href="/capstone/result">Read Reviews</a>
 </div>
 <!-- <div class=clearfix> -->
 <br>
 <div class="patientInfo">
 <br>
 <img class="patImage" src="img/patientSideBar.jpg" alt="doctorWho">
-<h1 class="greeting" style="margin-right: 20px;">Hello, ${patient.firstName} ${patient.lastName}</h1>
+<h1 class="greeting" style="margin-right: 20px;">Hello, <strong>${patient.firstName} ${patient.lastName}</strong></h1>
 
 <table class= "patientTable" style="width:40%">
   <tr>
