@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<div class="newUserMessage">${message}</div>
+<div class="newUserMessage" style="background-color: #83ccef">${message}</div>
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
 <script type="text/javascript">

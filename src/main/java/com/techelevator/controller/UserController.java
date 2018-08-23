@@ -93,7 +93,7 @@ public class UserController {
 		else return "redirect:/newUser";
 		} catch(Exception e) {
 			System.out.println(e.getMessage());
-			flashScope.addAttribute("message", "Username already exists!");
+			flashScope.addFlashAttribute("message", "Username unavailable");
 			return "redirect:/newUser";
 		}
 	}
