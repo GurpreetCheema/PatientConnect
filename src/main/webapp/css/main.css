@@ -6,11 +6,11 @@ body {
 }
 
 
-/* .container-fluid *{
+.container-fluid {
 	background-color: #000000;
 	color: 23b4ea;
 	opacity: .8;
-} */
+} 
 
 .headerIMG {
 	display: flex;
@@ -235,49 +235,84 @@ label.star:before {
 /*---------------- star rating ends here ------------------*/
 .patientInfoHead {
 	text-align: center; 
-	padding: 10px; 
+	padding: 20px; 
 	opacity: .8;
 	color: White; 
 	font-family: Helvetica;
 	background-color: black;
 	font-weight: lighter;
-	margin-top: 5%;
+	margin-top: 0%;
 	font-size: 3em;
 	
 }
-
+.patientAll {
+	border-style: solid; 
+	border-width: 2px;
+	border-color: black; 
+	box-shadow: 10px;
+	padding-bottom: 400px;
+	background: url("../img/docBackground3.jpg") repeat 0 0;
+	background-size: cover;
+	background-position: 50% 50%;
+}
 .patientInfo {
-	background-color: white;
-	border-color: #515151;
 	padding-left: 10px;
-	border-style: solid;
 	opacity: .8;
 	float: right;
-	box-shadow: 1px 10px;
 	margin-bottom: 20px;
 }
 
 .patImage {
 	width: 50%;
-	opacity: .5;
+	opacity: .7;
 	float: right;
 	padding-right: 30px;
 	padding-bottom: 20px;
 	position: relative;
+	border-style: solid;
 }
 
 .patientTable {
  	float: left;
 	font-size: 15pt;
 	margin-left: 50px; 
-	width: 100px;
-    height: 100px;
-    background-color: white;
     position: relative;
     font-family: harmonia-sans;
+    border-left: 2px groove black;
+    border-bottom:2px groove black;
+    margin-left: 10px;
+    height: 300px;
+    background-color: white;
+    opacity: .8;
+    padding-top: 30px;
  /* animation-name: example;
     animation-duration: 2s; */
 }
+.patientTable th{
+	font-size: 15pt;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-family: harmonia-sans;
+	color: black;
+
+}
+.patientTable td{
+	float: center;
+	padding-left: 6px;
+	padding-right: 10px;
+	display: inline-block;
+	color: black;
+	font-family: harmonis-sans;
+	font-size: 20px;
+	margin-top: 4px;
+	
+/* 	font-weight: bold; */
+	/* padding: 4px 34px; */
+/* 	text-decoration: none;
+	text-shadow: 0px 1px 0px #aade7c; */
+	/*  background-image: linear-gradient(to right, white , green); */
+	}
+
 /* @keyframes example {
     0%   {background-color:white; left:0px; top:0px;}
     25%  {background-color:white; left:200px; top:0px;}
@@ -285,6 +320,14 @@ label.star:before {
     75%  {background-color:white; left:0px; top:200px;}
     100% {background-color:white; left:0px; top:0px;}
 } */
+.greeting {
+	text-align: left;
+	margin-bottom: -31px;
+	color: #2a2a2a;
+    font-family: Helvetica;
+    text-decoration: underline;
+    padding-bottom: 5px;
+}
 .buttons *{
 	width: 15%;
 	padding-left: 3px;
@@ -337,39 +380,7 @@ label.star:before {
 .buttons {
 	text-align: center;
 }
-.patientTable th{
-	font-size: 15pt;
- 	/* border-width: 3px;
-	border-style: solid;
-	border-color: grey; */ 
-	padding-bottom: 2px; 	
-	padding-right: 10px;
-	padding-left: 3px;
-	font-family: harmonia-sans;
-}
-.patientTable td{
-	float: center;
-	padding-bottom: 3px;
-	padding-left: 6px;
-	padding-right: 10px;
-	display: inline-block;
-	color: #1f1f1f;
-	font-family: harmonis-sans;
-	font-size: 20px;
-/* 	font-weight: bold; */
-	/* padding: 4px 34px; */
-/* 	text-decoration: none;
-	text-shadow: 0px 1px 0px #aade7c; */
-	/*  background-image: linear-gradient(to right, white , green); */
-	}
-.greeting {
-	text-align: left;
-	margin-bottom: -31px;
-	color: #2a2a2a;
-    font-family: futura;
-    text-decoration: underline;
-    padding-bottom: 5px;
-}
+
 
 .appointmentsDoc {
 	display: inline-block;
