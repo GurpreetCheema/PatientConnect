@@ -17,9 +17,9 @@
 <div class= "patientAll">
 <h1 class="patientInfoHead"><strong style="font-weight: bold">Patient</strong> Information</h1>
 <div class="buttons">
-<a href="/capstone/updatePatientInfo">Edit Info</a>
-<a href="/capstone/review">Write A Review</a>
-<a href="/capstone/result">Read Reviews</a>
+<a href="/updatePatientInfo">Edit Info</a>
+<a href="/review">Write A Review</a>
+<a href="/result">Read Reviews</a>
 </div>
 <!-- <div class=clearfix> -->
 <br>

@@ -4,7 +4,7 @@
   </div>
   <div>
 		<footer class="footer">
-		<a href="/capstone/fun">
+		<a href="/fun">
 			© Copyright 2018 ZANG LLC. 
 		</a>
 		</footer>
