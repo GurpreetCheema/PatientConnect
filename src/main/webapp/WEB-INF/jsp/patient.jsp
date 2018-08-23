@@ -14,12 +14,13 @@
 <div class="reviewPost" style="display: none;">
 <a href="/review" target="_blank" class="review-button">Review</a>
 </div>
-<h1 class="patientInfoHead"><strong style="font-weight: bold">PATIENT</strong> INFORMATION</h1>
+<div class= "patientAll">
+<h1 class="patientInfoHead"><strong style="font-weight: bold">Patient</strong> Information</h1>
 <div class="buttons">
 <a href="/capstone/updatePatientInfo">Edit Info</a>
 <a href="/capstone/review">Write A Review</a>
 </div>
-<div class=clearfix>
+<!-- <div class=clearfix> -->
 <br>
 <div class="patientInfo">
 <br>
@@ -69,6 +70,7 @@
 	</div>
 	<br>
 	<br>
+	</div>
 	<div class="patientAPP" style="align-text: center; margin-left: 60px; opacity: .9;">
 	<!-- 						SCHEDULING BUTTON								 -->
 	<a href="https://app.acuityscheduling.com/schedule.php?owner=16497853" 
@@ -82,6 +84,7 @@
 	box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset;
 	border-radius: 4px; 
 	text-decoration: none; 
+	opacity: .9;
 	display: inline-block;">Schedule Appointment</a>
 	<link rel="stylesheet" href="https://embed.acuityscheduling.com/embed/button/16497853.css" id="acuity-button-styles" />
 	<script src="https://embed.acuityscheduling.com/embed/button/16497853.js" async></script>
@@ -89,21 +92,21 @@
 	<!-- MANTIS BUTTON -->
 	<a href="https://app.acuityscheduling.com/schedule.php?owner=16497853&calendarID=2473471" target="_blank" class="acuity-embed-button" style="background: #000000; color: #fff; 
 	padding: 8px 12px; border: 0px; -webkit-box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset;-moz-box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset;box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset;
-	border-radius: 4px; text-decoration: none; display: inline-block;">Schedule Appointment With Dr. Toboggan</a>
+	border-radius: 4px; text-decoration: none; opacity: .9;display: inline-block;">Schedule Appointment With Dr. Toboggan</a>
 	<link rel="stylesheet" href="https://embed.acuityscheduling.com/embed/button/16497853.css" id="acuity-button-styles" />
 	<script src="https://embed.acuityscheduling.com/embed/button/16497853.js" async></script>
 	 
 	 <!-- JACK BUTTON -->
 	<a href="https://app.acuityscheduling.com/schedule.php?owner=16497853&calendarID=2473523" target="_blank" class="acuity-embed-button" style="background: #000000; color: #fff; 
 	padding: 8px 12px; border: 0px; -webkit-box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset;-moz-box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset;box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset;
-	border-radius: 4px; text-decoration: none; display: inline-block;">Schedule Appointment With Dr. Kevorkian</a>
+	border-radius: 4px; text-decoration: none; opacity: .9;display: inline-block;">Schedule Appointment With Dr. Kevorkian</a>
 	<link rel="stylesheet" href="https://embed.acuityscheduling.com/embed/button/16497853.css" id="acuity-button-styles" />
 	<script src="https://embed.acuityscheduling.com/embed/button/16497853.js" async></script>
 
 	<!-- BARB BUTTON -->
 	<a href="https://app.acuityscheduling.com/schedule.php?owner=16497853&calendarID=2487129" target="_blank" class="acuity-embed-button" style="background: #000000; color: #fff; 
 	padding: 8px 12px; border: 0px; -webkit-box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset;-moz-box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset;
-	box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset;border-radius: 4px; text-decoration: none; display: inline-block;">Schedule Appointment With Dr. Hooks</a>
+	box-shadow: 0 -2px 0 rgba(0,0,0,0.15) inset; opacity: .9;border-radius: 4px; text-decoration: none; display: inline-block;">Schedule Appointment With Dr. Hooks</a>
 	<link rel="stylesheet" href="https://embed.acuityscheduling.com/embed/button/16497853.css" id="acuity-button-styles" />
 	<script src="https://embed.acuityscheduling.com/embed/button/16497853.js" async></script>
 	

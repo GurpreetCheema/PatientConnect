@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-
+<div class="docAll">
 <h1 class="whatsUpDoc"> <strong>Welcome</strong> Dr. ${doctor.lastName} </h1>
 <div class="buttonsDoc">
 <button>Edit Info</button>
@@ -55,6 +55,6 @@
 <h4>NAME: <em>${doctor.firstName} ${doctor.lastName}</em></h4>
 <%-- <h4>EMAIL: ${doctor.email}</h4> --%>
 </div>
-
+</div>
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />

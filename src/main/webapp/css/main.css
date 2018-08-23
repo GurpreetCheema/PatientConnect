@@ -1,11 +1,16 @@
 body { 
-    background: url("../img/docBackground2.jpg") repeat 0 0;
+    background: url("../img/docBackground3.jpg") repeat 0 0;
 	background-size: cover;
 	background-repeat: no-repeat;
-	
-	background-position: 0px 200px;
+	background-attachment: fixed;
 }
 
+
+.container-fluid {
+	background-color: #000000;
+	color: 23b4ea;
+	opacity: .8;
+} 
 
 .headerIMG {
 	display: flex;
@@ -15,6 +20,7 @@ body {
 	padding-top: 10px;
 	background-color: white;
 	max-width: 960px;
+
 }
 
 .newUserForm {
@@ -28,24 +34,24 @@ input {
 
 /* Button for Doctor and Patient Registration */
 .formSubmitButton {
-	background-color: #77d42a;
+	background-color: #23aff5;
 	border-radius: 6px;
-	border: 1px solid #268a16;
+	border: 1px solid #426f88;
 	display: inline-block;
 	cursor: pointer;
-	color: #306108;
-	font-family: Arial;
+	color: black;
+	font-family: Helvetica;
 	font-size: 15px;
-	font-weight: bold;
+	font-weight: normal;
 	padding: 6px 24px;
 	text-decoration: none;
-	text-shadow: 0px 1px 0px #aade7c;
+
 }
 
 .formSubmitButton:hover {
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811',
-		endColorstr='#77d42a', GradientType=0);
-	background-color: #5cb811;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a',
+		endColorstr='#23b4ea', GradientType=0);
+	background-color: #b0b8b6;
 }
 
 .formSubmitButton:active {
@@ -160,7 +166,7 @@ img.responsiveDoctor {
 .btn {
 	transition: .2s;
 	padding: 11px 22px;
-	background-color: #49e33b;
+	background-color: #83ccef;
 	color: #071105;
 	border-radius: 20;
 }
@@ -229,49 +235,84 @@ label.star:before {
 /*---------------- star rating ends here ------------------*/
 .patientInfoHead {
 	text-align: center; 
-	padding: 10px; 
+	padding: 20px; 
 	opacity: .8;
 	color: White; 
 	font-family: Helvetica;
 	background-color: black;
 	font-weight: lighter;
-	margin-top: 5%;
+	margin-top: 0%;
 	font-size: 3em;
 	
 }
-
+.patientAll {
+	border-style: solid; 
+	border-width: 2px;
+	border-color: black; 
+	box-shadow: 10px;
+	padding-bottom: 400px;
+	background: url("../img/docBackground3.jpg") repeat 0 0;
+	background-size: cover;
+	background-position: 50% 50%;
+}
 .patientInfo {
-	background-color: white;
-	border-color: #515151;
 	padding-left: 10px;
-	border-style: solid;
 	opacity: .8;
 	float: right;
-	box-shadow: 1px 10px;
 	margin-bottom: 20px;
 }
 
 .patImage {
 	width: 50%;
-	opacity: .5;
+	opacity: .7;
 	float: right;
 	padding-right: 30px;
 	padding-bottom: 20px;
 	position: relative;
+	border-style: solid;
 }
 
 .patientTable {
  	float: left;
 	font-size: 15pt;
 	margin-left: 50px; 
-	width: 100px;
-    height: 100px;
-    background-color: white;
     position: relative;
     font-family: harmonia-sans;
+    border-left: 2px groove black;
+    border-bottom:2px groove black;
+    margin-left: 10px;
+    height: 300px;
+    background-color: white;
+    opacity: .8;
+    padding-top: 30px;
  /* animation-name: example;
     animation-duration: 2s; */
 }
+.patientTable th{
+	font-size: 15pt;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-family: harmonia-sans;
+	color: black;
+
+}
+.patientTable td{
+	float: center;
+	padding-left: 6px;
+	padding-right: 10px;
+	display: inline-block;
+	color: black;
+	font-family: harmonis-sans;
+	font-size: 20px;
+	margin-top: 4px;
+	
+/* 	font-weight: bold; */
+	/* padding: 4px 34px; */
+/* 	text-decoration: none;
+	text-shadow: 0px 1px 0px #aade7c; */
+	/*  background-image: linear-gradient(to right, white , green); */
+	}
+
 /* @keyframes example {
     0%   {background-color:white; left:0px; top:0px;}
     25%  {background-color:white; left:200px; top:0px;}
@@ -279,6 +320,14 @@ label.star:before {
     75%  {background-color:white; left:0px; top:200px;}
     100% {background-color:white; left:0px; top:0px;}
 } */
+.greeting {
+	text-align: left;
+	margin-bottom: -31px;
+	color: #2a2a2a;
+    font-family: Helvetica;
+    text-decoration: underline;
+    padding-bottom: 5px;
+}
 .buttons *{
 	width: 15%;
 	padding-left: 3px;
@@ -319,55 +368,20 @@ label.star:before {
 }
 .whatsUpDoc {
 	text-align: center; 
-	padding: 10px; 
+	padding: 20px; 
 	opacity: .8;
 	color: White; 
 	font-family: Helvetica;
 	background-color: black;
 	font-weight: lighter;
-	margin-top: 5%;
+	margin-top: 0px;
 }
 
 .buttons {
 	text-align: center;
 }
-.patientTable th{
-	font-size: 15pt;
- 	/* border-width: 3px;
-	border-style: solid;
-	border-color: grey; */ 
-	padding-bottom: 2px; 	
-	padding-right: 10px;
-	padding-left: 3px;
-	font-family: harmonia-sans;
-}
-.patientTable td{
-	float: center;
-	padding-bottom: 3px;
-	padding-left: 6px;
-	padding-right: 10px;
-	display: inline-block;
-	color: #1f1f1f;
-	font-family: harmonis-sans;
-	font-size: 20px;
-/* 	font-weight: bold; */
-	/* padding: 4px 34px; */
-/* 	text-decoration: none;
-	text-shadow: 0px 1px 0px #aade7c; */
-	/*  background-image: linear-gradient(to right, white , green); */
-	}
-.greeting {
-	text-align: left;
-	margin-bottom: -31px;
-	color: #2a2a2a;
-    font-family: futura;
-    text-decoration: underline;
-    padding-bottom: 5px;
-}
-#map{
-	height:400px;
-	
-}
+
+
 .appointmentsDoc {
 	display: inline-block;
 	border-width: 2px;
@@ -388,23 +402,19 @@ label.star:before {
 	display: inline-block;
 	padding: 2px; 
 	opacity: .8;
-	color: White; 
+	color: black; 
 	font-family: Helvetica;
-	background-color: black;
 	font-weight: lighter;
-	border-size: 1px;
-	border-color: black;
-	border-style: solid;
-	border-radius: 20%;
 }
-.practice {
-	display: inline-block;
+
+.practice h2{
 	opacity: .8;
 	color: black; 
 	font-family: Helvetica;
 	font-weight: lighter;
-	text-size: 12pt;
+	text-size: 3pt;
 	margin-left: 15px;
+	margin-top: -2%;
 	
 }
 .docImage img{
@@ -413,11 +423,9 @@ label.star:before {
 	float: left;
 	opacity: .8;
 	border-style: solid;
-	border-width: 10px;
+	border-width: 2px;
 	border-color: black;
 }
-
-
 
 .drInfo{
 	margin-top: -35%;
@@ -453,4 +461,44 @@ label.star:before {
 	overflow: auto;
 }
 
+.starImg img {
+	width: 15%;
+}
+.docRevAll{
+	padding-left: 20px;
+	font-size: 2em;
+	font-family: Helvetica;
+}
+.allButPic {
+	margin-left: 25%;
+	padding-top: 10px;
+	background-color: white;
+	opacity: .8;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	padding-left: 10px;
+}
+
+.allButPic hr{
+	color: black;
+
+}
+.docAll {
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	padding-bottom: 490px;
+	background: url("../img/docBackground3.jpg") repeat 0 0;
+	background-size: cover;
+
+}
+.docAll img{
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.docAll h4 {
+	margin-left: 15px;
+	margin-top: -430px;
+}
 
