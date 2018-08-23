@@ -5,7 +5,6 @@
 <div class="docAll">
 <h1 class="whatsUpDoc"> <strong>Welcome</strong> Dr. ${doctor.lastName} </h1>
 <div class="buttonsDoc">
-<button>Edit Info</button>
 <a href="/capstone/appointment">Office Appointments</a>
 <c:if test="${doctor.doctorId == '1'}">
 	<!-- MANTIS AVAILABILITY BUTTON -->
