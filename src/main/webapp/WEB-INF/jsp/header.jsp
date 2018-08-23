@@ -38,8 +38,8 @@
 		<header>
 			<c:url var="homePageHref" value="/" />
 			<div class="headerIMG">
-			<div>
-				<c:url var="imgSrc1" value="/img/header23.jpg" />
+			<div class="imgHead">
+				<c:url var="imgSrc1" value="/img/header25.png" />
 				<a href="${homePageHref}"><img src="${imgSrc1}"
 					class="img-responsive" /></a>
 			</div>

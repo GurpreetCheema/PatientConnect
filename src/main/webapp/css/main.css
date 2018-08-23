@@ -6,6 +6,12 @@ body {
 }
 
 
+/* .container-fluid *{
+	background-color: #000000;
+	color: 23b4ea;
+	opacity: .8;
+} */
+
 .headerIMG {
 	display: flex;
 	margin-left: 26.5%;
@@ -14,6 +20,7 @@ body {
 	padding-top: 10px;
 	background-color: white;
 	max-width: 960px;
+
 }
 
 .newUserForm {
@@ -27,24 +34,24 @@ input {
 
 /* Button for Doctor and Patient Registration */
 .formSubmitButton {
-	background-color: #77d42a;
+	background-color: #23aff5;
 	border-radius: 6px;
-	border: 1px solid #268a16;
+	border: 1px solid #426f88;
 	display: inline-block;
 	cursor: pointer;
-	color: #306108;
-	font-family: Arial;
+	color: black;
+	font-family: Helvetica;
 	font-size: 15px;
-	font-weight: bold;
+	font-weight: normal;
 	padding: 6px 24px;
 	text-decoration: none;
-	text-shadow: 0px 1px 0px #aade7c;
+
 }
 
 .formSubmitButton:hover {
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811',
-		endColorstr='#77d42a', GradientType=0);
-	background-color: #5cb811;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a',
+		endColorstr='#23b4ea', GradientType=0);
+	background-color: #b0b8b6;
 }
 
 .formSubmitButton:active {
@@ -159,7 +166,7 @@ img.responsiveDoctor {
 .btn {
 	transition: .2s;
 	padding: 11px 22px;
-	background-color: #49e33b;
+	background-color: #83ccef;
 	color: #071105;
 	border-radius: 20;
 }
@@ -318,13 +325,13 @@ label.star:before {
 }
 .whatsUpDoc {
 	text-align: center; 
-	padding: 10px; 
+	padding: 20px; 
 	opacity: .8;
 	color: White; 
 	font-family: Helvetica;
 	background-color: black;
 	font-weight: lighter;
-	margin-top: 5%;
+	margin-top: 0px;
 }
 
 .buttons {
@@ -452,10 +459,35 @@ label.star:before {
 	font-family: Helvetica;
 }
 .allButPic {
-	margin-left: 30%;
+	margin-left: 25%;
 	padding-top: 10px;
+	background-color: white;
+	opacity: .8;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	padding-left: 10px;
 }
 
 .allButPic hr{
 	color: black;
+
 }
+.docAll {
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	padding-bottom: 490px;
+	background: url("../img/docBackground3.jpg") repeat 0 0;
+	background-size: cover;
+
+}
+.docAll img{
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.docAll h4 {
+	margin-left: 15px;
+	margin-top: -430px;
+}
+

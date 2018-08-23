@@ -57,9 +57,9 @@
 							<img src="/capstone/img/star-${review.rating}.png" />
 						</div>
 						<h4 style="font-weight: lighter; margin-bottom: 0%;">
-
 							<c:out value="${review.review}" />
 							<hr>
+						
 						</h4>
 
 					</c:forEach>
