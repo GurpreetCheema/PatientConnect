@@ -78,7 +78,6 @@
 		<div class="buttonMargin">
 			<button type="submit" class="btn btn-default">Submit
 				Your Review</button>
-	
 			<img src="/capstone/img/docImageRev.jpg"/>
 			<br>
 			</div>
