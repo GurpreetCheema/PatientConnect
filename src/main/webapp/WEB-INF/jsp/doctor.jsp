@@ -5,7 +5,7 @@
 <div class="docAll">
 <h1 class="whatsUpDoc"> <strong>Welcome</strong> Dr. ${doctor.lastName} </h1>
 <div class="buttonsDoc">
-<a href="/capstone/appointment">Office Appointments</a>
+<a href="/appointment">Office Appointments</a>
 <c:if test="${doctor.doctorId == '1'}">
 	<!-- MANTIS AVAILABILITY BUTTON -->
 	<a target="_blank" href="https://secure.acuityscheduling.com/preferences.php?tab=schedule&calendar=2473471">Change Availability</a>
@@ -22,7 +22,7 @@
 <a href="https://www.spotify.com/us/">Listen to Spotify</a>
 </div>
 <div class ="docImage">
-<img src="/capstone/img/Doctor${doctor.doctorId}.jpg">
+<img src="/img/Doctor${doctor.doctorId}.jpg">
 </div>
 
 <div class="infoDoc">

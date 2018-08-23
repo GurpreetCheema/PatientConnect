@@ -36,7 +36,7 @@
 		<div class="docRevAll">
 			<c:forEach var="doctors" items="${docName}">
 				<div class="docImage">
-					<img src="/capstone/img/Doctor${doctors.doctorId}.jpg">
+					<img src="/img/Doctor${doctors.doctorId}.jpg">
 				</div>
 				<div class="allButPic">
 					<c:out value="Dr. ${doctors.firstName} ${doctors.lastName} " />
@@ -54,7 +54,7 @@
 							<h4 style="margin-bottom: -10px;">
 								<em>Anonymous:</em>
 							</h4>
-							<img src="/capstone/img/star-${review.rating}.png" />
+							<img src="/img/star-${review.rating}.png" />
 						</div>
 						<h4 style="font-weight: lighter; margin-bottom: 0%;">
 							<c:out value="${review.review}" />
