@@ -4,14 +4,39 @@
 
 <link rel="stylesheet"
 	href="/maps/documentation/javascript/cgc/demos.css">
-<h2>Meet our Doctors:</h2>
 
 <div class="holdTogether">
+
+	<img src="/capstone/img/hosp.jpg"width="350" height="250" />
+	<table class="patientPicAndinfo">
+		<tr>
+		<td class ="officeName"> ${office.name} </td>
+		</tr>
+		<tr>
+		<td class ="officeAddress">${office.address}</td>
+		</tr>
+		<tr>
+			<td class ="officeCityState">${office.city}, ${office.state} ${office.zip}
+			</td>
+		</tr>
+		 
+		
+		<td class ="officePhone"><a href="tel:+1-303-499-7111">${office.phone}</td></a>
+			<td class ="officePhone"><a href="">Home Page</td></a>
+	
+		</tr>
+	
+</div>
+	</table></div>
+	
+</div>
+<h2>Meet our Doctors:</h2>
+
 	<div class="threeImg">
 		<figure>
 			<img src="/capstone/img/Doctor1.jpg" width="136" height="200" />
 			<blockquote>
-				<p class="quotation">A doctor who not only like to heal patients
+				<p class="quotation">A doctor, with ability to heal patients
 					but bring happiness in their lives by telling them It's always
 					sunny.</p>
 				<footerdoc> Dr.Toboggan</footerdoc>
@@ -40,35 +65,18 @@
 		</figure>
 
 	</div>
-	<table class="address">
-		<tr>
-			<td> ${office.name}</td>
-		</tr>
-		<tr>
-			<td>${office.address}</td>
-		</tr>
-		<tr>
-			<td>${office.city}</td>
-		</tr>
-		<tr>
-			<td>${office.state}</td>
-		</tr>
-		
-		
-		<tr>
-			<td>${office.zip}</td>
-		</tr>
-
-		<td>${office.phone}</td>
-		</tr>
-		<br>
-		<br>
-	</table>
-</div>
-
+	
 </div>
 <div class ="spacebetweenMapandTable"></div>
+<div class="getDirection">
+	<form action="http://maps.google.com/maps" method="get" target="_blank">
+   <input type="text" name="something" />
+   <input type="hidden" name="something1" value="11031 Clifton Blvd.
+Cleveland, OH 44102" />
+   <input type="submit" value="Get directions" />
+</form>
 
+</div>
 <div id="map">
 	<script>
 		function initMap() {
