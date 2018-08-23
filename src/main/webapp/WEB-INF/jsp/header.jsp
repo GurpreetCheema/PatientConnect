@@ -4,13 +4,14 @@
 <html>
 	<head>
 		<title>Patient Connect</title>
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
-	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.js "></script>
+	    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+	    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.js "></script>
 	    <script src="https://cdn.jsdelivr.net/jquery.timeago/1.4.1/jquery.timeago.min.js"></script>
-	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	    <c:url var="cssHref" value="./css/main.css" />
 	    	<c:url var="styleCssHref" value="./css/style.css" />
 	    	<c:url var="adminCssHref" value="./css/admin.css" />
@@ -56,14 +57,6 @@
 					<c:url var="homePageHref" value="/" />
 					<li><a href="${homePageHref}">Home</a></li>
 
-					<%-- <c:if test="${not empty currentUser}">
-						<c:url var="dashboardHref" value="/users/${currentUser}" />
-						<li><a href="${dashboardHref}">Private Messages</a></li>
-						<c:url var="newMessageHref" value="/users/${currentUser}/messages/new" />
-						<li><a href="${newMessageHref}">New Message</a></li>
-						<c:url var="sentMessagesHref" value="/users/${currentUser}/messages" />
-						<li><a href="${sentMessagesHref}">Sent Messages</a></li>
---%>
 					<c:if test="${not empty currentUser}">
 						<c:url var="changePasswordHref" value="/changePassword" />
 						<li><a href="${changePasswordHref}">Change Password</a></li>
