@@ -1,5 +1,14 @@
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
 Link for the app, If you can't open it just refresh the page. It will work.
 https://limitless-forest-18497.herokuapp.com/
+
+This is what it looks like in real time, If anybody is not able to run it on their server. https://gurpreetcheema.github.io/PatientConnect---View/patientConnectAppView.html
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
 
 
 # Capstone Starter Project
